@@ -1,0 +1,78 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.history_wrap{padding-bottom:70px}
+.c_ttl{display:none;top:0;margin-left:20px}
+.history{position:relative;z-index:1}
+.history .img_area{width:265px;margin:0 auto}
+.history > li{text-align:center}
+.history .list{display:inline-block;width:auto;padding:25px 0 43px;margin:0 auto;text-align:left}
+.history .list li{margin-bottom:12px}
+.history .list li:last-child{margin-bottom:0}
+.history .date{width:80px;font-family:'SunBatang-Light';font-size:1.25rem;letter-spacing:-0.15em;color:#231f20}
+
+@media screen and (min-width:768px){
+    .history_wrap{padding-bottom:100px}
+    .c_line{display:none}
+    .history .img_area{width:480px}
+    .history .list{padding:45px 0 60px}
+    .history .list li{margin-bottom:15px}
+    .history .date{width:105px;font-size:1.875rem}
+    .history .cont{padding-top:2px}
+}
+@media screen and (min-width:1080px){
+    .history_wrap{padding-bottom:150px}
+    .c_line{display:block}
+    .c_ttl{display:block}
+    .history > li{display:table;table-layout:fixed;width:1040px;margin:0 auto 90px}
+    .history > li:last-child{margin-bottom:0}
+    .history .img_area{display:table-cell;width:50%;vertical-align:middle;box-sizing:border-box}
+    .history .img_area .img{width:480px}
+    .history .list{display:table-cell;width:50%;padding:0 0 0 70px;vertical-align:middle;box-sizing:border-box}
+    .history .date{width:110px}
+}
+@media screen and (min-width:1260px){
+    .history > li{width:1200px;margin:0 auto 100px}
+    .history .img_area{padding-left:22px}
+    .history .img_area .img{width:510px}
+    .history .list{padding-left:90px}
+}
+</style>
+        <div class="history_wrap rel">
+            <div class="c_line"></div>
+            <p class="c_ttl l50"><img src="<?=$root?>/img/page/com/03/cttl.png" alt="Sullai History"></p>
+            <ul class="history">
+            <?
+            $his_sql = "select * from ".TABLE_LEFT."history_01 where view3_use = 1";
+            $his_res = mysql_query($his_sql);
+            while ($his_lst = mysql_fetch_assoc($his_res)) {
+                $his_img = explode("||",$his_lst['view3_file']);
+            ?>
+                <li>
+                    <div class="img_area">
+                        <div class="img over_border"><img src="<?=$root?>/upload/history_01<?=$his_img[2]?>" alt="" class="w100"></div>
+                    </div>
+                    <ul class="list">
+                        <?
+                        $his_val = explode("||",$his_lst['view3_special_01']);
+                        for ($i=0; $i < count($his_val); $i++) {
+                            $his = explode("##",$his_val[$i]);
+                        ?>
+                            <li class="fs_def">
+                                <p class="date"><?=$his[0]?></p>
+                                <p class="cont text"><?=view3_html($his[1])?></p>
+                            </li>
+                        <?
+                        }
+                        ?>
+                    </ul>
+                </li>
+            <?
+            }
+            ?>
+            </ul>
+        </div>
+<?php
+include_once('../inc/bottom.php');
+?>

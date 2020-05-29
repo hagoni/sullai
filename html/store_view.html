@@ -1,0 +1,364 @@
+<?php
+include_once('../inc/top.php');
+
+$view3_idx = $_REQUEST['idx'];
+$sql = "select * from ".TABLE_LEFT."map_01 where view3_use = 1 and view3_idx = {$view3_idx}";
+$res = mysql_query($sql);
+$lst = mysql_fetch_assoc($res);
+$lst_img = explode("||",$lst['view3_file']);
+?>
+        <!-- 뷰페이지 start -->
+        <div class="store_view">
+            <div class="view_banner rel t_center">
+                <div class="bg_slide">
+                    <div class="swiper-container h100">
+                        <ul class="swiper-wrapper h100">
+                            <?
+
+                                if ($lst_img[3] == "") {
+                                ?>
+                                    <li class="swiper-slide" style="background-image:url('../img/page/store/view_banner.jpg')"></li>
+                                <?
+                                } else {
+                                    for ($i=3; $i < count($lst_img); $i++) {
+                                    ?>
+                                    <li class="swiper-slide" style="background-image:url('<?=$root?>/upload/map_01<?=$lst_img[$i]?>')"></li>
+                                    <?
+                                }
+                            }?>
+                            <!-- <li class="swiper-slide" style="background-image:url('../img/page/store/view_banner.jpg')"></li>
+                            <li class="swiper-slide" style="background-image:url('../img/page/store/view_banner.jpg')"></li>
+                            <li class="swiper-slide" style="background-image:url('../img/page/store/view_banner.jpg')"></li>
+                            <li class="swiper-slide" style="background-image:url('../img/page/store/view_banner.jpg')"></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="v_mid">
+                    <p class="store_name_en"><?=$lst['view3_title_02']?></p>
+                    <p class="store_name"><span><?=$lst['view3_title_01']?></span><a href="<?=$lst['view3_link']?>" target="_blank" class="kakao_btn">카카오채널 친구추가</a></p>
+                    <!--<p class="store_stext">연 <?=$lst['view3_check_04']?>명의 고객님이 방문해주셨습니다.</p>-->
+                    <div class="store_text">
+                        <?=htmlspecialchars_decode($lst['view3_command_01'])?>
+                    </div>
+                    <ul class="store_info fs_def">
+                        <li>좌석 <?=$lst['view3_check_01']?>석</li>
+                        <li>영업시간 <?=$lst['view3_special_02']?></li>
+                        <li>
+                            <?=$lst['view3_special_05'] == 'on' ? '주차 가능' : '주차 불가능'?>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="view_btns view_prev">이전</button>
+                <button type="button" class="view_btns view_next">다음</button>
+                <ul class="bg_paging fs_def">
+                    <!-- <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                    <li><a href="#none"></a></li>
+                    <li><a href="#none"></a></li> -->
+                </ul>
+                <a href="<?=$root?>/html/store.html" class="list_link">다른 지점 보기</a>
+                <div class="pop_wrap" id="popWrap">
+                    <a href="#none" class="pop_cont">강강술래 새해복권</a>
+                    <a href="#none" class="pop_close">팝업 닫기</a>
+                </div>
+            </div>
+            <div class="ctgr_wrap t_center">
+                <ul class="ctgr ctgr_tab fs_def">
+                    <li>
+                        <a href="#none">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">메뉴소개</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="javascript:alert('준비중입니다.')">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">강강술래의 자부심</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">오시는 길</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">매장이벤트</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">고객의 소리</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="circ_area"></div>
+                            <p class="circ_text"><span class="span_text">예약하기</span><span class="circ_arr"><img src="<?=$root?>/img/page/store/view_arr.png" alt="" class="w100"></span></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="view_conts">
+                <!-- menu start -->
+                <div class="view_cont01 view_cont menu">
+                    <p class="view_title">메뉴소개</p>
+                    <ul class="menu_tab fs_def t_center">
+                    <?
+                    $menu_sql = "select * from ".TABLE_LEFT."menu_01 where view3_use = 1 and view3_special_09 = 'cate' and view3_map_idx = {$view3_idx} order by view3_order desc, view3_write_day desc";
+                    $menu_res = mysql_query($menu_sql);
+                    $cnt = 0;
+                    while ($menu_lst = mysql_fetch_assoc($menu_res)) {
+                        ${'LI_SCA_'.$cnt} = $menu_lst['view3_sca'];
+                        if ($cnt == 0) {
+                            $class = "class='on'";
+                        } else {
+                            $class = "";
+                        }
+                    ?>
+                        <li <?=$class?>><a href="#none"><?=$menu_lst['view3_title_01']?></a></li>
+                    <?
+                    $cnt++;
+                    }
+                    ?>
+                        <!-- <li class="on"><a href="#none">구이류</a></li>
+                        <li><a href="#none">정식류</a></li>
+                        <li><a href="#none">식사류</a></li>
+                        <li><a href="#none">연희 잔치 메뉴</a></li> -->
+                    </ul>
+                    <div class="menu_conts">
+                        <div class="menu_cont01 menu_cont">
+                            <ul class="menu_list fs_def">
+                        <?
+                        $mn_sql = "select * from ".TABLE_LEFT."menu_01 where view3_use = 1 and view3_special_09 is null and view3_map_idx = {$view3_idx} and view3_sca = {$LI_SCA_0} order by view3_order desc, view3_write_day desc";
+                        $mn_res = mysql_query($mn_sql);
+                        while ($mn_lst = mysql_fetch_assoc($mn_res)) {
+                            $mn_img = explode("||",$mn_lst['view3_file']);
+                        ?>
+                                <li>
+                                    <div class="img_area" style="background-image:url('<?=$root?>/upload/menu_01<?=$mn_img[2]?>')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko"><?=$mn_lst['view3_title_01']?></p>
+                                        <p class="menu_en"><?=$mn_lst['view3_title_02']?></p>
+                                    </div>
+                                </li>
+                        <?
+                        }
+                        ?>
+                                <!-- <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/menu_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko">한우스페샬</p>
+                                        <p class="menu_en">Special Assorted Grilled Beef</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/menu_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko">한우스페샬</p>
+                                        <p class="menu_en">Special Assorted Grilled Beef</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/menu_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko">한우스페샬</p>
+                                        <p class="menu_en">Special Assorted Grilled Beef</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/menu_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko">한우스페샬</p>
+                                        <p class="menu_en">Special Assorted Grilled Beef</p>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="menu_cont02 menu_cont" style="display:none">
+                            <ul class="menu_list fs_def">
+                        <?
+                        $mn_sql = "select * from ".TABLE_LEFT."menu_01 where view3_use = 1 and view3_special_09 is null and view3_map_idx = {$view3_idx} and view3_sca = {$LI_SCA_1} order by view3_order desc, view3_write_day desc";
+                        $mn_res = mysql_query($mn_sql);
+                        while ($mn_lst = mysql_fetch_assoc($mn_res)) {
+                            $mn_img = explode("||",$mn_lst['view3_file']);
+                        ?>
+                                <li>
+                                    <div class="img_area" style="background-image:url('<?=$root?>/upload/menu_01<?=$mn_img[2]?>')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko"><?=$mn_lst['view3_title_01']?></p>
+                                        <p class="menu_en"><?=$mn_lst['view3_title_02']?></p>
+                                    </div>
+                                </li>
+                        <?
+                        }
+                        ?>
+                            </ul>
+                        </div>
+                        <div class="menu_cont03 menu_cont" style="display:none">
+                            <ul class="menu_list fs_def">
+                        <?
+                        $mn_sql = "select * from ".TABLE_LEFT."menu_01 where view3_use = 1 and view3_special_09 is null and view3_map_idx = {$view3_idx} and view3_sca = {$LI_SCA_2} order by view3_order desc, view3_write_day desc";
+                        $mn_res = mysql_query($mn_sql);
+                        while ($mn_lst = mysql_fetch_assoc($mn_res)) {
+                            $mn_img = explode("||",$mn_lst['view3_file']);
+                        ?>
+                                <li>
+                                    <div class="img_area" style="background-image:url('<?=$root?>/upload/menu_01<?=$mn_img[2]?>')"></div>
+                                    <div class="text_area">
+                                        <p class="menu_ko"><?=$mn_lst['view3_title_01']?></p>
+                                        <p class="menu_en"><?=$mn_lst['view3_title_02']?></p>
+                                    </div>
+                                </li>
+                        <?
+                        }
+                        ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //menu end -->
+                <!-- proud start -->
+                <div class="view_cont02 view_cont proud" style="display:none">
+                    <div style="display:none">
+                        <p class="view_title">강강술래의 자부심</p>
+                        <ul class="proud_cont">
+                            <li class="li1 clearfix">
+                                <div class="img_area" style="background-image:url('../img/page/store/proud_img1.jpg')"></div>
+                                <div class="text_area">
+                                    <div class="v_mid_1080">
+                                        <p class="proud_title">고객님들을 위해 끊임없이 노력하는<br><em>늘봄농원점 김술래 점장입니다.</em></p>
+                                        <p class="proud_text">
+                                            안녕하십니까 강강술래 늘봄농원점 000점장입니다.<br>
+                                            늘봄농원점을 방문해 주시는 모든 고객님들께 최상의 맛<br class="br_m">과 <br class="br_768">서비스를 보여 드릴 수 있도록 노력하겠습니다.<br><br>
+
+                                            또한 봄, 여름, 가을, 겨울 계절별 제철 요리로 고객님들의 <br>오감만족을 위하여 끊임없이 연구하겠습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="li2 clearfix">
+                                <div class="img_area" style="background-image:url('../img/page/store/proud_img2.jpg')"></div>
+                                <div class="text_area">
+                                    <div class="v_mid_1080">
+                                        <p class="proud_title">고객님들의 오감만족을 책임지는<br><em>늘봄농원점 김강강 쉐프입니다</em></p>
+                                        <p class="proud_text">
+                                            안녕하십니까 강강술래 늘봄농원점 000점장입니다.<br>
+                                            늘봄농원점을 방문해 주시는 모든 고객님들께 최상의 맛<br class="br_m">과 <br class="br_768">서비스를 보여 드릴 수 있도록 노력하겠습니다.<br><br>
+
+                                            또한 봄, 여름, 가을, 겨울 계절별 제철 요리로 고객님들의 <br>오감만족을 위하여 끊임없이 연구하겠습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //proud end -->
+                <!-- location start -->
+                <div class="view_cont03 view_cont location" style="display:none">
+                    <p class="view_title">오시는 길</p>
+                    <div class="map_area" id="map_area"></div>
+                    <div class="loc_cont">
+                        <div class="title_area">
+                            <p class="loc_title">강강술래 <?=$lst['view3_title_01']?></p>
+                            <p class="loc_text">총 좌석 <?=$lst['view3_check_01']?>석 / <?=$lst['view3_special_05'] == 'on' ? '주차 가능' : '주차 불가능'?></p>
+                        </div>
+                        <ul class="info_area">
+                            <li>
+                                <p class="info_title">주소</p>
+                                <p class="info_text"><?=$lst['view3_addr_road'].' '.$lst['view3_addr_detail']?></p>
+                            </li>
+                            <li>
+                                <p class="info_title">전화번호</p>
+                                <p class="info_text"><?=$lst['view3_special_04']?></p>
+                            </li>
+                            <li>
+                                <p class="info_title">영업시간</p>
+                                <p class="info_text"><?=$lst['view3_special_02']?></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //location end -->
+                <!-- event start -->
+                <div class="view_cont04 view_cont event" style="display:none">
+<?
+$board = 'event_01';
+$view3_skin = 'view3_event_01';
+$no_include = true;
+include(BOARD_INC.'/index.php');
+?>
+                    <!-- <p class="view_title">매장 이벤트</p>
+                    <ul class="event_tab fs_def t_center">
+                        <li class="on"><a href="#none">진행 중 이벤트</a></li>
+                        <li><a href="#none">완료된 이벤트</a></li>
+                        <li><a href="#none">전체 이벤트</a></li>
+                    </ul>
+                    <div class="event_conts">
+                        <div class="event_cont01 event_cont">
+                            <ul>
+                                <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/event_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <div class="prgr_wrap fs_def">
+                                            <p class="prgr_box">진행중</p>
+                                            <p class="prgr_date">~2020.03.15</p>
+                                        </div>
+                                        <p class="event_title ellipsis">새해福권을 드립니다!</p>
+                                        <p class="event_text">강강술래가 새해를 맞이하여 새해복권을 드립니다. 강강술래가 새해를 맞이하여 새해복권을 드립니다. a매장에서 식사를 하신 후 새해복권을 수령하세요~</p>
+                                        <a href="#none" class="event_link">자세히 보기</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_area" style="background-image:url('../img/page/store/event_img1.jpg')"></div>
+                                    <div class="text_area">
+                                        <div class="prgr_wrap fs_def">
+                                            <p class="prgr_box">진행중</p>
+                                            <p class="prgr_date">~2020.03.15</p>
+                                        </div>
+                                        <p class="event_title ellipsis">새해福권을 드립니다!</p>
+                                        <p class="event_text">강강술래가 새해를 맞이하여 새해복권을 드립니다. a매장에서 식사를 하신 후 새해복권을 수령하세요~</p>
+                                        <a href="#none" class="event_link">자세히 보기</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- //event end -->
+            </div>
+        </div>
+        <!-- //뷰페이지 end -->
+<script src="http://maps.googleapis.com/maps/api/js?language=ko&amp;region=kr&amp;libraries=geometry<?if($settings_data['google_api_key']){echo '&key='.$settings_data['google_api_key'];}?>"></script>
+<script>
+$(document).ready(function() {
+    (function() {
+        var map = new google.maps.Map(document.getElementById('map_area'), {
+            center: new google.maps.LatLng(+<?=$lst['view3_addr_y']?>, +<?=$lst['view3_addr_x']?>),
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        });
+
+        var marker = new google.maps.Marker({
+            map: map,
+			position: {lat: +<?=$lst['view3_addr_y']?>, lng: +<?=$lst['view3_addr_x']?>},
+			//title: '',
+            icon: '<?=$markerImgPath?>'
+		});
+    }());
+
+    $('.pop_close').on('click', function(e) {
+        e.preventDefault();
+        $('.pop_wrap').hide(0);
+        e.preventDefault();
+    });
+
+
+});
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>

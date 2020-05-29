@@ -1,0 +1,346 @@
+<?php
+include_once('../inc/top.php');
+unset($_SESSION['dodoPoint_token']);
+?>
+<script src="<?=$root;?>/plug_in/jquery_ui/jquery-ui-1.12.1.min.js"></script>
+<link rel="stylesheet" href="<?=$root;?>/plug_in/jquery_ui/jquery-ui-1.12.1.min.css">
+<style>
+@import url('../css/board.css');
+.sub_content{min-height:650px;}
+.name_box{padding:34px 0 32px;border:1px solid rgba(90,17,28,0.3)}
+.name_box > p{display:block;font-size:0.875rem}
+.name_box > p em{font-size:1.75rem}
+.name_box .name{padding-bottom:15px;font-family:'SunBatang-Light';letter-spacing:-0.12em;color:#231f20}
+.name_box .point{letter-spacing:-0.06em;color:#231f20}
+.name_box .point em{font-family:'SunBatang-Light';letter-spacing:-0.12em}
+.name_box .point em span{font-size:1rem}
+@media screen and (min-width:768px){
+    .name_box{padding:54px 0 48px}
+    .name_box > p{display:inline-block;font-size:1.25rem}
+    .name_box > p em{font-size:2.5rem}
+    .name_box .name{padding-bottom:0;margin-right:55px}
+    .name_box .point em span{font-size:1.5rem}
+}
+
+.tabmenu{margin:20px 0 30px}
+@media screen and (min-width:768px){
+    .tabmenu{margin:50px 0}
+}
+@media screen and (min-width:1080px){
+    .tabmenu{margin:50px 0 40px}
+}
+.ui-datepicker{z-index:200 !important;}
+.srch_wrap{padding-bottom:28px}
+.srch_month .srch_text{display:none;margin-right:30px;font-size:1.125rem;letter-spacing:-0.05em;line-height:40px;color:#666}
+.srch_month input[type="radio"]{overflow:hidden;position:absolute;width:0.1px;height:0.1px;opacity:0;z-index:-1}
+.srch_month label{width:25%;line-height:40px;border:1px solid #d1d1d1;border-right:0;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;cursor:pointer;box-sizing:border-box}
+.srch_month label:last-child{border-right:1px solid #d1d1d1}
+.srch_month input[type="radio"]:checked + label{background:#5a111c;border-color:#5a111c;color:#fff}
+.srch_date{padding-top:4px}
+.srch_date input.is_cal{width:calc(50% - 2px);height:40px;border:0;border:1px solid #d1d1d1;background-color:transparent;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;box-sizing:border-box}
+.srch_date .ml_4{margin-left:4px}
+.srch_date .wave{display:none;width:40px;font-size:1.125rem;letter-spacing:-0.05em;color:#666;line-height:40px;text-align:center}
+.srch_submit{display:block;width:120px;height:40px;margin:20px auto 0;background-color:#5f1823;font-size:0.8125rem;letter-spacing:-0.05em;color:#fff}
+@media screen and (min-width:768px){
+    .srch_wrap{padding-bottom:50px}
+    .srch_month .srch_text{display:inline-block}
+    .srch_month label{width:95px;font-size:1.125rem}
+    .srch_date{padding-top:20px}
+    .srch_date input.is_cal{width:150px;font-size:1.125rem}
+    .srch_date .ml_4{margin-left:0}
+    .srch_date .wave{display:inline-block}
+    .srch_submit{display:inline-block;width:65px;height:40px;margin:0 0 0 10px;background-color:transparent;border:1px solid #d1d1d1;font-size:1.125rem;color:#666;box-sizing:border-box}
+}
+@media screen and (min-width:1080px){
+    .srch_wrap{overflow:hidden;padding-bottom:35px}
+    .srch_month{float:left}
+    .srch_date{padding-top:0;float:right}
+}
+
+.count_result{padding-bottom:12px;font-size:0.8125rem;letter-spacing:-0.05em;color:#666}
+.count_result em{color:#5f1823}
+.point_table li{position:relative;height:92px;border-bottom:1px solid rgba(35,31,32,0.15)}
+.point_table li:nth-child(2){border-top:1px solid rgba(35,31,32,0.15)}
+.point_table li.th_row{display:none}
+.point_table li .td2{position:absolute;left:10px;top:22px;font-size:1.125rem;letter-spacing:-0.05em;color:#231f20}
+.point_table li .td4{position:absolute;right:10px;top:22px;font-size:1.125rem;letter-spacing:-0.05em;color:#231f20}
+.point_table li .td5{position:absolute;right:10px;bottom:22px;font-size:1.125rem;letter-spacing:-0.05em;color:#231f20}
+.point_table li .td1{position:absolute;left:10px;bottom:22px;font-size:0.8125rem;letter-spacing:-0.05em;color:#969696}
+.point_table li .td3{position:absolute;right:10px;bottom:22px;font-size:0.8125rem;letter-spacing:-0.05em;color:#969696}
+.point_table li .td6{display:none}
+@media screen and (min-width:768px){
+    .count_result{padding-bottom:30px;font-size:1.125rem}
+    .point_table li{font-size:0;line-height:0;text-align:center;border-bottom:0}
+    .point_table li:nth-child(2){border-top:0}
+    .point_table li .td2{position:relative;left:auto;top:auto}
+    .point_table li .td4, .point_table li .td5{position:relative;right:auto;top:auto;bottom:auto;}
+    .point_table li .td1{position:relative;left:auto;bottom:auto}
+    .point_table li .td3{position:relative;right:auto;bottom:auto}
+    .point_table li .td6, .point_table li .th6{display:none}
+    .point_table li > *{width:20%;display:inline-block;font-size:16px;vertical-align:top}
+    .point_table li.th_row{display:block;height:80px;background-color:rgba(216,216,216,0.3)}
+    .point_table li.th_row > *{line-height:80px;font-size:1.375rem;letter-spacing:-0.05em;color:#231f20}
+    .point_table li.td_row{height:70px;border-bottom:1px solid rgba(35,31,32,0.15)}
+    .point_table li.td_row > *{line-height:70px;font-size:1.25rem;letter-spacing:-0.05em;color:#666}
+    .point_table li.td_row span{display:none}
+    .point_table li.td_noresult{height:70px;line-height: 70px;border-bottom:1px solid rgba(35,31,32,0.15);text-align:center;font-size:1.25rem}
+    input.tel_number,input.check_number{width:28%;}
+}
+@media screen and (min-width:1080px){
+    .tabmenu{margin:70px 0 70px}
+    .tab_cont01 .srch_wrap{padding-bottom:50px}
+    .point_table li > *{width:16.6667%}
+    .point_table li .td6, .point_table li .th6{display:inline-block}
+}
+/* .inner_pc{display:none}
+.inner_pc.on{display:block} */
+.tel_number,.check_number{vertical-align:middle;margin-right:6px;width:40%;text-indent:10px;padding:10px 15px;border:solid 1px #EFEFEF;}
+.tel_submit,.check_submit{vertical-align:middle;padding:10px 15px;border:1px solid #3f0c14;background-color:#3f0c14;color:#fff;font-size:15px;font-weight:bold}
+
+.progressWrap{position:absolute;z-index:99;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:#555;background-color:rgba(0,0,0,0.3);text-align:center;overflow:hidden;}
+.progressWrap img{position:fixed;max-width:50%;left:50%;top:50%;transform:translate(-50%, -50%);pointer-events:none;}
+</style>
+<?
+$setDate = Array();
+$setDate['1w'] = date('Y-m-d', strtotime('-7 day'));
+$setDate['1m'] = date('Y-m-d', strtotime('-1 month'));
+$setDate['3m'] = date('Y-m-d', strtotime('-3 month'));
+$setDate['6m'] = date('Y-m-d', strtotime('-6 month'));
+$setDate['end'] = date('Y-m-d')
+?>
+<script>
+$(document).ready(function(){
+    var progressBlockRun = 0;
+    var progressBlockComplete = 0;
+    function progressBlock(display){
+        if(display){
+            progressBlockRun++;
+            $('.progressWrap').show();
+            $('.progressWrap img').attr('src', $('.progressWrap img').attr('data-src')+'?'+progressBlockRun);
+        }else{
+            progressBlockComplete++;
+            if(progressBlockRun<=progressBlockComplete)$('.progressWrap').hide();
+        }
+    }
+    var listHeader = $('.point_table > li').first().clone();
+    var noresultHTML = '<li class="td_noresult">출력 할 내역이 없습니다.</li>';
+    $('[name="set_date"]').click(function(){
+        $('#date_s').val($(this).attr('data-start'));
+        $('#date_e').val($(this).attr('data-end'));
+    });
+    var historyLoaded = false;
+    var requestURI = '<?=$root;?>/lib/spoqa/dodo_point/process.php';
+    function authComplete(){
+        progressBlock(true);
+        $.ajax({
+            url : requestURI,
+            type : 'post',
+            data : {process:'userAuthCheck'},
+            success : function(response){
+                response = JSON.parse(response);
+                if(response.result === true){
+                    $('.inner_pc_0').hide();
+                    $('.inner_pc_1').hide();
+                    $('.inner_pc_2').show();
+                    $('.point_conts').show();
+                    $('.name_box .name em').text(response.number);
+                    loadPage(1);
+                }
+            },
+            complete:function(){
+                progressBlock(false);
+            }
+        });
+    }
+    $('.tabmenu3 li').click(function(){
+        $('.tabmenu3 li').removeClass('on');
+        $(this).addClass('on');
+        if(historyLoaded)loadPage(1);
+    });
+    $('.inner_pc_0 .tel_submit').click(function(e){
+        e.preventDefault();
+        progressBlock(true);
+        $.ajax({
+            url : requestURI,
+            type : 'post',
+            data : {process:'userAuth',step:'send',number:$('.tel_number').val()},
+            success : function(response){
+                response = JSON.parse(response);
+                if(response.result === 'fail'){
+                    if(response.msg)alert(response.msg);
+                }
+                if(response.result === 'success'){
+                    if(response.msg)alert(response.msg);
+                    $('.inner_pc_0').hide();
+                    $('.inner_pc_1').show();
+                }
+            },
+            complete:function(){
+                progressBlock(false);
+            }
+        });
+    });
+    $('.inner_pc_1 .check_submit').click(function(e){
+        e.preventDefault();
+        progressBlock(true);
+        $.ajax({
+            url : requestURI,
+            type : 'post',
+            data : {process:'userAuth',step:'cert',cert_code:$('.check_number').val()},
+            success : function(response){
+                response = JSON.parse(response);
+                if(response.result === 'fail'){
+                    if(response.msg)alert(response.msg);
+                }
+                if(response.result === 'success'){
+                    if(response.msg)alert(response.msg);
+                    authComplete();
+                }
+            },
+            complete:function(){
+                progressBlock(false);
+            }
+        });
+    });
+    function number_comma(num, zeroText){
+        if(typeof zeroText === 'undefined')zeroText = '0';
+        if((num+'') === 0)return zeroText;
+        var regexp = /\B(?=(\d{3})+(?!\d))/g;
+        return num.toString().replace(regexp, ',');
+    }
+    //'step'=>'','number'=>'','cert_code'=>''
+    function loadPage(page){
+        historyLoaded = true;
+        progressBlock(true);
+        $.ajax({
+            url : requestURI,
+            type : 'post',
+            data : {process:'getHistory', date_s:$('#date_s').val(), date_e:$('#date_e').val(), 'type':$('.tabmenu3 li.on a').attr('data-type'), page:page},
+            success : function(response){
+                response = JSON.parse(response);
+                $('.count_result em').text(number_comma(response['total'])+'건');
+                $('.point em').html(number_comma(response['point'])+' <span>p</span>');
+                $('.paging').html($(response['pagination']).html());
+                $('.point_table').empty().append(listHeader);
+                if(response.history.length<1)$('.point_table').append(noresultHTML);
+                for(var i in response.history){
+                    var typeTxt = (response.history[i]['type']=='purchase'?'적립':'사용');
+                    var paidTxt = '';
+                    if(parseInt(response.history[i]['paid'], 10) > 0){
+                        paidTxt = '<span>이용금액</span>'+number_comma(response.history[i]['paid']);
+                    }
+                    var li = $('<li class="td_row">'+
+                                '<div class="td1 td">'+response.history[i]['acted_at_txt']+'</div>'+
+                                '<div class="td2 td ellipsis">'+response.history[i]['store_name']+'</div>'+
+                                '<div class="td3 td"><span></span></div>'+
+                                '<div class="td4 td">'+paidTxt+'</div>'+
+                                '<div class="td5 td"><span>'+typeTxt+' </span>'+number_comma(response.history[i]['points'])+'p</div>'+
+                                '<div class="td6 td">'+typeTxt+'</div>'+
+                            '</li>');
+                    $('.point_table').append(li);
+                }
+            },
+            complete:function(){
+                progressBlock(false);
+            }
+        });
+    }
+    $('body').on('click', '.paging a', function(e){
+        e.preventDefault();
+        loadPage($(this).attr('data-page'));
+    });
+    $('body').on('click', '.srch_submit', function(e){
+        e.preventDefault();
+        loadPage(1);
+    });
+    $('.is_cal').datepicker({
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년'
+    });
+
+    $('[name="set_date"]').eq(1).trigger('click');
+    $('.tabmenu3 li').eq(0).trigger('click');
+    authComplete();
+});
+</script>
+        <div class="progressWrap" style="display:none">
+            <img src="" data-src="<?=$root;?>/img/common/progress_bi.gif">
+        </div>
+        <input type="hidden" name="" class="secret_key" value="0">
+        <div class="inner_pc inner_pc_0 on">
+            <div class="name_box fs_def t_center">
+                <input type="text" name="tel_number" class="tel_number" value="" placeholder="핸드폰 번호 입력">
+                <button type="button" name="button" class="tel_submit">인증번호 받기</button>
+            </div>
+        </div>
+        <div class="inner_pc inner_pc_1" style="display:none">
+            <div class="name_box fs_def t_center">
+                <input type="text" name="check_number" class="check_number" value="" placeholder="인증번호 입력">
+                <button type="button" name="button" class="check_submit">인증</button>
+            </div>
+        </div>
+        <div class="inner_pc inner_pc_2" style="display:none">
+            <div class="name_box fs_def t_center">
+                <p class="name"><em></em> 고객님</p>
+                <p class="point">잔여 포인트 <em>0<span>p</span></em></p>
+            </div>
+        </div>
+        <div class="point_conts" style="display:none">
+            <ul class="tabmenu tabmenu3 fs_def">
+                <li><a href="#none" data-type="all">전체</a></li>
+                <li><a href="#none" data-type="purchase">적립</a></li>
+                <li><a href="#none" data-type="redeem">사용</a></li>
+            </ul>
+            <div class="tab_conts inner_pc">
+                <div class="tab_cont01 tab_cont">
+                    <form class="member_form" onsubmit="return false;">
+                        <fieldset>
+                            <div class="srch_wrap">
+                                <div class="srch_month fs_def t_center">
+                                    <p class="srch_text">기간선택</p>
+                                    <input type="radio" name="set_date" id="set_1w" value="1주일" data-start="<?=$setDate['1w'];?>" data-end="<?=$setDate['end'];?>">
+                                    <label for="set_1w">1주일</label>
+                                    <input type="radio" name="set_date" id="set_1m" value="1개월" data-start="<?=$setDate['1m'];?>" data-end="<?=$setDate['end'];?>">
+                                    <label for="set_1m">1개월</label>
+                                    <input type="radio" name="set_date" id="set_3m" value="3개월" data-start="<?=$setDate['3m'];?>" data-end="<?=$setDate['end'];?>">
+                                    <label for="set_3m">3개월</label>
+                                    <input type="radio" name="set_date" id="set_6m" value="6개월" data-start="<?=$setDate['6m'];?>" data-end="<?=$setDate['end'];?>">
+                                    <label for="set_6m">6개월</label>
+                                </div>
+                                <div class="srch_date fs_def t_center">
+                                    <input name="date_s" id="date_s" class="is_cal">
+                                    <span class="wave">~</span>
+                                    <input name="date_e" id="date_e" class="ml_4 is_cal">
+                                    <button type="button" class="srch_submit">검색</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <p class="count_result t_center">총 <em>0건</em> 조회 결과입니다.</p>
+                    <ul class="point_table">
+                        <li class="th_row">
+                            <div class="th1 th">거래일</div>
+                            <div class="th2 th">지점</div>
+                            <div class="th3 th"></div>
+                            <div class="th4 th">이용금액</div>
+                            <div class="th5 th">포인트</div>
+                            <div class="th6 th">내역</div>
+                        </li>
+                    </ul>
+                    <div class="paging fs_def t_center">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php
+include_once('../inc/bottom.php');
+?>

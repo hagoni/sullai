@@ -1,0 +1,122 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+
+.sub_content{margin-left:0;margin-right:0}
+.c_ttl{display:none;position:absolute;left:50%;top:0;margin-left:20px}
+.tr2_slide{width:254px;height:292px;margin:0 auto}
+.tr2_slide .sl1{background-image:url('../img/page/trust/02/tr2_sl1.jpg')}
+.tr2_slide .sl2{background-image:url('../img/page/trust/02/tr2_sl2.jpg')}
+.tr2_slide .sl3{background-image:url('../img/page/trust/02/tr2_sl3.jpg')}
+.tr2_slide .sl4{background-image:url('../img/page/trust/02/tr2_sl4.jpg')}
+.tr2_slide .sl5{background-image:url('../img/page/trust/02/tr2_sl5.jpg')}
+.tr2_paging{padding-top:10px;padding-left:50%;margin-left:-127px}
+/* .tr2_slide{top:153px;margin-left:-670px;width:594px;height:684px} */
+/* .tr2_paging{top:873px;margin-left:-670px} */
+.layer1 .text_area{padding:28px 0 43px;text-align:center}
+.layer1 .text_area .stitle{padding-bottom:14px}
+
+.layer2{height:520px;background-image:url('../img/page/trust/02/lyr2_bg.jpg');box-sizing:border-box}
+.layer2 .text_area{text-align:center}
+.layer2 .stitle{padding:46px 0 17px}
+.lyr2_link{margin:0 auto;padding-left:12px;color:#ccc;border-bottom:1px solid rgba(255,255,255,0.3)}
+
+@media screen and (min-width:768px){
+    .c_line{display:none}
+    .tr2_slide{width:480px;height:552px}
+    .tr2_paging{padding-top:17px;margin-left:-240px}
+    .layer1 .text_area{padding:50px 0 62px}
+    .layer1 .text_area .stitle{padding-bottom:32px}
+
+    .layer2{height:1000px}
+    .layer2 .stitle{padding:150px 0 20px}
+    .cmn_link .cmn_arr{margin-left:40px}
+}
+@media screen and (min-width:1080px){
+    .c_ttl{display:block}
+    .c_line{display:block}
+    .layer1{padding-bottom:120px;margin-left:20px;margin-right:20px}
+    .layer1 .slide_area{float:left;width:50%;box-sizing:border-box}
+    .layer1 .text_area{float:left;width:50%;padding:0;padding-left:80px;text-align:left;box-sizing:border-box}
+    .tr2_slide{margin:0}
+    .tr2_paging{padding-left:0;margin-left:0}
+
+    .layer2{height:950px}
+}
+@media screen and (min-width:1260px){
+    .layer1{padding-bottom:130px;margin:0 auto}
+    .tr2_paging{padding-top:30px}
+    .layer1 .text_area{padding-top:50px}
+
+    .layer2{overflow:hidden;margin-left:20px;margin-right:20px}
+}
+@media screen and (min-width:1450px){
+    .tr2_slide{margin-left:-70px;width:600px;height:690px}
+    .cmn_paging{margin-left:-70px}
+    .layer1 .text_area{padding-left:90px;padding-top:175px}
+}
+</style>
+
+        <div class="trust_2 cmn_page over_h rel">
+            <div class="c_line"></div>
+            <div class="layer1 pc_inner clearfix">
+                <p class="c_ttl"><img src="<?=$root?>/img/page/trust/02/tr2_cttl.png" alt="Sullai HMR"></p>
+                <div class="slide_area">
+                    <div class="cmn_slide tr2_slide over_border">
+                        <div class="swiper-container h100">
+                            <ul class="swiper-wrapper h100">
+                                <li class="swiper-slide sl1 bg h100"></li>
+                                <li class="swiper-slide sl2 bg h100"></li>
+                                <li class="swiper-slide sl3 bg h100"></li>
+                                <li class="swiper-slide sl4 bg h100"></li>
+                                <li class="swiper-slide sl5 bg h100"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="cmn_paging tr2_paging fs_def">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                </div>
+                <div class="text_area">
+                    <p class="stitle">프리미엄 한식 <br>HMR기획전 <br><em>모두의 마음에 닿다</em></p>
+                    <p class="text">
+                        강강술래 매장에서 경험했던 그 맛 그대로<br>
+                        이젠 가정에서도 즐기실 수 있도록,<br>
+                        다양한 프리미엄 HMR로 <br class="br_m1080 br_m1260">
+                        한식의 우수성을 보다 널리 알리기 위해<br>
+                        <em>강강술래 전문 셰프들이 진심을 담아<br>
+                        연구하고 개발했습니다.</em>
+                    </p>
+                </div>
+            </div>
+            <div class="layer2 over_h bg rel">
+                <div class="text_area">
+                    <p class="stitle">고마운 사람에게 전할 <br class="br_m1080">특별한 선물로 <br><em>모두의 마음에 닿겠습니다.</em></p>
+                    <!-- <a href="#none" class="lyr2_link cmn_link">술래몰 바로가기<span class="cmn_arr"><img src="<?=$root?>/img/sub/link_arr_gray.png" alt=""></span></a> -->
+                </div>
+            </div>
+        </div>
+<script>
+new Swiper('.tr2_slide .swiper-container', {
+    setWrapperSize: true,
+    loop: true,
+    speed: 500,
+    autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+    	el: '.tr2_paging',
+    	type: 'bullets',
+    	clickable: true,
+    	renderBullet: function(index, className){
+    		return '<li class="' + className + '"><a href="#none"></a></li>';
+    	}
+    },
+});
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

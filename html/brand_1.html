@@ -1,0 +1,222 @@
+<?php
+include_once('../inc/top.php');
+
+$cnt_sql = "select * from ".TABLE_LEFT."count_01 where view3_use = 1";
+$cnt_res = mysql_query($cnt_sql);
+
+while ($cnt_lst = mysql_fetch_assoc($cnt_res)) {
+    for ($ic=1;$ic<=4;$ic++) {
+        if ($cnt_lst['view3_special_0'.$ic] != 0) {
+
+
+
+            // 자리수체크
+            $num = 1;
+            $store = $cnt_lst['view3_special_0'.$ic];
+            for ($i=0; ;$i++) {
+                if (floor($store/$num) == 0) {
+                    break;
+                }
+                $num *= 10;
+            }
+
+            // 배열에 자리수 마다 하나씩 배열에 넣기
+            ${'arr_num_str_'.$ic} = array();
+            for ($ix=0; ; $ix++) {
+                $num/=10;
+                ${'arr_num_str_'.$ic}[] = floor($store/$num);
+                $store -= floor($store/$num)*$num;
+                if ($num == 1) {
+                    break;
+                }
+            }
+
+            // HTML 태그에 넣기
+            ${'HTML_'.$ic} = "";
+            ${'arr_html_'.$ic} = array();
+            $cnt = 4;
+            for ($il=count(${'arr_num_str_'.$ic}); $il >= 0; $il--) {
+                $cls = "";
+                if ($cnt == 0) {
+                    $cls = "rest";
+                    $cnt = 3;
+                }
+                // ${'HTML_'.$ic} .= "<li class='{$cls}' data-number='{${'arr_num_str_'.$ic}[$il]}'>{${'arr_num_str_'.$ic}[$il]}</li>";
+                ${'arr_html_'.$ic}[$il] = "<li class='{$cls}' data-number='{${'arr_num_str_'.$ic}[$il]}'>{${'arr_num_str_'.$ic}[$il]}</li>";
+                $cnt--;
+            }
+
+        }
+        unset(${'arr_html_'.$ic}[count(${'arr_html_'.$ic})-1]);
+
+    }
+}
+
+// var_dump($arr_html_1);
+?>
+
+        <div class="brand_1 rel">
+            <div class="numlyr t_center" data-motion-offset="1">
+                <div class="numlyr_logo"><img src="<?=$root?>/img/page/brand/01/numlyr_logo.png" alt="" class="w100"></div>
+                <p class="numlyr_ttl">숫자로 보는 강강술래</p>
+                <div class="big_num_wrap fs_def">
+                    <ul class="big_num numbering1 numbering fs_def">
+                        <!-- <li data-number="3">0</li>
+                        <li class="rest" data-number="0">0</li>
+                        <li data-number="1">0</li>
+                        <li data-number="2">0</li>
+                        <li class="rest" data-number="5">0</li>
+                        <li data-number="7">0</li>
+                        <li data-number="9">0</li>
+                        <li data-number="0">0</li> -->
+                        <?
+                        for ($i=0; $i < count($arr_html_1); $i++) {
+                            echo $arr_html_1[$i];
+                        }
+                        ?>
+                    </ul>
+                    <p class="big_num_unit">명</p>
+                </div>
+                <p class="numlyr_sttl">지난, 10년동안 강강술래를 <br class="br_m">방문해주신 고객님들입니다.</p>
+                <ul class="smlyr fs_def">
+                    <li>
+                        <p class="numlyr_smttl">육류 소비량</p>
+                        <div class="sm_num_wrap fs_def">
+                            <p class="unit_ttl">월<br>평<br>균</p>
+                            <ul class="sm_num1 sm_num numbering numbering2 fs_def">
+                                <!-- <li data-number="1">0</li>
+                                <li data-number="5">0</li>
+                                <li data-number="0">0</li> -->
+                                <?
+                                for ($i=0; $i < count($arr_html_1); $i++) {
+                                    echo $arr_html_2[$i];
+                                }
+                                ?>
+                            </ul>
+                            <p class="sm_num_unit">톤</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="numlyr_smttl">갈비탕 판매</p>
+                        <div class="sm_num_wrap fs_def">
+                            <p class="unit_ttl">일<br>평<br>균</p>
+                            <ul class="sm_num2 sm_num numbering numbering3 fs_def">
+                                <!-- <li class="rest" data-number="1">0</li>
+                                <li data-number="7">0</li>
+                                <li data-number="0">0</li>
+                                <li data-number="0">0</li> -->
+                                <?
+                                for ($i=0; $i < count($arr_html_1); $i++) {
+                                    echo $arr_html_3[$i];
+                                }
+                                ?>
+                            </ul>
+                            <p class="sm_num_unit">그릇</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="numlyr_smttl">냉면 판매</p>
+                        <div class="sm_num_wrap fs_def">
+                            <p class="unit_ttl">일<br>평<br>균</p>
+                            <ul class="sm_num3 sm_num numbering numbering4 fs_def">
+                                <!-- <li class="rest" data-number="2">0</li>
+                                <li data-number="4">0</li>
+                                <li data-number="0">0</li>
+                                <li data-number="0">0</li> -->
+                                <?
+                                for ($i=0; $i < count($arr_html_1); $i++) {
+                                    echo $arr_html_4[$i];
+                                }
+                                ?>
+                            </ul>
+                            <p class="sm_num_unit">그릇</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="brand_video over_border">
+                <iframe src="//player.vimeo.com/video/389907146?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=0&background=0" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="layer1" data-motion-offset="2">
+                <div class="lyr1_ttl lyr_ttl_c rel t_center over_h">
+                    <div class="lyr1_ttl1 fixed_ttl el2_1"><img src="<?=$root?>/img/page/brand/01/lyr1_ttl1.png" alt="" class="w100"></div>
+                    <div class="lyr1_ttl2 in_ttl1 in_ttl el2_2 over_h"><img src="<?=$root?>/img/page/brand/01/lyr1_ttl2.png" alt="" class="w100"></div>
+                    <div class="lyr1_ttl3 in_ttl el2_3 over_h"><img src="<?=$root?>/img/page/brand/01/lyr1_ttl3.png" alt="" class="w100"></div>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">30년 전통의 노하우와 <br class="br_m768">직접 생산 및 가공하는 최상의 육류로<br>더욱 깊은 맛을 담았습니다</p>
+                    <p class="text">신선한 한우와 30여 가지 재료로 만든 소스, <br class="br_m768">그리고 강강술래만의 <br class="br_768">특화된 조리법으로 <br class="br_m768">더욱 깊은 숯불구이의 맛을 구현했습니다.</p>
+                </div>
+                <div class="lyr1_video over_border">
+                    <iframe src="//player.vimeo.com/video/386448635?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="layer2 layer" data-motion-offset="3">
+                <div class="bg_area">
+                    <div class="lyr2_ttl lyr_ttl_c rel t_center over_h">
+                        <div class="lyr2_ttl1 fixed_ttl el3_1"><img src="<?=$root?>/img/page/brand/01/lyr2_ttl1.png" alt="" class="w100"></div>
+                        <div class="lyr2_ttl2 in_ttl1 in_ttl el3_2 over_h"><img src="<?=$root?>/img/page/brand/01/lyr2_ttl2.png" alt="" class="w100"></div>
+                        <div class="lyr2_ttl3 in_ttl el3_3 over_h"><img src="<?=$root?>/img/page/brand/01/lyr2_ttl3.png" alt="" class="w100"></div>
+                    </div>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 다양한 문화 및 <br class="br_m768">제휴이벤트를 통해 <br>고객의 즐거움까지 책임집니다</p>
+                    <p class="text">2017년 현재까지 총 100 편 이상의 <br class="br_m768">문화컨텐츠와 <br class="br_768">생활밀착 제품을 <br class="br_m768">이벤트를 통해 제공하고 있습니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="video1 over_border">
+                        <iframe src="//player.vimeo.com/video/386448718?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+            <div class="layer3 layer" data-motion-offset="4">
+                <div class="bg_area video_bg">
+                    <div class="video">
+                        <iframe src="//player.vimeo.com/video/386458511?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div class="lyr3_ttl lyr_ttl_c rel t_center over_h">
+                        <div class="lyr3_ttl1 fixed_ttl el4_1"><img src="<?=$root?>/img/page/brand/01/lyr3_ttl1.png" alt="" class="w100"></div>
+                        <div class="lyr3_ttl2 in_ttl1 in_ttl el4_2 over_h"><img src="<?=$root?>/img/page/brand/01/lyr3_ttl2.png" alt="" class="w100"></div>
+                        <div class="lyr3_ttl3 in_ttl el4_3 over_h"><img src="<?=$root?>/img/page/brand/01/lyr3_ttl3.png" alt="" class="w100"></div>
+                    </div>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 고객과 직원 <br class="br_m768">모두가 행복할 수 있는 <br>사람중심 외식기업입니다</p>
+                    <p class="text">우리 직원도 고객이란 마음가짐으로 <br class="br_m768">직원복지와 위생교육을 <br class="br_768">적극 실시하며 <br class="br_m768">100%의 고객만족을 지향합니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+            <div class="layer4 layer" data-motion-offset="5">
+                <div class="bg_area">
+                    <div class="lyr4_ttl lyr_ttl_c rel t_center over_h">
+                        <div class="lyr4_ttl1 fixed_ttl el5_1"><img src="<?=$root?>/img/page/brand/01/lyr4_ttl1.png" alt="" class="w100"></div>
+                        <div class="lyr4_ttl2 in_ttl1 in_ttl el5_2 over_h"><img src="<?=$root?>/img/page/brand/01/lyr4_ttl2.png" alt="" class="w100"></div>
+                        <div class="lyr4_ttl3 in_ttl el5_3 over_h"><img src="<?=$root?>/img/page/brand/01/lyr4_ttl3.png" alt="" class="w100"></div>
+                    </div>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 <br class="br_m768">사회적 책임을 다 하기 위한 <br>다양한 사회공헌활동을 전개합니다</p>
+                    <p class="text">매년 지역사회와 함께 <br class="br_m768">주위의 어렵고 소외된 이웃에게 <br>따뜻한 음식을 전달하고 있습니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+        </div>
+<script src="<?=$root?>/js/YMotion.js"></script>
+<script src="<?=$root?>/js/brand_1.js"></script>
+<?
+include_once('../inc/bottom.php');
+?>

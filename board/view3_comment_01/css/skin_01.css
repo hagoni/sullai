@@ -1,0 +1,51 @@
+.view3_comment_wrap.comment_skin_01 { position: relative; background: #f2f4f6;}
+.view3_comment_wrap.comment_skin_01 textarea, .view3_comment_wrap.comment_skin_01 input, .view3_comment_wrap.comment_skin_01 label { cursor: pointer}
+.view3_comment_wrap.comment_skin_01 textarea:focus, .view3_comment_wrap.comment_skin_01 input:focus { cursor: text}
+.view3_comment_wrap.comment_skin_01  .c_both { clear: both}
+.view3_comment_wrap.comment_skin_01 .comment_insert_area { position: relative; border-top: 4px solid #56788a; padding: 20px 30px 30px 30px;}
+.view3_comment_wrap.comment_skin_01 .comment_fix_line { position: relative; margin-top: 10px;}
+.view3_comment_wrap.comment_skin_01 .comment_input_text { position: relative; margin-top: 10px;}
+.view3_comment_wrap.comment_skin_01 .comment_input_text label { position: absolute; line-height: 23px; z-index: 11; padding: 7px; font-size: 14px; color: #8c8f94;}
+.view3_comment_wrap.comment_skin_01 .comment_input_text input { position: relative; z-index: 10; padding: 7px; height: 23px; line-height: 23px; font-size: 16px; border: 0; background: #e2e7eb;}
+.view3_comment_wrap.comment_skin_01 .comment_textarea { position: relative; display: block; left: 0px; right: 0px;}
+.view3_comment_wrap.comment_skin_01 .comment_textarea textarea { position: relative; z-index: 10; width: 98%; right: 0; min-height: 90px; height: auto !important; height: 90px; overflow: auto; resize: none; padding: 7px 1%; line-height: 23px; font-size: 16px; border: 0; background: #e2e7eb;}
+.view3_comment_wrap.comment_skin_01 .comment_textarea label { position: absolute; line-height: 23px; z-index: 11; padding: 7px 0; left: 0; padding-left: 1%; width: 99%; font-size: 14px; color: #8c8f94;}
+.view3_comment_wrap.comment_skin_01 .comment_textarea input { color: #424650}
+.view3_comment_wrap.comment_skin_01 .comment_list_area { border-top: #a3afb5 solid 3px}
+.view3_comment_wrap.comment_skin_01 .comment_list_area li { position: relative; clear:both; border-top: #a3afb5 solid 1px;}
+.view3_comment_wrap.comment_skin_01 .comment_list_content_wrap { position: relative; padding: 12px 20px;}
+.view3_comment_wrap.comment_skin_01 .comment_user_name { font-size: 16px; font-weight: bold; color: #39424a;}
+.view3_comment_wrap.comment_skin_01 .comment_user_name span { font-size: 12px; font-weight: normal; margin-left: 7px; color: #5b727e;}
+.view3_comment_wrap.comment_skin_01 .comment_option { cursor:pointer; position: absolute; z-index: 13; right: 0; top: 0;}
+.view3_comment_wrap.comment_skin_01 .comment_option.on .comment_option_menu { display: block}
+.view3_comment_wrap.comment_skin_01 .comment_option_btn { padding: 4px 10px 10px 11px; color: #5b727e; background: #e2e7eb; font-size: 24px; font-weight: normal;}
+.view3_comment_wrap.comment_skin_01 .comment_option_menu { display: none; position: absolute; z-index: 12; top: 0; right: 0;}
+.view3_comment_wrap.comment_skin_01 .comment_option_menu ul li { padding: 10px 0; text-align: center; width: 80px; background: #6A7986;}
+.view3_comment_wrap.comment_skin_01 .comment_option_menu ul li { cursor: pointer; padding: 10px 0; font-size: 14px; text-align: center; width: 80px; color: #FFF; background: #919FAB;}
+.view3_comment_wrap.comment_skin_01 .comment_option_menu ul li:hover { background: #6A7986}
+.view3_comment_wrap.comment_skin_01 .comment_content { min-height: 90px; height: auto !important; height: 90px; padding: 13px 3px 0 3px;}
+.view3_comment_wrap.comment_skin_01 .comment_content.content_type_text { font-size: 14px; color: #39424a; line-height: 120%;}
+.view3_comment_wrap.comment_skin_01 .comment_insert_btn { position: relative; margin-top: 20px; text-align: center; border-radius: 2px; letter-spacing: -1px; display: block; cursor: pointer; background: #6a7986; color: #FFF; font-size: 14px; font-weight: bold; padding: 10px; float: right;}
+.view3_comment_wrap.comment_skin_01 .pw_check_box { position: absolute; z-index: 15; left: 0; top: 0; width: 100%; height: 100%; background: #303131; background: rgba(0,0,0,0.8);}
+.view3_comment_wrap.comment_skin_01 .pw_check_close { cursor: pointer; position: absolute; top: 0; right: 0; padding: 4px 10px 10px 11px; color: #FFF; background: #303131; font-size: 24px; font-weight: normal;}
+.view3_comment_wrap.comment_skin_01 .comment_pwcheck_wrap { position: relative; margin: 0 auto; top: 50px; width: 270px;}
+.view3_comment_wrap.comment_skin_01 .comment_pwcheck_btn { position: absolute; top: 0; right: 0; margin-top: 10px; width: 20%; text-align: center; border-radius: 2px; letter-spacing: -1px; display: block; cursor: pointer; background: #6a7986; color: #FFF; font-size: 14px; font-weight: bold; padding: 11px 0 12px 0;}
+.view3_comment_wrap.comment_skin_01 .comment_list_content_wrap .comment_textarea { margin-top: 20px}
+.view3_comment_wrap.comment_skin_01 .input_type_short { margin-right: 10px; float: left;}
+.view3_comment_wrap.comment_skin_01 .input_type_short input { width: 170px}
+.view3_comment_wrap.comment_skin_01 .input_type_pwcheck { position: absolute; top: 0; width: 70%;}
+.view3_comment_wrap.comment_skin_01 .input_type_pwcheck input { color: #424650; width: 100%;}
+.view3_comment_wrap.comment_skin_01 li.comment_more_list{cursor:pointer;background:#a3afb5;text-align:center;color:#FFF;font-size:12px;padding:15px 0;font-weight:bold;border-top:0;}
+.view3_comment_wrap.comment_skin_01 li.comment_more_list a{color:#FFF;}
+.view3_comment_wrap.comment_skin_01 li.comment_more_list:hover{background:#939fa5;}
+.view3_comment_wrap.comment_skin_01 div.comment_more_page{position: absolute;font-size:14px;background: #939fa5;top: 0;right: 0;bottom: 0;padding: 18px;}
+.view3_comment_wrap.comment_skin_01 .blur {/*IE는 IE9 에서만 지원*/
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    /* FF doesn't support blur filter, but SVG */
+    filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
+    filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius = '5');
+    filter: blur(5px);
+}

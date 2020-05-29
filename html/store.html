@@ -1,0 +1,257 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_visual{display:none}
+.lnb_wrap{display:none}
+.page_title_area{display:none}
+.banner{height:650px;background-image:url('../img/page/store/banner_bg.jpg')}
+.banner .page_title{padding:242px 0 14px;font-family:'SunBatang-Light';font-size:2.1875rem;letter-spacing:-0.12em;color:#fff}
+.banner .page_text{padding-bottom:30px;font-size:0.8125rem;letter-spacing:-0.05em;color:#b8b8b8}
+.banner .view_more{width:128px;height:40px;padding-left:20px;border-bottom:1px solid rgba(255,255,255,0.3);font-size:0.8125rem;letter-spacing:-0.05em;line-height:39px;color:#fff;box-sizing:border-box;
+background-image: url('../img/page/store/arr.png'); /* 화살표 아이콘 추가 */
+background-repeat: no-repeat;
+background-position: right 22px center;
+background-size: 6px 13px;
+}
+select.other_store{width:128px;height:40px;padding-left:20px;margin-left:20px;border:0;border-radius:none;border-bottom:1px solid rgba(255,255,255,0.3);font-size:0.8125rem;letter-spacing:-0.05em;line-height:39px;color:#fff;background-color:transparent;box-sizing:border-box;
+-webkit-border-radius: 0;
+-webkit-appearance: none;/* 화살표 없애기 for chrome*/
+-moz-appearance: none;    /* 화살표 없애기 for firefox*/
+appearance: none;         /* 화살표 없애기 공통*/
+background-image: url('../img/page/store/arr.png'); /* 화살표 아이콘 추가 */
+background-repeat: no-repeat;
+background-position: right 22px center;
+background-size: 6px 13px;
+}
+select.other_store::-ms-expand {
+   display: none;            /* 화살표 없애기 for IE10, 11*/
+}
+select.other_store option{color:#000}
+@media screen and (min-width:768px){
+    .banner{margin-top:20px}
+    .banner .page_title{padding:220px 0 20px;font-size:3.125rem}
+    .banner .page_text{font-size:1.125rem}
+    .banner .view_more{width:160px;height:64px;padding-left:24px;font-size:1.125rem;line-height:63px;
+    background-position: right 27px center;
+    background-size: 8px 16px;
+    }
+    select.other_store{width:160px;height:64px;padding-left:24px;font-size:1.125rem;line-height:63px;
+    background-position: right 27px center;
+    background-size: 8px 16px;
+    }
+}
+@media screen and (min-width:1080px){
+    .banner{background-image:url('../img/page/store/banner_bg_pc.jpg')}
+}
+
+/* store_list */
+.store_tab{padding-top:50px;border-bottom:1px solid rgba(90,17,28,0.3);box-sizing:border-box}
+.store_tab li{width:77px;height:25px}
+.store_tab li a{display:block;width:100%;height:100%;background-color:rgba(90,17,28,0.3);font-size:0.625rem;letter-spacing:-0.025em;line-height:25px;color:#fff}
+.store_tab li.on a{background-color:rgba(90,17,28,1)}
+.store_conts{padding-top:38px}
+.store_list{width:300px;margin:0 auto}
+.store_list > li{width:100%;margin-bottom:48px}
+.store_list .store_name{padding-bottom:12px;font-family:'SunBatang-Light';font-size:1.25rem;letter-spacing:-0.12em;color:#231f20}
+.store_list .box{width:100%;border:1px solid rgba(90,17,28,0.3);box-sizing:border-box}
+.store_list .img_area{width:100%;height:209px;background-repeat:no-repeat;background-position:center;background-size:cover}
+.store_list .text_area{padding:15px}
+.store_list .store_info > li{margin-bottom:10px;font-size:0.8125rem;letter-spacing:-0.05em;color:#666}
+.store_list .store_info > li span{margin-right:5px;font-family:'NotoSansKR-Medium';color:#222}
+.store_list .view_more{display:block;width:128px;height:40px;padding-left:20px;margin:0 auto;border-bottom:1px solid rgba(90,17,28,0.3);font-size:0.8125rem;letter-spacing:-0.05em;line-height:39px;color:#666;box-sizing:border-box;
+background-image: url('../img/page/store/arr_red.png');
+background-repeat: no-repeat;
+background-position: right 22px center;
+background-size: 6px 13px;
+}
+
+@media screen and (min-width:768px){
+    .store_tab{padding-top:100px}
+    .store_tab li{width:250px;height:60px}
+    .store_tab li a{font-size:1.0625rem;line-height:60px}
+    .store_conts{padding-top:75px}
+    .store_list{width:570px}
+    .store_list > li{margin-bottom:46px}
+    .store_list .store_name{padding-bottom:25px;font-size:2.5rem}
+    .store_list .img_area{height:400px}
+    .store_list .text_area{padding:45px 50px 50px}
+    .store_list .store_info > li{margin-bottom:20px;font-size:1.125rem}
+    .store_list .store_info > li span{margin-right:10px}
+    .store_list .view_more{width:160px;height:64px;padding-left:24px;font-size:1.125rem;line-height:63px;
+    background-position: right 27px center;
+    background-size: 8px 16px;
+    }
+}
+@media screen and (min-width:1080px){
+    .store_tab li a:hover{background-color:rgba(90,17,28,1)}
+    .store_conts{padding-bottom:70px}
+    .store_list{width:1040px}
+    .store_list > li{width:490px;margin-bottom:0}
+    .store_cont01 .store_list > li:nth-child(even){margin-top:95px;margin-left:60px}
+    .store_cont02 .store_list > li{width:100%;margin-bottom:95px}
+    .store_list .box{overflow:hidden}
+    .store_cont02 .store_list .text_area{float:left;padding-top:120px}
+    .store_cont02 .store_list .img_area{float:right;width:600px}
+}
+@media screen and (min-width:1260px){
+    .store_list{width:1200px}
+    .store_list > li{width:570px}
+    .store_cont02 .store_list .text_area{width:598px;padding-top:120px;box-sizing:border-box}
+    .store_cont02 .store_list .img_area{width:600px}
+}
+</style>
+        <!-- store banner start -->
+        <div class="banner bg">
+            <p class="page_title t_center">늘봄농원점</p>
+            <p class="page_text t_center">고객님과 가장 가까운 곳에 위치하고 있습니다.</p>
+            <div class="btns_wrap fs_def t_center">
+                <a href="#none" class="view_more arr t_left">자세히 보기</a>
+                <select name="" class="other_store arr t_left">
+                    <option value="">다른매장</option>
+                    <option value="늘봄농원점">늘봄농원점</option>
+                    <option value="상계점">상계점</option>
+                    <option value="신림점">신림점</option>
+                    <option value="시흥점">시흥점</option>
+                </select>
+            </div>
+        </div>
+        <!-- //store banner end -->
+        <!-- store list start -->
+        <ul class="store_tab fs_def t_center">
+            <li class="on"><a href="#none">국내매장</a></li>
+            <li><a href="#none">해외매장</a></li>
+        </ul>
+        <div class="store_conts">
+            <div class="store_cont01 store_cont">
+                <ul class="store_list fs_def">
+<?
+$map_sql = "select * from ".TABLE_LEFT."map_01 where view3_use = 1 order by view3_order desc, view3_write_day desc";
+$map_res = mysql_query($map_sql);
+while ($map_lst = mysql_fetch_assoc($map_res)) {
+    $map_img = explode("||",$map_lst['view3_file']);
+    if ($map_img[2] == "") {
+        $img = $root."/img/page/store/store_img2.jpg";
+    } else {
+        $img = $root."/upload/map_01".$map_img[2];
+    }
+?>
+                    <li>
+                        <p class="store_name">강강술래 <?=$map_lst['view3_title_01']?></p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url(<?=$img?>)"></div>
+                            <div class="text_area">
+                                <ul class="store_info t_center">
+                                    <li><span>영업시간.</span><?=$map_lst['view3_special_02']?></li>
+                                    <li><span>전화번호.</span><?=$map_lst['view3_special_04']?></li>
+                                    <li><span>주소.</span><?=$map_lst['view3_addr_road'].' '.$map_lst['view3_addr_detail']?></li>
+                                </ul>
+                                <a href="<?=$root?>/html/store_view.html?idx=<?=$map_lst['view3_idx']?>" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li>
+<?
+}
+?>
+                    <!-- <li>
+                        <p class="store_name">강강술래 늘봄농원점</p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url('../img/page/store/store_img1.jpg')"></div>
+                            <div class="text_area">
+                                <ul class="store_info t_center">
+                                    <li><span>영업시간.</span>오전 11:00 ~ 오후 23:30 (연중무휴)</li>
+                                    <li><span>전화번호.</span>032-0000-000</li>
+                                    <li><span>주소.</span>인천광역시 미추홀구 연남로 35</li>
+                                </ul>
+                                <a href="#none" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="store_name">강강술래 상계점</p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url('../img/page/store/store_img2.jpg')"></div>
+                            <div class="text_area">
+                                <ul class="store_info t_center">
+                                    <li><span>영업시간.</span>오전 11:00 ~ 오후 23:30 (연중무휴)</li>
+                                    <li><span>전화번호.</span>032-0000-000</li>
+                                    <li><span>주소.</span>인천광역시 미추홀구 연남로 35</li>
+                                </ul>
+                                <a href="#none" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="store_name">강강술래 신림점</p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url('../img/page/store/store_img1.jpg')"></div>
+                            <div class="text_area">
+                                <ul class="store_info t_center">
+                                    <li><span>영업시간.</span>오전 11:00 ~ 오후 23:30 (연중무휴)</li>
+                                    <li><span>전화번호.</span>032-0000-000</li>
+                                    <li><span>주소.</span>인천광역시 미추홀구 연남로 35</li>
+                                </ul>
+                                <a href="#none" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="store_cont02 store_cont" style="display:none">
+                <ul class="store_list fs_def">
+                    <li>
+                        <p class="store_name">강강술래 필리핀클락점</p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url('../img/page/store/store_img3.jpg')"></div>
+                            <div class="text_area">
+                                <!-- <ul class="store_info t_center">
+                                    <li><span>영업시간.</span>오전 11:00 ~ 오후 23:30 (연중무휴)</li>
+                                    <li><span>전화번호.</span>032-0000-000</li>
+                                    <li><span>주소.</span>인천광역시 미추홀구 연남로 35</li>
+                                </ul> -->
+                                <a href="#none" onclick="javascript:alert('내용 준비중입니다.')" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <p class="store_name">강강술래 필리핀클락점</p>
+                        <div class="box">
+                            <div class="img_area" style="background-image:url('../img/page/store/store_img2.jpg')"></div>
+                            <div class="text_area">
+                                <ul class="store_info t_center">
+                                    <li><span>영업시간.</span>오전 11:00 ~ 오후 23:30 (연중무휴)</li>
+                                    <li><span>전화번호.</span>032-0000-000</li>
+                                    <li><span>주소.</span>인천광역시 미추홀구 연남로 35</li>
+                                </ul>
+                                <a href="#none" class="view_more">자세히 보기</a>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- //store list end -->
+<script>
+function scrollHandler() {
+    var scrollTop = win.scrollTop();
+    if(fixed === false && scrollTop >= offset) {
+        $topElement.addClass('scroll');
+        fixed = true;
+    } else if(fixed === true && scrollTop < offset) {
+        $topElement.removeClass('scroll');
+        fixed = false;
+    }
+}
+
+var $topElement = $('.header'),
+    offset = $('.store_tab').offset().top - 60,
+    fixed = false;
+
+    console.log(offset);
+
+win.scroll(scrollHandler);
+scrollHandler();
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

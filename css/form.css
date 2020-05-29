@@ -1,0 +1,265 @@
+/* input 기본 스타일 초기화 */
+input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+            border: none;
+}
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear { display: none; }
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+/* Select box 스타일 초기화 */
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+                border: none;
+}
+
+/* IE 에서 Select box 화살표 제거 */
+select::-ms-expand { display: none; }
+
+/* firefox 초기화 */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* common */
+.page_title_area{display:none}
+.page_title{padding:44px 0 26px;font-family:'SunBatang-Light';font-size:1.5625rem;letter-spacing:-0.12em;color:#231f20;text-align:center}
+.cmn_ttl{padding-bottom:10px;font-family:'NotoSansKR-Medium';font-size:0.9375rem;color:#231815}
+input{border:1px solid #ddd;box-sizing:border-box}
+select{border:1px solid #ddd;box-sizing:border-box;
+background-repeat:no-repeat;
+background-position:right 10px center;
+background-image:url('../img/form/arrow.png');
+}
+@media screen and (min-width:768px){
+    .page_title{padding:100px 0 42px;font-size:2.5rem}
+    .cmn_ttl{padding-bottom:16px;font-size:1.5625rem}
+}
+@media screen and (min-width:1080px){
+    .cmn_ttl{padding-left:30px}
+}
+@media screen and (min-width:1260px){
+    .cmn_ttl{padding-left:40px}
+}
+
+/* 회원가입 : 약관동의 */
+.signup_wrap{padding-bottom:100px}
+.su_check > input{position:absolute;left:0;top:0;opacity:0;width:0;height:0}
+.su_check > label{display:block;position:relative;padding-left:32px;font-size:0.75rem;line-height:192%;color:#231815}
+.su_check > label:before{content:'';position:absolute;left:10px;top:5px;width:14px;height:14px;background-repeat:no-repeat;background-position:left 0;background-image:url('../img/form/checkbox.jpg');background-size:14px 28px;cursor:pointer}
+.su_check > input:checked + label:before{background-position:left -14px}
+.su_check > label .inquired{color:#f00}
+.su_check1{padding:10px 0;border-top:1px solid #666}
+.su_check .policy_cont{overflow:hidden;height:112px;margin-top:8px;padding:18px 20px;border:1px solid #e7e7e7;border-top:1px solid #666;box-sizing:border-box}
+.su_check .policy_cont .policy_text{font-size:0.75rem;line-height:144%;color:#231815}
+.su_check3{padding:13px 0 30px}
+.su_next{display:block;width:102px;height:40px;margin:0 auto;line-height:40px;background-color:#5a111c;font-family:'NotoSansKR-Medium';font-size:0.8125rem;color:#fff;text-align:center}
+@media screen and (min-width:768px){
+    .signup_wrap{padding-bottom:120px}
+    .su_check > label{padding-left:50px;font-size:1.125rem}
+    .su_check > label:before{left:0;top:2px;width:30px;height:30px;background-size:30px 60px}
+    .su_check > input:checked + label:before{background-position:left -30px}
+    .su_check1{padding:18px 0 25px}
+    .su_check .policy_cont{height:190px;margin-top:18px;padding:32px 32px}
+    .su_check .policy_cont .policy_text{font-size:1rem}
+    .su_check3{padding:50px 0 50px}
+    .su_next{width:170px;height:60px;line-height:60px;font-size:1rem}
+}
+@media screen and (min-width:1080px){
+    .signup_wrap{padding-bottom:150px}
+}
+
+/* 회원가입 : 가입양식 */
+.signup_2 .cmn_ttl{border-bottom:1px solid #666}
+.cmn_ttl small{margin-left:10px;font-family:'NotoSansKR-DemiLight';font-size:0.75rem;color:#231815}
+.cmn_ttl small i{display:inline-block;vertical-align:middle;margin-right:4px;width:3px;height:3px;border-radius:50%;background-color:#f00}
+label i{display:none;vertical-align:middle;width:3px;height:3px;margin-right:10px;border-radius:50%;background-color:#f00}
+label.required i{display:inline-block}
+.signup_wrap.form_m li{padding:12px 10px;border-bottom:1px solid #ddd}
+.signup_wrap.form_m label{display:block;padding-bottom:8px;font-size:0.8125rem;color:#1c1c1c}
+.signup_wrap.form_m input{height:40px;padding:0 10px;font-size:0.8125rem;color:#666}
+.signup_wrap.form_m select{height:40px;padding:0 10px;font-size:0.8125rem;color:#666}
+.signup_wrap.form_m .email input{width:46.4286%}
+.signup_wrap.form_m .email .bridge{display:inline-block;width:7.1428%;height:35px;line-height:38px;font-size:0.8125rem;color:#1c1c1c;text-align:center}
+.signup_wrap.form_m .email #email_03{margin-top:10px}
+.signup_wrap.form_m .su_check > label{padding-left:22px;margin-top:3px;padding-bottom:0}
+.signup_wrap.form_m .su_check > label:before{left:0}
+.signup_wrap.form_m #address{width:calc(100% - 95px);margin-bottom:5px}
+.signup_wrap.form_m #address2{margin-bottom:5px}
+.signup_wrap.form_m .addr_srch{display:inline-block;width:90px;height:40px;margin-left:5px;border:1px solid #ddd;background-color:#fff;font-size:0.8125rem;color:#1c1c1c;line-height:38px;text-align:center;box-sizing:border-box}
+.signup_wrap.form_m #birth_01{margin-bottom:5px}
+.signup_wrap.form_m #birth_02{margin-bottom:5px}
+.signup_wrap.form_m .cmn_ttl2{padding-top:30px}
+.signup_wrap.form_m .btns_wrap{padding-top:30px}
+.signup_wrap.form_m .cancel{width:102px;height:40px;border:1px solid #ddd;line-height:38px;font-family:'NotoSansKR-Medium';font-size:0.8125rem;color:#231815;text-align:center;box-sizing:border-box}
+.signup_wrap.form_m .signup_btn{width:102px;height:40px;margin-left:6px;background-color:#5a111c;line-height:38px;font-family:'NotoSansKR-Medium';font-size:0.8125rem;color:#fff;text-align:center}
+
+.signup_wrap.form_pc{display:none}
+.signup_wrap.form_pc tr{border-bottom:1px solid #ddd}
+.signup_wrap.form_pc tr > *{padding:20px 0}
+.signup_wrap.form_pc th{padding-left:35px;width:155px;vertical-align:middle;text-align:left}
+.signup_wrap.form_pc label{position:relative;font-size:1.125rem}
+.signup_wrap.form_pc label i{position:absolute;left:-15px;top:50%;margin-top:-2px;width:5px;height:5px}
+.signup_wrap.form_pc input{width:300px;height:50px;padding:0 20px;font-size:1rem;color:#666;box-sizing:border-box}
+.signup_wrap.form_pc select{height:50px;padding:0 20px;font-size:1rem;color:#666;box-sizing:border-box}
+.signup_wrap.form_pc .email input{width:170px}
+.signup_wrap.form_pc .email select{margin-left:-1px;width:170px}
+.signup_wrap.form_pc .email .bridge{display:inline-block;width:34px;line-height:50px;font-size:1rem;color:#666;text-align:center}
+.signup_wrap.form_pc .su_check > label{padding-left:25px;line-height:120%;margin-top:6px;padding-bottom:0;font-size:1rem}
+.signup_wrap.form_pc .su_check > label:before{left:0;width:16px;height:16px;background-size:16px 32px}
+.signup_wrap.form_pc .su_check > input:checked + label:before{background-position:left -16px}
+.signup_wrap.form_pc #address, .signup_wrap.form_pc #address2{margin-bottom:10px}
+.signup_wrap.form_pc #address2, .signup_wrap.form_pc #address3{width:540px;display:block}
+.signup_wrap.form_pc .addr_srch{width:135px;height:50px;margin-left:10px;border:1px solid #ddd;background-color:#fff;font-size:1rem;color:#1c1c1c;line-height:48px;text-align:center;box-sizing:border-box}
+.signup_wrap.form_pc .birth select{width:180px;margin-right:10px}
+.signup_wrap.form_pc .birth #birth_03{margin-right:0}
+.signup_wrap.form_pc .btns_wrap{padding-top:50px}
+.signup_wrap.form_pc .cancel{width:170px;height:60px;border:1px solid #ddd;line-height:58px;font-family:'NotoSansKR-Medium';font-size:1rem;color:#231815;text-align:center;box-sizing:border-box}
+.signup_wrap.form_pc .signup_btn{width:170px;height:60px;margin-left:10px;background-color:#5a111c;line-height:60px;font-family:'NotoSansKR-Medium';font-size:1rem;color:#fff;text-align:center}
+.signup_wrap.form_pc .cmn_ttl2{padding-top:50px}
+
+@media screen and (min-width:768px){
+    .signup_wrap.form_m{display:none}
+    .signup_wrap.form_pc{display:block}
+    .cmn_ttl small{margin-left:48px;font-size:1rem}
+    .cmn_ttl small i{margin-right:8px;vertical-align:4px;width:5px;height:5px}
+}
+@media screen and (min-width:1080px){
+    .signup_wrap.form_pc th{padding-left:55px;width:210px}
+    .signup_wrap.form_pc .email input{width:300px}
+    .signup_wrap.form_pc .email input#email_02{width:240px}
+    .signup_wrap.form_pc .email select{width:240px}
+    .signup_wrap.form_pc .birth select{width:240px}
+    .signup_wrap.form_pc .cmn_ttl2{padding-top:70px}
+    .signup_wrap.form_pc .btns_wrap{padding-top:70px}
+}
+@media screen and (min-width:1260px){
+    .signup_wrap{width:1100px;margin:0 auto}
+    .signup_wrap.form_pc th{padding-left:65px;width:240px}
+}
+
+/* 아이디 찾기 */
+.find_wrap{padding:42px 0 44px;margin-bottom:100px;border:1px solid #ddd;box-sizing:border-box}
+.find_wrap .find_id{width:257px;margin:0 auto}
+.find_wrap .su_check2{margin-left:10px}
+.find_id .check_wrap{padding-bottom:5px}
+.find_id .fill{width:150px}
+.find_id .fill input{height:40px;padding:0 10px;font-size:0.8125rem}
+.find_id .fill .fill_input1{margin-bottom:3px}
+.find_id .find_id_btn{width:102px;height:83px;margin-left:5px;line-height:83px;background-color:#5a111c;font-family:'NotoSansKR-Medium';font-size:0.8125rem;color:#fff;text-align:center}
+.find_id .top_area{padding-bottom:10px;border-bottom:1px solid #ddd}
+.find_wrap .other_btns{padding-top:18px;text-align:center}
+.find_wrap .other_btn{display:block;margin:0 auto;width:150px;height:40px;font-size:0.8125rem;text-align:center;box-sizing:border-box}
+.find_wrap .other_btn1{margin-bottom:5px;background-color:#fff;border:1px solid #ddd;line-height:38px;color:#231815}
+.find_wrap .other_btn2{background-color:#5a111c;line-height:40px;color:#fff}
+@media screen and (min-width:768px){
+    .find_wrap{padding:67px 0 74px;width:600px;margin:0 auto 120px}
+    .find_wrap .cmn_ttl{text-align:left}
+    .find_wrap .find_id{width:480px}
+    .find_wrap .su_check2{margin-left:20px}
+    .find_id .check_wrap{padding-bottom:8px;text-align:left}
+    .find_wrap .su_check > label{padding-left:25px;line-height:120%;margin-top:6px;padding-bottom:0;font-size:1rem}
+    .find_wrap .su_check > label:before{left:0;width:16px;height:16px;background-size:16px 32px}
+    .find_wrap .su_check > input:checked + label:before{background-position:left -16px}
+    .find_id .fill{width:300px}
+    .find_id .fill input{height:50px;padding:0 20px;font-size:1rem}
+    .find_id .fill .fill_input1{margin-bottom:9px}
+    .find_id .find_id_btn{width:170px;height:109px;margin-left:10px;line-height:109px;font-size:1rem}
+    .find_id .top_area{padding-bottom:50px}
+    .find_wrap .other_btns{padding-top:20px;line-height:0}
+    .find_wrap .other_btn{display:inline-block;width:153px;height:50px;font-size:1rem}
+    .find_wrap .other_btn1{line-height:48px}
+    .find_wrap .other_btn2{margin-left:10px;line-height:50px}
+}
+
+/* 비밀번호 찾기 */
+.find_pwd{width:258px;margin:0 auto}
+.find_pwd .cmn_ttl{padding-bottom:0}
+.find_pwd .sub_ttl{padding:3px 0 5px;font-size:0.8125rem;color:#666;text-align:center}
+.find_pwd .top_area{padding:20px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;text-align:center}
+.find_pwd input{width:150px;height:40px;padding:0 10px;font-size:0.8125rem}
+@media screen and (min-width:768px){
+    .find_pwd{width:480px}
+    .find_pwd .sub_ttl{padding:14px 0 8px;font-size:1rem;text-align:left}
+    .find_pwd .top_area{padding:50px 0}
+    .find_pwd input{width:300px;height:50px;padding:0 20px;font-size:1rem}
+}
+
+/* 로그인 */
+.find_wrap .sign_in .other_btn1{margin-bottom:0;margin-top:5px}
+.find_wrap .sign_in .su_check > label{padding-left:20px}
+.find_wrap .su_check > label:before{left:0}
+
+/* 마이페이지 */
+.mypage .mytab.tabmenu li{width:33.3333%;height:36px}
+.mypage .mytab.tabmenu li a{line-height:36px;font-size:0.8125rem}
+.mypage .mytab_conts.tab_conts{padding-top:26px}
+.mypage .form_m .btns_wrap{position:relative;padding-top:56px}
+.mypage .form_m .withdraw{position:absolute;right:0;top:20px;display:inline-block;width:51px;height:18px;border:1px solid #ddd;font-size:0.625rem;line-height:16px;color:#231815;text-align:center;box-sizing:border-box}
+.mypage .form_pc .btns_wrap{position:relative}
+.mypage .form_pc .withdraw{position:absolute;right:0;top:50px;width:85px;height:30px;border:1px solid #ddd;font-size:1rem;line-height:28px;color:#231815;text-align:center}
+.mypage .mytab_cont.tab_cont02{max-width:1100px;margin:0 auto;padding-bottom:100px}
+.mypage .mytab_cont.tab_cont02 .cmn_ttl{border-bottom:1px solid #666}
+.mypage .mytab_cont.tab_cont02 .cmn_ttl2{padding-top:26px}
+.mypage .mytab_cont.tab_cont02 ul{padding-top:10px;width:100%}
+.mypage .mytab_cont.tab_cont02 li a{display:block;width:100%;box-sizing:border-box}
+.mypage .mytab_cont.tab_cont02 .th p{padding:0 10px;height:42px;line-height:42px;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;box-sizing:border-box}
+.mypage .mytab_cont.tab_cont02 .td a p{padding:0 10px;height:42px;line-height:42px;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;box-sizing:border-box}
+.mypage .mytab_cont.tab_cont02 .cont{display:none}
+.mypage .mytab_cont.tab_cont02 .cmt_cont{display:none}
+.mypage .mytab_cont.tab_cont02 .date{width:34.96%}
+.mypage .mytab_cont.tab_cont02 .store{width:28.67%}
+.mypage .mytab_cont.tab_cont02 .state{width:36.37%}
+.mypage .mytab_cont.tab_cont02 .cmt_date{width:36.96%}
+.mypage .mytab_cont.tab_cont02 .cmt_event{width:63.04%}
+.mypage .mytab_cont.tab_cont02 .th p{background-color:rgba(216,216,216,0.3);color:#231f20}
+.mypage .mytab_cont.tab_cont02 .td{border-bottom:1px solid #ddd}
+.mypage .mytab_cont.tab_cont02 .td .cont, .mypage .tab_cont02 .td .cmt_cont, .mypage .tab_cont02 .td .cmt_event{text-align:left}
+.mypage .mytab_cont.tab_cont02 .board_area{padding:25px;border-top:1px  solid #ddd;}
+.mypage .mytab_cont.tab_cont02 .board_ttl{padding-left:10px;font-size:0.8125rem;letter-spacing:-0.05em;color:#231f20}
+.mypage .mytab_cont.tab_cont02 .board_text{padding:12px 0 12px 10px;font-size:0.8125rem;line-height:177%;letter-spacing:-0.05em;color:#666}
+.mypage .mytab_cont.tab_cont02 .board_text1{border-bottom:1px dashed #ddd}
+@media screen and (min-width:768px){
+    .mypage .mytab.tabmenu li{width:33.3333%;height:60px}
+    .mypage .mytab.tabmenu li a{line-height:60px;font-size:1.0625rem}
+    .mypage .mytab_conts.tab_conts{padding-top:48px}
+    .mypage .mytab_cont.tab_cont02{padding-bottom:120px}
+    .mypage .mytab_cont.tab_cont02 .cmn_ttl{padding-bottom:15px}
+    .mypage .mytab_cont.tab_cont02 .cmn_ttl2{padding-top:93px}
+    .mypage .mytab_cont.tab_cont02 ul{padding-top:30px}
+    .mypage .mytab_cont.tab_cont02 .th p{padding:0 20px;height:60px;line-height:60px;font-size:1.25rem}
+    .mypage .mytab_cont.tab_cont02 .td a p{padding:0 20px;height:60px;line-height:60px;font-size:1.25rem}
+    .mypage .mytab_cont.tab_cont02 .cont{display:inline-block;width:49.45%}
+    .mypage .mytab_cont.tab_cont02 .date{width:16.96%}
+    .mypage .mytab_cont.tab_cont02 .store{width:18.48%}
+    .mypage .mytab_cont.tab_cont02 .state{width:15.11%}
+    .mypage .mytab_cont.tab_cont02 .cmt_date{width:18.96%}
+    .mypage .mytab_cont.tab_cont02 .cmt_event{width:34.07%}
+    .mypage .mytab_cont.tab_cont02 .cmt_cont{display:inline-block;width:46.97%}
+    .mypage .mytab_cont.tab_cont02 .board_area{padding:36px 30px}
+    .mypage .mytab_cont.tab_cont02 .board_ttl{padding-left:0;font-size:1.25rem}
+    .mypage .mytab_cont.tab_cont02 .board_text{padding:12px 0 35px 0;font-size:1.25rem}
+    .mypage .mytab_cont.tab_cont02 .board_text2{padding-top:35px}
+}
+@media screen and (min-width:1080px){
+    .mypage .mytab_cont.tab_cont02{padding-bottom:150px}
+    .mypage .mytab_cont.tab_cont02 .board_area{padding:36px 50px}
+}

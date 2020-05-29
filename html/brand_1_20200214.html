@@ -1,0 +1,205 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+.sub_content{padding-bottom:100px;margin-left:0;margin-right:0}
+.over_border{border:0;box-shadow:none}
+.c_line{height:120px}
+
+.brand_1{padding-top:70px}
+.brand_video{position:relative;width:100%;padding-top:56.25%}
+.brand_video iframe{position:absolute;left:0;top:0;width:100%}
+.layer1{padding-bottom:70px}
+.layer1 .lyr1_ttl{padding:47px 0 26px}
+.layer1 .lyr1_ttl img{width:59px}
+.layer1 .img_wrap > div{width:50%;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer1 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr1_img1.jpg')}
+.layer1 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr1_img2.jpg')}
+.layer1 .text_area{padding:26px 0 24px;text-align:center}
+.layer1 .text_area .br_ttl{padding-bottom:12px;font-family:'SunBatang-Light';font-size:1.125rem;line-height:159%;letter-spacing:-0.12em;color:#222}
+.layer1 .lyr1_video{position:relative;width:100%;padding-top:53.3333%}
+.layer1 .lyr1_video iframe{position:absolute;left:0;top:0}
+@media screen and (min-width:768px){
+    .sub_content{padding-bottom:120px;margin-left:20px;margin-right:20px}
+    .over_border{border:3px solid #fff;box-shadow: 4px 7px 11px 0px rgba(6, 6, 6, 0.08)}
+    .brand_1{padding-top:100px}
+    .layer1 .lyr1_ttl{padding:66px 0 57px}
+    .layer1 .lyr1_ttl img{width:88px}
+    .layer1 .img_wrap > div{width:337px;height:337px}
+    .layer1 .img_wrap .img1{margin-right:20px}
+    .layer1 .text_area{padding:38px 0 40px}
+    .layer1 .text_area .br_ttl{padding-bottom:14px;font-size:1.375rem}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:150px}
+    .brand_1{padding-top:120px}
+    .layer1{padding-bottom:120px}
+    .layer1 .lyr1_ttl{padding:94px 0 55px}
+    .layer1 .img_wrap .img1{width:400px;height:400px;margin-right:50px}
+    .layer1 .img_wrap .img2{width:400px;height:550px;margin-top:140px}
+    .layer1 .text_area{width:750px;margin:-203px auto 0;padding:0 0 82px;text-align:left}
+    .layer1 .lyr1_video{width:750px;height:400px;margin:0 auto;padding-top:0}
+    .layer1 .lyr1_video iframe{position:relative}
+}
+@media screen and (min-width:1260px){
+    .brand_video{width:1260px;height:710px;margin:0 auto;padding-top:0}
+    .brand_video iframe{position:relative}
+    .layer1 .lyr1_ttl{padding:100px 0 50px}
+}
+
+.layer{position:relative;padding-bottom:70px}
+.layer.layer4{padding-bottom:0}
+.layer .bg_area{overflow:hidden;height:192px;background-repeat:no-repeat;background-position:center;background-size:cover;box-sizing:border-box}
+.layer2 .bg_area{background-image:url('../img/page/brand/01/lyr2_bg.jpg')}
+.layer3 .bg_area{background-image:url('../img/page/brand/01/lyr3_bg.jpg')}
+.layer4 .bg_area{background-image:url('../img/page/brand/01/lyr4_bg.jpg')}
+.layer .lyr_ttl{padding-top:10px}
+.layer .lyr_ttl img{width:60px}
+.layer .text_area{padding:26px 0 24px;text-align:center}
+.layer .text_area .br_ttl{padding-bottom:12px;font-family:'SunBatang-Light';font-size:1.125rem;line-height:159%;letter-spacing:-0.12em;color:#222}
+
+.layer .img_wrap .img1{width:50vw;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .img2{width:50vw;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .img3{width:100vw;height:51.25vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .video1{position:relative;width:50%;padding-top:50%}
+.layer .img_wrap .video1 iframe{position:absolute;left:0;top:0}
+.layer2 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr2_img1.jpg')}
+.layer2 .img_wrap .img3{background-image:url('../img/page/brand/01/lyr2_img3.jpg')}
+.layer3 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr3_img1.jpg')}
+.layer3 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr3_img2.jpg')}
+.layer3 .img_wrap .img3{display:none;background-image:url('../img/page/brand/01/lyr3_img3.jpg')}
+.layer4 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr4_img1.jpg')}
+.layer4 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr4_img3.jpg')}
+.layer4 .img_wrap .img3{background-image:url('../img/page/brand/01/lyr4_img2.jpg')}
+
+.layer3 .video_bg{position:relative}
+.layer3 .lyr_ttl{top:0;left:0;width:100%;z-index:1}
+.layer3 .video_bg .video{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   overflow: hidden;
+}
+.layer3 .video_bg iframe {
+   width: 100vw;
+   height: 42.5vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 235.294117647vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width:768px){
+    .layer .bg_area{height:322px}
+    .layer .lyr_ttl{padding-top:20px}
+    .layer .lyr_ttl img{width:103px}
+    .layer .img_wrap{position:absolute;left:0;top:340px;width:100%}
+    .layer .img_wrap .video1{width:29.9479vw;height:29.9479vw;padding-top:29.89%;margin-right:2.4041vw}
+    .layer .img_wrap .img1{width:29.9479vw;height:29.9479vw;margin-right:2.4041vw}
+    .layer .img_wrap .img2{width:29.9479vw;height:29.9479vw;margin-right:2.4041vw}
+    .layer .img_wrap .img3{width:29.9479vw;height:29.9479vw}
+    .layer3 .img_wrap .img2{width:62.2395vw;margin-right:0}
+    .layer .text_area{padding:37.1094vw 0 0}
+    .layer .text_area .br_ttl{font-size:1.375rem}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:200px}
+    .layer .bg_area{height:850px}
+    .layer .lyr_ttl{padding-top:195px}
+    .layer .img_wrap{top:0}
+    .layer .img_wrap .video1{position:absolute;left:50%;top:750px;margin-left:50px;width:400px;height:400px;padding-top:0;margin-right:0}
+    .layer .img_wrap .video1 iframe{position:relative}
+    .layer2 .img_wrap .img1{position:absolute;left:50%;top:650px;margin-left:-449px;margin-right:0;width:447px;height:400px}
+    .layer2 .img_wrap .img3{position:absolute;left:50%;top:1100px;margin-left:-401px;margin-right:0;width:400px;height:500px}
+    .layer2 .text_area{padding:363px 0 280px calc(50% + 100px);text-align:left}
+    .layer3 .video_bg .video{left:50%;margin-left:-1000px;width:2000px;height:850px}
+    .layer3 .video_bg .video iframe{width:100%;height:100%;position:relative}
+    .layer3 .img_wrap .img1{position:absolute;left:50%;top:750px;margin-left:-425px;width:400px;height:400px}
+    .layer3 .img_wrap .img2{position:absolute;left:50%;top:650px;margin-left:25px;width:457px;height:400px}
+    .layer3 .img_wrap .img3{display:block;position:absolute;left:50%;top:1100px;margin-left:25px;width:400px;height:600px}
+    .layer3 .text_area{padding:363px 0 380px 50%;margin-left:-375px;text-align:left}
+    .layer4 .img_wrap .img1{position:absolute;left:50%;top:650px;margin-left:-470px;width:467px;height:400px}
+    .layer4 .img_wrap .img2{position:absolute;left:50%;top:750px;margin-left:50px;width:400px;height:400px}
+    .layer4 .img_wrap .img3{display:block;position:absolute;left:50%;top:1100px;margin-left:-400px;width:400px;height:500px}
+    .layer4 .text_area{padding:363px 0 110px calc(50% + 100px);text-align:left}
+}
+</style>
+
+        <div class="brand_1 rel">
+            <div class="c_line"></div>
+            <div class="brand_video over_border">
+                <iframe src="//player.vimeo.com/video/389907146?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=0&background=0" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="layer1">
+                <p class="lyr1_ttl t_center"><img src="<?=$root?>/img/page/brand/01/lyr1_ttl.png" alt="더깊게 느끼다"></p>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">30년 전통의 노하우와 <br class="br_m768">직접 생산 및 가공하는 최상의 육류로<br>더욱 깊은 맛을 담았습니다</p>
+                    <p class="text">신선한 한우와 30여 가지 재료로 만든 소스, <br class="br_m768">그리고 강강술래만의 <br class="br_768">특화된 조리법으로 <br class="br_m768">더욱 깊은 숯불구이의 맛을 구현했습니다.</p>
+                </div>
+                <div class="lyr1_video over_border">
+                    <iframe src="//player.vimeo.com/video/386448635?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="layer2 layer">
+                <div class="bg_area">
+                    <p class="lyr_ttl t_center"><img src="<?=$root?>/img/page/brand/01/lyr2_ttl.png" alt="보다 더넓게"></p>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 다양한 문화 및 <br class="br_m768">제휴이벤트를 통해 <br>고객의 즐거움까지 책임집니다</p>
+                    <p class="text">2017년 현재까지 총 100 편 이상의 <br class="br_m768">문화컨텐츠와 <br class="br_768">생활밀착 제품을 <br class="br_m768">이벤트를 통해 제공하고 있습니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="video1 over_border">
+                        <iframe src="//player.vimeo.com/video/386448718?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+            <div class="layer3 layer">
+                <div class="bg_area video_bg">
+                    <div class="video">
+                        <iframe src="//player.vimeo.com/video/386458511?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="lyr_ttl t_center abs"><img src="<?=$root?>/img/page/brand/01/lyr3_ttl.png" alt="더함께 나가다"></p>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 고객과 직원 <br class="br_m768">모두가 행복할 수 있는 <br>사람중심 외식기업입니다</p>
+                    <p class="text">우리 직원도 고객이란 마음가짐으로 <br class="br_m768">직원복지와 위생교육을 <br class="br_768">적극 실시하며 <br class="br_m768">100%의 고객만족을 지향합니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+            <div class="layer4 layer">
+                <div class="bg_area">
+                    <p class="lyr_ttl t_center"><img src="<?=$root?>/img/page/brand/01/lyr4_ttl.png" alt="더많이 나누다"></p>
+                </div>
+                <div class="text_area">
+                    <p class="br_ttl">강강술래는 <br class="br_m768">사회적 책임을 다 하기 위한 <br>다양한 사회공헌활동을 전개합니다</p>
+                    <p class="text">매년 지역사회와 함께 <br class="br_m768">주위의 어렵고 소외된 이웃에게 <br>따뜻한 음식을 전달하고 있습니다.</p>
+                </div>
+                <div class="img_wrap fs_def t_center">
+                    <div class="img1 over_border"></div>
+                    <div class="img2 over_border"></div>
+                    <div class="img3 over_border"></div>
+                </div>
+            </div>
+        </div>
+<script>
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

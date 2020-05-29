@@ -1,0 +1,48 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+
+.trust_2{height:2105px;background-image:url('../img/temp/trust_2.jpg')}
+.tr2_slide{top:153px;margin-left:-670px;width:594px;height:684px}
+.tr2_paging{top:873px;margin-left:-670px}
+</style>
+
+        <div class="trust_2 rel bg">
+            <div class="cmn_slide tr2_slide l50">
+                <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/trust/02/tr2_sl1.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/trust/02/tr2_sl2.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/trust/02/tr2_sl3.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/trust/02/tr2_sl4.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/trust/02/tr2_sl5.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="cmn_paging tr2_paging l50 fs_def">
+                <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                <li><a href="#none"></a></li>
+            </ul>
+        </div>
+<script>
+new Swiper('.tr2_slide .swiper-container', {
+    setWrapperSize: true,
+    speed: 500,
+        autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+    	el: '.tr2_paging',
+    	type: 'bullets',
+    	clickable: true,
+    	renderBullet: function(index, className){
+    		return '<li class="' + className + '"><a href="#none"></a></li>';
+    	}
+    },
+});
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

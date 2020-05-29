@@ -1,0 +1,399 @@
+<?php
+include_once('../inc/top.php');
+?>
+<link rel="stylesheet" href="<?=$root?>/css/form.css?<?=$time?>">
+        <!-- 마이페이지 start -->
+        <div class="mypage">
+            <p class="page_title">마이페이지</p>
+            <ul class="mytab tabmenu fs_def t_center">
+                <li class="on"><a href="#none">회원정보 수정</a></li>
+                <li><a href="#none">문의내역</a></li>
+                <li><a href="#none">멤버십 조회</a></li>
+            </ul>
+            <div class="mytab_conts tab_conts">
+                <!-- 마이페이지 : 회원정보 수정 start -->
+                <div class="tab_cont01 tab_cont mytab_cont">
+                    <form class="signup_wrap form_m" method="post">
+                        <fieldset class="signup_2">
+                            <legend class="indent">가입양식</legend>
+            				<p class="cmn_ttl">기본정보<small><i></i>동그라미 표시는 필수입력항목입니다.</small></p>
+                            <ul>
+                                <li>
+                                    <label for="suId" class="required"><i></i>아이디</label>
+                                    <input type="text" class="w100" id="suId">
+                                </li>
+                                <li>
+                                    <label for="suPwd" class="required"><i></i>비밀번호</label>
+                                    <input type="text" class="w100" id="suPwd">
+                                </li>
+                                <li>
+                                    <label for="suPwd2" class="required"><i></i>비밀번호 확인</label>
+                                    <input type="text" class="w100" id="suPwd2">
+                                </li>
+                                <li>
+                                    <label for="suName" class="required"><i></i>이름</label>
+                                    <input type="text" class="w100" id="suName">
+                                </li>
+                                <li class="email fs_def">
+                                    <label for="email_01"><i></i>이메일</label>
+                                    <input type="text" id="email_01">
+                                    <span class="bridge">@</span>
+                                    <input type="text" id="email_02">
+                                    <select id="email_03" class="w100" onchange="javascript:view3_email(this,this.options[this.selectedIndex].value);">
+                                        <option value="">직접입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="dreamwiz.com">dreamwiz.com</option>
+                                        <option value="lycos.co.kr">lycos.co.kr</option>
+                                        <option value="empas.com">empas.com</option>
+                                        <option value="korea.com">korea.com</option>
+                                        <option value="paran.com">paran.com</option>
+                                        <option value="freechal.com">freechal.com</option>
+                                        <option value="hanmir.com">hanmir.com</option>
+                                        <option value="hotmail.com">hotmail.com</option>
+                                    </select>
+                                    <div class="su_check rel">
+                    					<input type="checkbox" name="privacy_agree" id="emailCheck" />
+                    					<label for="emailCheck" class="check_label">정보/이벤트 메일 수신에 동의합니다.</label>
+                    				</div>
+                                </li>
+                                <li>
+                                    <label for="mobileNumber"><i></i>휴대폰번호</label>
+                                    <input type="text" class="w100" id="mobileNumber">
+                                    <div class="su_check rel">
+                    					<input type="checkbox" name="privacy_agree" id="emailCheck" />
+                    					<label for="emailCheck" class="check_label">정보/이벤트 메일 수신에 동의합니다.</label>
+                    				</div>
+                                </li>
+                                <li>
+                                    <label for="phoneNumber"><i></i>전화번호</label>
+                                    <input type="text" class="w100" id="phoneNumber">
+                                </li>
+                                <li class="address fs_def">
+                                    <label for="address"><i></i>주소</label>
+                                    <input type="text" id="address">
+                                    <a href="#none" class="addr_srch">우편번호 검색</a>
+                                    <input type="text" class="w100" id="address2">
+                                    <input type="text" class="w100" id="address3">
+                                </li>
+                            </ul>
+                            <p class="cmn_ttl2 cmn_ttl">부가정보</p>
+                            <ul>
+                                <li class="birth">
+                                    <label for="birth_01" class="required"><i></i>생일</label>
+                                    <select id="birth_01" class="w100">
+                                        <option value="">년</option>
+                                        <option value="1900">1900</option>
+                                        <option value="1901">1900</option>
+                                        <option value="1902">1900</option>
+                                        <option value="1903">1900</option>
+                                        <option value="1904">1900</option>
+                                    </select>
+                                    <select id="birth_02" class="w100">
+                                        <option value="">월</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                    <select id="birth_03" class="w100">
+                                        <option value="">일</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <div class="btns_wrap fs_def t_center">
+                                <a href="#none" class="withdraw">회원탈퇴</a>
+                                <a href="#none" class="cancel">취소</a>
+                                <a href="#none" class="signup_btn">회원정보수정</a>
+                            </div>
+            			</fieldset>
+                    </form>
+                    <form class="signup_wrap form_pc" method="post">
+            			<fieldset class="signup_2">
+            				<legend class="indent">가입양식</legend>
+                            <p class="cmn_ttl">기본정보<small><i></i>동그라미 표시는 필수입력항목입니다.</small></p>
+            				<table summary="회원 정보 입력사항">
+            					<caption class="indent">회원 정보 입력사항</caption>
+            					<colgroup>
+            						<col width="20%">
+            						<col width="*">
+            					</colgroup>
+            					<tbody>
+            						<tr>
+            							<th scope="row"><label for="suId" class="required"><i></i>아이디</label></th>
+            							<td>
+            								<input type="text" name="id" id="suId">
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="suPwd" class="required"><i></i>비밀번호</label></th>
+            							<td>
+            								<input type="text" name="password" id="suPwd">
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="suPwd2" class="required"><i></i>비밀번호 확인</label></th>
+            							<td>
+            								<input type="text" name="password" id="suPwd2">
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="suName" class="required"><i></i>이름</label></th>
+            							<td class="col2">
+            								<input type="text" name="name" id="suName">
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="email"><i></i>이메일</label></th>
+            							<td class="email col2 fs_def">
+                                            <input type="text" id="email_01">
+                                            <span class="bridge">@</span>
+                                            <input type="text" id="email_02">
+                                            <select id="email_03" onchange="javascript:view3_email(this,this.options[this.selectedIndex].value);">
+                                                <option value="">직접입력</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="nate.com">nate.com</option>
+                                                <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                                <option value="hanmail.net">hanmail.net</option>
+                                                <option value="daum.net">daum.net</option>
+                                                <option value="dreamwiz.com">dreamwiz.com</option>
+                                                <option value="lycos.co.kr">lycos.co.kr</option>
+                                                <option value="empas.com">empas.com</option>
+                                                <option value="korea.com">korea.com</option>
+                                                <option value="paran.com">paran.com</option>
+                                                <option value="freechal.com">freechal.com</option>
+                                                <option value="hanmir.com">hanmir.com</option>
+                                                <option value="hotmail.com">hotmail.com</option>
+                                            </select>
+                                            <div class="su_check rel">
+                            					<input type="checkbox" name="privacy_agree" id="emailCheck2" />
+                            					<label for="emailCheck2" class="check_label">정보/이벤트 메일 수신에 동의합니다.</label>
+                            				</div>
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="mobileNumber" class="required"><i></i>휴대폰번호</label></th>
+            							<td class="col2">
+            								<input type="text" name="mobilenumber" id="mobileNumber">
+                                            <div class="su_check rel">
+                            					<input type="checkbox" name="privacy_agree" id="mobileCheck2" />
+                            					<label for="mobileCheck2" class="check_label">정보/이벤트 메일 수신에 동의합니다.</label>
+                            				</div>
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="phoneNumber" class="required"><i></i>전화번호</label></th>
+            							<td class="col2">
+            								<input type="text" name="phonenumber" id="phoneNumber" placeholder="- 없이 입력하세요.">
+            							</td>
+            						</tr>
+                                    <tr>
+            							<th scope="row"><label for="address"><i></i>주소</label></th>
+            							<td class="col2">
+                                            <div class="fs_def">
+                                                <input type="text" id="address">
+                                                <a href="#none" class="addr_srch">우편번호 검색</a>
+                                            </div>
+                                            <input type="text" class="w100" id="address2">
+                                            <input type="text" class="w100" id="address3">
+            							</td>
+            						</tr>
+            					</tbody>
+            				</table>
+                            <p class="cmn_ttl2 cmn_ttl">부가정보</p>
+                            <table summary="회원 정보 입력사항">
+                                <caption class="indent">회원 정보 입력사항</caption>
+                                <colgroup>
+                                    <col width="20%">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><label for="suId" class="required"><i></i>생일</label></th>
+                                        <td class="birth">
+                                            <div class="fs_def">
+                                                <select id="birth_01">
+                                                    <option value="">년</option>
+                                                    <option value="1900">1900</option>
+                                                    <option value="1901">1900</option>
+                                                    <option value="1902">1900</option>
+                                                    <option value="1903">1900</option>
+                                                    <option value="1904">1900</option>
+                                                </select>
+                                                <select id="birth_02">
+                                                    <option value="">월</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                                <select id="birth_03">
+                                                    <option value="">일</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btns_wrap fs_def t_center">
+                                <a href="#none" class="withdraw">회원탈퇴</a>
+                                <a href="#none" class="cancel">취소</a>
+                                <a href="#none" class="signup_btn">회원정보수정</a>
+                            </div>
+            			</fieldset>
+            		</form>
+                </div>
+                <!-- //마이페이지 : 회원정보 수정 end -->
+                <!-- 마이페이지 : 문의내역 start -->
+                <div class="tab_cont02 tab_cont mytab_cont" style="display:none">
+                    <div class="qa">
+                        <p class="cmn_ttl">고객의소리 내역</p>
+                        <ul>
+                            <li class="th fs_def">
+                                <p class="date">일자</p>
+                                <p class="store">지점</p>
+                                <p class="cont">내용</p>
+                                <p class="state">상태</p>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="date">2020.01.18</p>
+                                    <p class="store">늘봄농원점</p>
+                                    <p class="cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                    <p class="state">미처리</p>
+                                </a>
+                                <div class="board_area">
+                                    <p class="board_ttl">내 문의</p>
+                                    <p class="board_text1 board_text">
+                                        늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다.
+                                    </p>
+                                    <p class="board_text2 board_text">
+                                        안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의해주신 건에 대한 답변을 드립니다. 안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의 해주신 건에 대한 답변을 드립니다. 감사합니다^^
+                                     </p>
+                                </div>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="date">2020.01.18</p>
+                                    <p class="store">늘봄농원점</p>
+                                    <p class="cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                    <p class="state">미처리</p>
+                                </a>
+                                <div class="board_area">
+                                    <p class="board_ttl">내 문의</p>
+                                    <p class="board_text1 board_text">
+                                        늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다.
+                                    </p>
+                                    <p class="board_text2 board_text">
+                                        안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의해주신 건에 대한 답변을 드립니다. 안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의 해주신 건에 대한 답변을 드립니다. 감사합니다^^
+                                     </p>
+                                </div>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="date">2020.01.18</p>
+                                    <p class="store">늘봄농원점</p>
+                                    <p class="cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                    <p class="state">미처리</p>
+                                </a>
+                                <div class="board_area">
+                                    <p class="board_ttl">내 문의</p>
+                                    <p class="board_text1 board_text">
+                                        늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다. 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 늘봄 농원점을 이용했는데 서버분의 친절함에 감동을 받아 글을 남깁니다.
+                                    </p>
+                                    <p class="board_text2 board_text">
+                                        안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의해주신 건에 대한 답변을 드립니다. 안녕하세요 늘봄농원점 점장 OOO입니다. 우선 저희 지점에 오신 것을 감사드리며 문의 해주신 건에 대한 답변을 드립니다. 감사합니다^^
+                                     </p>
+                                </div>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="date">2020.01.18</p>
+                                    <p class="store">늘봄농원점</p>
+                                    <p class="cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                    <p class="state">미처리</p>
+                                </a>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="date">2020.01.18</p>
+                                    <p class="store">늘봄농원점</p>
+                                    <p class="cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                    <p class="state">미처리</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="cmn_ttl2 cmn_ttl">내 댓글 관리</p>
+                        <ul>
+                            <li class="th fs_def">
+                                <p class="cmt_date">일자</p>
+                                <p class="cmt_event">이벤트</p>
+                                <p class="cmt_cont">내용</p>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="cmt_date">2020.01.18</p>
+                                    <p class="cmt_event ellipsis">[멤버십 더블적립 포인트 멤버십 더블적립 포인트]</p>
+                                    <p class="cmt_cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                </a>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="cmt_date">2020.01.18</p>
+                                    <p class="cmt_event ellipsis">[멤버십 더블적립 포인트 멤버십 더블적립 포인트]</p>
+                                    <p class="cmt_cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                </a>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="cmt_date">2020.01.18</p>
+                                    <p class="cmt_event ellipsis">[멤버십 더블적립 포인트 멤버십 더블적립 포인트]</p>
+                                    <p class="cmt_cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                </a>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="cmt_date">2020.01.18</p>
+                                    <p class="cmt_event ellipsis">[멤버십 더블적립 포인트 멤버십 더블적립 포인트]</p>
+                                    <p class="cmt_cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                </a>
+                            </li>
+                            <li class="td">
+                                <a href="#none" class="fs_def">
+                                    <p class="cmt_date">2020.01.18</p>
+                                    <p class="cmt_event ellipsis">[멤버십 더블적립 포인트 멤버십 더블적립 포인트]</p>
+                                    <p class="cmt_cont ellipsis">늘봄농원점을 이용했는데 서버분의 늘봄농원점을 이용했는데 서버분의</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //마이페이지 : 문의내역 end -->
+                <!-- 마이페이지 : 멤버십 조회 start -->
+                <div class="tab_cont03 tab_cont mytab_cont" style="display:none"></div>
+                <!-- //마이페이지 : 멤버십 조회 end -->
+            </div>
+        </div>
+        <!-- //마이페이지 end -->
+
+<script>
+new Tabbing($('.mytab.tabmenu'), $('.mytab_conts.tab_conts'));
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>

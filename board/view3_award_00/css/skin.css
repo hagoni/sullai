@@ -1,0 +1,71 @@
+#boardWrap{margin:0 auto;padding-top:0}
+.lyr01_tit{position:relative;text-align:center;padding:40px 0}
+
+.sub_content{margin-left:0;margin-right:0}
+/* .newspaper{padding-bottom:100px} */
+
+.np_list .swiper-container{}
+.np_list .swiper-slide{opacity:0.4;width:220px;padding-top:28px}
+.np_list .swiper-slide.swiper-slide-active{opacity:1;padding-top:0}
+.np_list .swiper-slide.swiper-slide-active a{width:200px;height:282px}
+.np_list .swiper-slide a{position:relative;display:block;margin:0 auto;width:160px;height:225px;background-repeat:no-repeat;background-position:center;background-size:cover}
+.np_list .swiper-slide a:before{opacity:0;content:'';position:absolute;left:50%;top:50%;margin-left:-30px;margin-top:-30px;width:60px;height:60px;background:url('../../../img/page/news/05/np_plus.png')no-repeat center;background-size:cover;transition:0.3s}
+.np_list .swiper-slide.swiper-slide-active a{width:200px;height:280px}
+/* .np_list .swiper-slide.swiper-slide-active a:before{opacity:1} */
+.np_list .swiper-slide.swiper-slide-active:hover a:before{opacity:1}
+.np_list .text_area{opacity:0;text-align:center}
+.np_list .text_area .vol{padding:10px 0 5px;font-family:'NotoSansKR-Medium';font-size:1rem;letter-spacing:-0.03em;color:#231f20}
+.np_list .text_area .np_ttl{padding-top:10px;font-size:1rem;letter-spacing:-0.03em;color:#666}
+.np_list .swiper-slide.swiper-slide-active .text_area{opacity:1}
+.np_btns{position:absolute;left:50%;top:130px;width:10px;height:20px;background-repeat:no-repeat;background-position:center;background-size:cover;font-size:0}
+.np_btns.np_prev{margin-left:-125px;background-image:url('../../../img/page/news/05/np_prev.png')}
+.np_btns.np_next{margin-left:115px;background-image:url('../../../img/page/news/05/np_next.png')}
+
+.np_paging{margin-top:40px;width:100%;height:100px;background-color:#5b131e;padding:5px 20px;box-sizing:border-box}
+.np_paging .swiper-container{width:100%;height:100%}
+.np_paging li{width:64px;height:90px}
+.np_paging li a{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:center;background-size:cover}
+.pg_btns{position:absolute;top:50%;margin-top:-5px;width:5px;height:10px;background-repeat:no-repeat;background-position:center;background-size:cover;font-size:0}
+.pg_btns.pg_prev{left:8px;background-image:url('../../../img/page/news/05/pg_prev.png')}
+.pg_btns.pg_next{right:8px;background-image:url('../../../img/page/news/05/pg_next.png')}
+@media screen and (min-width:768px){
+    /* .newspaper{padding-bottom:120px} */
+    .np_list .swiper-slide{width:429px;padding-top:64px}
+    .np_list .swiper-slide a{width:328px;height:459px}
+    .np_list .swiper-slide a:before{margin-left:-45px;margin-top:-45px;width:90px;height:90px}
+    .np_list .swiper-slide.swiper-slide-active{}
+    .np_list .swiper-slide.swiper-slide-active a{width:419px;height:587px}
+    .np_list .text_area .vol{padding:25px 0 15px;font-size:1.375rem}
+    .np_list .text_area .np_ttl{font-size:1.375rem}
+    .np_btns{top:274px;width:19px;height:39px}
+    .np_btns.np_prev{margin-left:-248px}
+    .np_btns.np_next{margin-left:228px}
+
+    .np_paging{margin-top:66px;height:170px;padding:17px 50px}
+    .np_paging li{width:97px;height:135px}
+    .pg_btns{margin-top:-10px;width:10px;height:20px}
+    .pg_btns.pg_prev{left:20px}
+    .pg_btns.pg_next{right:20px}
+}
+@media screen and (min-width:1080px){
+    /* .newspaper{padding-bottom:150px} */
+}
+@media screen and (min-width:1260px){
+    .np_list .swiper-slide{width:480px}
+}
+
+.patent_pop_con{position:absolute;left:50%;z-index:200;text-align:center}
+.patent_pop_con img{width:100%;max-width:300px}
+.close_div{position:relative;margin:0 auto;}
+.pop_close{display:block;position:absolute;top:-53px;right:50%;margin-right:-150px;width:43px;height:43px;background:url('../img/pop_close.png') no-repeat;text-indent:-100000px;font-size:0}
+
+@media screen and (min-width:550px) {
+    .patent_pop_con img{max-width:500px}
+    .close_div{max-width:500px;}
+    .pop_close{right:0;margin-right:0}
+}
+@media screen and (min-width:1260px) {
+    .close_div{max-width:40%;}
+    .patent_pop_con img{max-width:40%}
+    .pop_close{right:0;margin-right:0}
+}

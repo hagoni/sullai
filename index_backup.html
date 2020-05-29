@@ -1,0 +1,76 @@
+<?
+$time = time();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=1260">
+<title></title>
+<link rel="shortcut icon" href="<?=$root?>/img/favicon.ico">
+<link rel="stylesheet" href="<?=$root?>/css/style.css?<?=$time?>">
+</head>
+<body>
+
+<style type="text/css">
+/* sian */
+.sian{overflow:hidden;position:relative;max-width:2000px;min-width:1260px;margin:0 auto}
+.sian .slider-wrapper{overflow:hidden;}
+.sian .slider-items{width:100%;background-repeat:no-repeat;background-position:center}
+.sian .slider-items a:after{display:block;content:"";clear:both}
+.sian .slider-items.slide01{height:4493px;background-image:url('../img/sian/01.jpg')}
+.sian .slider-items.slide02{height:4242px;background-image:url('../img/sian/02.jpg')}
+.sian .slider-items.slide03{height:5544px;background-image:url('../img/sian/03.jpg')}
+.sian_btns{position:absolute;top:0;width:50%;height:100%;background-color:transparent;font-size:0}
+.sian_btns.sian_prev{left:0}
+.sian_btns.sian_next{left:50%}
+button:focus{outline:0}
+</style>
+
+<div id="wrap">
+	<!-- sian start -->
+	<div class="sian">
+		<div class="slider-container swiper-container">
+			<ul class="slider-wrapper swiper-wrapper">
+				<li class="slider-items swiper-slide slide01"></li>
+				<li class="slider-items swiper-slide slide02"></li>
+				<li class="slider-items swiper-slide slide03"></li>
+			</ul>
+		</div>
+		<button type="button" class="sian_btns sian_prev">이전</button>
+		<button type="button" class="sian_btns sian_next">다음</button>
+	</div>
+	<!-- //sian end -->
+</div>
+
+<!-- script start -->
+<script>
+var CONST_REQUEST_ROOT = '<?=$request_root?>';
+var CONST_ROOT = '<?=$root?>';
+</script>
+<script src="<?=$root?>/js/jquery-1.12.0.min.js"></script>
+<script src="<?=$root?>/js/common.js?<?=$time?>"></script>
+<script type="text/javascript">
+(function($) {
+	doc.ready(function() {
+		new Swiper($('.sian .swiper-container'), {
+			autoplay: false,
+			autoplayDisableOnInteraction: false,
+			setWrapperSize: true,
+			autoHeight: true,
+			navigation: {
+				prevEl: '.sian_prev',
+				nextEl: '.sian_next'
+			}
+		});
+	});
+}(jQuery));
+</script>
+<!-- //script end -->
+
+</body>
+</html>

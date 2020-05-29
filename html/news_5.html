@@ -1,0 +1,231 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_content{margin-left:0;margin-right:0}
+.newspaper{padding-bottom:100px}
+
+.np_list .swiper-container{margin-left:-40px}
+.np_list .swiper-slide{opacity:0.4;width:160px;padding-top:28px}
+.np_list .swiper-slide.swiper-slide-active{opacity:1;width:200px;padding-top:0}
+.np_list .swiper-slide a{position:relative;display:block;width:160px;height:224px;background-repeat:no-repeat;background-position:center;background-size:cover}
+.np_list .swiper-slide a:before{opacity:0;content:'';position:absolute;left:50%;top:50%;margin-left:-30px;margin-top:-30px;width:60px;height:60px;background:url('../img/page/news/05/np_plus.png')no-repeat center;background-size:cover}
+.np_list .swiper-slide.swiper-slide-active a{width:200px;height:280px}
+.np_list .swiper-slide.swiper-slide-active a:before{opacity:1}
+.np_list .text_area{opacity:0;text-align:center}
+.np_list .text_area .vol{padding:10px 0 5px;font-family:'NotoSansKR-Medium';font-size:1rem;letter-spacing:-0.03em;color:#231f20}
+.np_list .text_area .np_ttl{font-size:1rem;letter-spacing:-0.03em;color:#666}
+.np_list .swiper-slide.swiper-slide-active .text_area{opacity:1}
+.np_btns{position:absolute;left:50%;top:130px;width:10px;height:20px;background-repeat:no-repeat;background-position:center;background-size:cover;font-size:0}
+.np_btns.np_prev{margin-left:-120px;background-image:url('../img/page/news/05/np_prev.png')}
+.np_btns.np_next{margin-left:110px;background-image:url('../img/page/news/05/np_next.png')}
+
+.np_paging{margin-top:40px;width:100%;height:100px;background-color:#5b131e;padding:5px 20px;box-sizing:border-box}
+.np_paging .swiper-container{width:100%;height:100%}
+.np_paging li{width:64px;height:90px}
+.np_paging li a{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:center;background-size:cover}
+.pg_btns{position:absolute;top:50%;margin-top:-5px;width:5px;height:10px;background-repeat:no-repeat;background-position:center;background-size:cover;font-size:0}
+.pg_btns.pg_prev{left:8px;background-image:url('../img/page/news/05/pg_prev.png')}
+.pg_btns.pg_next{right:8px;background-image:url('../img/page/news/05/pg_next.png')}
+@media screen and (min-width:768px){
+    .newspaper{padding-bottom:120px}
+    .np_list .swiper-container{margin-left:-85px}
+    .np_list .swiper-slide{width:328px;padding-top:64px}
+    .np_list .swiper-slide a{width:328px;height:459px}
+    .np_list .swiper-slide a:before{margin-left:-45px;margin-top:-45px;width:90px;height:90px}
+    .np_list .swiper-slide.swiper-slide-active{width:419px}
+    .np_list .swiper-slide.swiper-slide-active a{width:419px;height:587px}
+    .np_list .text_area .vol{padding:25px 0 15px;font-size:1.375rem}
+    .np_list .text_area .np_ttl{font-size:1.375rem}
+    .np_btns{top:274px;width:19px;height:39px}
+    .np_btns.np_prev{margin-left:-258px}
+    .np_btns.np_next{margin-left:248px}
+
+    .np_paging{margin-top:66px;height:170px;padding:17px 50px}
+    .np_paging li{width:97px;height:135px}
+    .pg_btns{margin-top:-10px;width:10px;height:20px}
+    .pg_btns.pg_prev{left:20px}
+    .pg_btns.pg_next{right:20px}
+}
+@media screen and (min-width:1080px){
+    .newspaper{padding-bottom:150px}
+}
+@media screen and (min-width:1260px){
+}
+</style>
+        <!-- 소식지 start -->
+        <div class="newspaper">
+            <div class="np_list rel">
+                <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                            <div class="text_area">
+                                <p class="vol">VOL.43</p>
+                                <p class="np_ttl ellipsis">만나세요 19년 11월호</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="np_btns np_prev">이전</button>
+                <button type="button" class="np_btns np_next">다음</button>
+            </div>
+            <div class="np_paging rel">
+                <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#none" style="background-image:url('../img/page/news/05/np_img.jpg')"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="pg_btns pg_prev">이전</button>
+                <button type="button" class="pg_btns pg_next">다음</button>
+            </div>
+        </div>
+        <!-- //소식지 end -->
+<script>
+var npSwiper = new Swiper('.np_list .swiper-container', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    speed: 500,
+    spaceBetween: 80,
+        autoplay: {
+        delay: 3000,
+    },
+    navigation: {
+        nextEl: '.np_btns.np_next',
+        prevEl: '.np_btns.np_prev',
+    },
+    breakpoints: {
+        767: {
+          spaceBetween: 30
+        },
+    }
+});
+var pgSwiper = new Swiper('.np_paging .swiper-container', {
+    slidesPerView: 'auto',
+    speed: 500,
+    spaceBetween: 15,
+    centeredSlides: true,
+    freeMode: true,
+    autoplay: {
+        delay: 3000,
+    },
+    navigation: {
+        nextEl: '.pg_btns.pg_next',
+        prevEl: '.pg_btns.pg_prev',
+    },
+    slideToClickedSlide: true,
+    breakpoints: {
+        767: {
+          spaceBetween: 5
+        },
+    }
+});
+
+npSwiper.controller.control = pgSwiper;
+pgSwiper.controller.control = npSwiper;
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>

@@ -1,0 +1,179 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_content{padding-bottom:100px}
+.coor li{position:relative;width:100%;height:370px;margin:0 auto 10px;border:1px solid rgba(35,31,32,0.3);box-sizing:border-box}
+.coor li:last-child{margin-bottom:0}
+.coor li .cont{position:absolute;left:0;top:50%;width:100%;text-align:center;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+.coor .li1 img{width:189px}
+.coor .li2 img{width:199px}
+.coor .li3 img{width:185px}
+.coor .li4 img{width:186px}
+.coor .li5 img{width:186px}
+.coor .li6 img{width:191px}
+.coor .li7 img{width:174px}
+.coor .li8 img{width:190px}
+.coor .li9 img{width:187px}
+.coor .stitle{padding-bottom:12px}
+@media screen and (min-width:768px){
+    .sub_content{padding-bottom:120px}
+    .coor .stitle{font-size:1.625rem}
+    .coor .text{font-size:0.975rem}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:150px}
+    .coor ul{width:1040px;margin:0 auto}
+    .coor li{width:336px;height:443px;margin-left:16px;margin-right:0;margin-bottom:16px}
+    .coor li:nth-child(3n-2){margin-left:0}
+    .coor li:nth-last-child(3), .coor li:nth-last-child(2), .coor li:last-child{margin-bottom:0}
+}
+@media screen and (min-width:1260px){
+    .coor ul{width:1200px}
+    .coor li{width:386px;height:510px;margin-left:20px;margin-bottom:20px}
+    .coor .stitle{font-size:1.875rem}
+    .coor .text{font-size:1.125rem}
+    .coor .logo{margin-bottom:24px}
+    .coor .li1 img{width:219px}
+    .coor .li2 img{width:227px}
+    .coor .li3 img{width:214px}
+    .coor .li4 img{width:215px}
+    .coor .li5 img{width:212px}
+    .coor .li6 img{width:221px}
+    .coor .li7 img{width:202px}
+    .coor .li8 img{width:216px}
+    .coor .li9 img{width:216px}
+}
+</style>
+        <div class="coor">
+            <ul class="coor_list fs_def">
+                <li class="li1">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo1.jpg" alt=""></div>
+                        <p class="stitle">강강술래</p>
+                        <p class="text">
+                            30년 전통, 숯불구이 전문점 강강술래는 <br class="br_m768">
+                            매월 30만명 이상이 찾는 외식명소로 <br>
+                            양념갈비와 신선한 한우가 대표메뉴이다. <br class="br_m768">
+                            서울 및 수도권 지역에 8개 직영 매장과 <br>
+                            필리핀 클락점을 운영하고 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li2">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo2.jpg" alt=""></div>
+                        <p class="stitle">휴미락</p>
+                        <p class="text">
+                            고양시에 위치한 휴미락은 <br>
+                            국내 최대인 1만 2천평 규모의 <br class="br_m768">
+                            외식테마파크로 강강술래와 솟대촌에서 <br class="br_m768">
+                            식사 후 <br class="br_768">라이브공연, 문화, <br class="br_m768">
+                            산책을 즐길 수 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li3">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo3.jpg" alt=""></div>
+                        <p class="stitle">스시유</p>
+                        <p class="text">
+                            스시유는 일본에 가지 않고도 <br class="br_m768">
+                            일본 정통 에도마에 스시를 맛볼 수 있는 곳이다. <br>
+                            국내산 식자재를 비롯해 일본에서 직수입한 <br class="br_m768">
+                            식기 및 인테리어를 통해 고객들이 <br>
+                            최상의 행복한 시간을 누릴 수 있도록 <br class="br_m768">
+                            정성을 다하고 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li4">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo4.jpg" alt=""></div>
+                        <p class="stitle">스시유M</p>
+                        <p class="text">
+                            스시유M은 정통 에도마에 스시 브랜드 <br class="br_m768">
+                            스시유의 세컨드 브랜드이다. <br>
+                            M은 대중(MASS)과 명품(PRESTIGE)의 <br class="br_m768">
+                            합성어인 메스티지를 의미하여 <br>
+                            보다 많은 고객이 최상의 일식 메뉴를 <br class="br_m768">
+                            즐길 수 있는 공간이다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li5">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo5.jpg" alt=""></div>
+                        <p class="stitle">주향천리</p>
+                        <p class="text">
+                            주향천리에서는 라이브 무대와 함께 <br>
+                            맛있는 안주 및 주류를 즐길 수 있으며, <br>
+                            야외 나들이에 어울리는 <br class="br_m768">
+                            고양시 유명 명소로 발돋움하고 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li6">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo6.jpg" alt=""></div>
+                        <p class="stitle">낭만별곡</p>
+                        <p class="text">
+                            전통한식 주점인 낭만별곡은 <br>
+                            정갈하고 맛있는 <br class="br_m768">
+                            안주와 다양한 주류를 <br>
+                            편안한 공간에서 <br class="br_m768">
+                            즐길 수 있는 공간이다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li7">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo7.jpg" alt=""></div>
+                        <p class="stitle">늘봄마켓</p>
+                        <p class="text">
+                            늘봄마켓은 국내에서 생산된 우수 농산물과 <br>
+                            HMR 식품을 판매하는 푸드 마켓이다. <br class="br_m768">
+                            GAP(농산물우수관리), HACCP(위해요소중점관리), <br>
+                            친환경 인증 등 안심먹거리를 제공하며 <br class="br_m768">
+                            농식품 산업 발전에 앞정서고 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li8">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo8.jpg" alt=""></div>
+                        <p class="stitle">(주)테슬러</p>
+                        <p class="text">
+                            대형 육가공 시설을 갖춘 테슬러는 좋은 품질의 <br class="br_m768">
+                            육류를 신속 정확하게 납품 하고 있으며, <br>
+                            강강술래 전 매장에서 판매되는 모든 <br class="br_m768">
+                            양념육류를 직접 생산 및 가공하고 있다. <br>
+                            철저한 위생 및 안전, 생산관리를 통해 <br class="br_m768">
+                            소비자들이 <br class="br_768">안심 하고 즐길 수 있도록 <br class="br_m768">
+                            안전한 축산 가공품을 선보이고 있다.
+                        </p>
+                    </div>
+                </li>
+                <li class="li9">
+                    <div class="cont">
+                        <div class="logo"><img src="<?=$root?>/img/page/com/06/logo9.jpg" alt=""></div>
+                        <p class="stitle">월천농원</p>
+                        <p class="text">
+                            월천농원은 식자재 납품전문 업체로 <br class="br_m768">
+                            강강술래에 납품을 시작으로 현재까지 <br>
+                            병원, 학교, 대형식당 등 <br class="br_m768">
+                            150여 업체에 식자재를 공급하고 있다. <br>
+                            최고 품질의 식자재 확보를 위해 전국 산지 및 <br class="br_m768">
+                            도매시장과 연계하여 <br class="br_768">저렴하고 신속 정확하게 <br class="br_m768">
+                            매장으로 공급을 원칙으로 하고 있다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+<?php
+include_once('../inc/bottom.php');
+?>

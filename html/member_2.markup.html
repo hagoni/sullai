@@ -1,0 +1,237 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+@import url('../css/board.css');
+.sub_content{min-height:800px;}
+.name_box{padding:34px 0 32px;border:1px solid rgba(90,17,28,0.3)}
+.name_box > p{display:block;font-size:0.875rem}
+.name_box > p em{font-size:1.75rem}
+.name_box .name{padding-bottom:15px;font-family:'SunBatang-Light';letter-spacing:-0.12em;color:#231f20}
+.name_box .point{letter-spacing:-0.06em;color:#231f20}
+.name_box .point em{font-family:'SunBatang-Light';letter-spacing:-0.12em}
+.name_box .point em span{font-size:1rem}
+@media screen and (min-width:768px){
+    .name_box{padding:54px 0 48px}
+    .name_box > p{display:inline-block;font-size:1.25rem}
+    .name_box > p em{font-size:2.5rem}
+    .name_box .name{padding-bottom:0;margin-right:55px}
+    .name_box .point em span{font-size:1.5rem}
+}
+
+.tabmenu{margin:20px 0 30px}
+@media screen and (min-width:768px){
+    .tabmenu{margin:50px 0}
+}
+@media screen and (min-width:1080px){
+    .tabmenu{margin:50px 0 40px}
+}
+
+.srch_wrap{padding-bottom:28px}
+.srch_month .srch_text{display:none;margin-right:30px;font-size:1.125rem;letter-spacing:-0.05em;line-height:40px;color:#666}
+.srch_month input[type="radio"]{overflow:hidden;position:absolute;width:0.1px;height:0.1px;opacity:0;z-index:-1}
+.srch_month label{width:25%;line-height:40px;border:1px solid #d1d1d1;border-right:0;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;cursor:pointer;box-sizing:border-box}
+.srch_month label:last-child{border-right:1px solid #d1d1d1}
+.srch_month input[type="radio"]:checked + label{background:#5a111c;border-color:#5a111c;color:#fff}
+.srch_date{padding-top:4px}
+.srch_date input[type="date"]{width:calc(50% - 2px);height:40px;border:0;border:1px solid #d1d1d1;background-color:transparent;font-size:0.8125rem;letter-spacing:-0.05em;color:#666;text-align:center;box-sizing:border-box}
+.srch_date .ml_4{margin-left:4px}
+.srch_date .wave{display:none;width:40px;font-size:1.125rem;letter-spacing:-0.05em;color:#666;line-height:40px;text-align:center}
+.srch_submit{display:block;width:120px;height:40px;margin:20px auto 0;background-color:#5f1823;font-size:0.8125rem;letter-spacing:-0.05em;color:#fff}
+@media screen and (min-width:768px){
+    .srch_wrap{padding-bottom:50px}
+    .srch_month .srch_text{display:inline-block}
+    .srch_month label{width:95px;font-size:1.125rem}
+    .srch_date{padding-top:20px}
+    .srch_date input[type="date"]{width:150px;font-size:1.125rem}
+    .srch_date .ml_4{margin-left:0}
+    .srch_date .wave{display:inline-block}
+    .srch_submit{display:inline-block;width:65px;height:40px;margin:0 0 0 10px;background-color:transparent;border:1px solid #d1d1d1;font-size:1.125rem;color:#666;box-sizing:border-box}
+}
+@media screen and (min-width:1080px){
+    .srch_wrap{overflow:hidden;padding-bottom:35px}
+    .srch_month{float:left}
+    .srch_date{padding-top:0;float:right}
+}
+
+.count_result{padding-bottom:12px;font-size:0.8125rem;letter-spacing:-0.05em;color:#666}
+.count_result em{color:#5f1823}
+.point_table li{position:relative;height:92px;border-bottom:1px solid rgba(35,31,32,0.15)}
+.point_table li:nth-child(2){border-top:1px solid rgba(35,31,32,0.15)}
+.point_table li.th_row{display:none}
+.point_table li .td2{position:absolute;left:10px;top:22px;font-size:1.125rem;letter-spacing:-0.05em;color:#231f20}
+.point_table li .td4, .point_table li .td5{position:absolute;right:10px;top:22px;font-size:1.125rem;letter-spacing:-0.05em;color:#231f20}
+.point_table li .td1{position:absolute;left:10px;bottom:22px;font-size:0.8125rem;letter-spacing:-0.05em;color:#969696}
+.point_table li .td3{position:absolute;right:10px;bottom:22px;font-size:0.8125rem;letter-spacing:-0.05em;color:#969696}
+.point_table li .td6{display:none}
+@media screen and (min-width:768px){
+    .count_result{padding-bottom:30px;font-size:1.125rem}
+    .point_table li{font-size:0;line-height:0;text-align:center;border-bottom:0}
+    .point_table li:nth-child(2){border-top:0}
+    .point_table li .td2{position:relative;left:auto;top:auto}
+    .point_table li .td4, .point_table li .td5{position:relative;right:auto;top:auto}
+    .point_table li .td1{position:relative;left:auto;bottom:auto}
+    .point_table li .td3{position:relative;right:auto;bottom:auto}
+    .point_table li .td6, .point_table li .th6{display:none}
+    .point_table li > *{width:20%;display:inline-block;font-size:16px;vertical-align:top}
+    .point_table li.th_row{display:block;height:80px;background-color:rgba(216,216,216,0.3)}
+    .point_table li.th_row > *{line-height:80px;font-size:1.375rem;letter-spacing:-0.05em;color:#231f20}
+    .point_table li.td_row{height:70px;border-bottom:1px solid rgba(35,31,32,0.15)}
+    .point_table li.td_row > *{line-height:70px;font-size:1.25rem;letter-spacing:-0.05em;color:#666}
+    .point_table li.td_row span{display:none}
+}
+@media screen and (min-width:1080px){
+    .tabmenu{margin:70px 0 70px}
+    .tab_cont01 .srch_wrap{padding-bottom:50px}
+    .point_table li > *{width:16.6667%}
+    .point_table li .td6, .point_table li .th6{display:inline-block}
+}
+.inner_pc{display:none}
+.inner_pc.on{display:block}
+.tell_number,.check_number{vertical-align:middle;margin-right:15px;width:20%;max-height:30px;text-indent:10px;padding:5px 0;}
+.tell_submit,.check_submit{vertical-align:middle;padding:10px 15px;border:1px solid #3f0c14;background-color:#3f0c14;color:#fff;font-size:15px;font-weight:bold}
+</style>
+        <input type="hidden" name="" class="secret_key" value="0">
+        <div class="inner_pc inner_pc_0 on">
+            <div class="name_box fs_def t_center">
+                <input type="text" name="tell_number" class="tell_number" value="" placeholder="핸드폰 번호 입력">
+                <button type="submit" name="button" class="tell_submit">인증번호 받기</button>
+            </div>
+        </div>
+        <div class="inner_pc inner_pc_1">
+            <div class="name_box fs_def t_center">
+                <input type="text" name="check_number" class="check_number" value="" placeholder="인증번호 입력">
+                <button type="submit" name="button" class="check_submit">인증</button>
+            </div>
+        </div>
+        <div class="inner_pc inner_pc_2">
+            <div class="name_box fs_def t_center">
+                <p class="name"><em>김술래</em> 고객님</p>
+                <p class="point">잔여 포인트 <em>10,000 <span>p</span></em></p>
+            </div>
+        </div>
+        <div class="point_conts" style="display:none">
+            <ul class="tabmenu tabmenu3 fs_def">
+                <li class="on"><a href="#none">전체</a></li>
+                <li><a href="#none">적립</a></li>
+                <li><a href="#none">사용</a></li>
+            </ul>
+            <div class="tab_conts inner_pc">
+                <div class="tab_cont01 tab_cont">
+                    <form method="post" class="member_form">
+                        <fieldset>
+                            <div class="srch_wrap">
+                                <div class="srch_month fs_def t_center">
+                                    <p class="srch_text">기간선택</p>
+                                    <input type="radio" name="" id="" value="1주일" checked>
+                                    <label for="">1주일</label>
+                                    <input type="radio" name="" id="" value="1개월">
+                                    <label for="">1개월</label>
+                                    <input type="radio" name="" id="" value="3개월">
+                                    <label for="">3개월</label>
+                                    <input type="radio" name="" id="" value="6개월">
+                                    <label for="">6개월</label>
+                                </div>
+                                <div class="srch_date fs_def t_center">
+                                    <input type="date" name="" id="">
+                                    <span class="wave">~</span>
+                                    <input type="date" name="" id="" class="ml_4">
+                                    <button type="submit" class="srch_submit">검색</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <p class="count_result t_center">총 <em>20건</em> 조회 결과입니다.</p>
+                    <ul class="point_table">
+                        <li class="th_row">
+                            <div class="th1 th">거래일</div>
+                            <div class="th2 th">지점</div>
+                            <div class="th3 th">이용금액</div>
+                            <div class="th4 th">사용포인트</div>
+                            <div class="th5 th">적립포인트</div>
+                            <div class="th6 th">내역</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.18</div>
+                            <div class="td2 td ellipsis">늘봄농원점</div>
+                            <div class="td3 td"><span>이용 금액 </span>120,000</div>
+                            <div class="td4 td"><span>사용 </span>0p</div>
+                            <div class="td5 td"><span>적립 </span>3,600p</div>
+                            <div class="td6 td">적립</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.02</div>
+                            <div class="td2 td ellipsis">역삼점</div>
+                            <div class="td3 td"><span>이용 금액</span>80,000</div>
+                            <div class="td4 td"><span>사용 </span>0p</div>
+                            <div class="td5 td"><span>적립 </span>2,400p</div>
+                            <div class="td6 td">적립</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.01</div>
+                            <div class="td2 td ellipsis">늘봄농원점</div>
+                            <div class="td3 td"><span>이용 금액 </span>120,000</div>
+                            <div class="td4 td"><span>사용 </span>3,600p</div>
+                            <div class="td5 td"><span>적립 </span>0p</div>
+                            <div class="td6 td">사용</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.01</div>
+                            <div class="td2 td ellipsis">늘봄농원점</div>
+                            <div class="td3 td"><span>이용 금액 </span>120,000</div>
+                            <div class="td4 td"><span>사용 </span>3,600p</div>
+                            <div class="td5 td"><span>적립 </span>0p</div>
+                            <div class="td6 td">사용</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.01</div>
+                            <div class="td2 td ellipsis">늘봄농원점</div>
+                            <div class="td3 td"><span>이용 금액 </span>120,000</div>
+                            <div class="td4 td"><span>사용 </span>3,600p</div>
+                            <div class="td5 td"><span>적립 </span>0p</div>
+                            <div class="td6 td">사용</div>
+                        </li>
+                        <li class="td_row">
+                            <div class="td1 td">2020.01.01</div>
+                            <div class="td2 td ellipsis">늘봄농원점</div>
+                            <div class="td3 td"><span>이용 금액 </span>120,000</div>
+                            <div class="td4 td"><span>사용 </span>3,600p</div>
+                            <div class="td5 td"><span>적립 </span>0p</div>
+                            <div class="td6 td">사용</div>
+                        </li>
+                    </ul>
+                    <div class="paging fs_def t_center">
+        				<a href="#none" class="paging_prevnext total_prev"></a>
+        				<a href="#none" class="paging_prevnext paging_prev"></a>
+                        <ul class="paging_ul fs_def">
+        					<li class="on"><span>1</span></li>
+        					<li><a href="#none">2</a></li>
+        					<li><a href="#none">3</a></li>
+        					<li><a href="#none">4</a></li>
+        					<li><a href="#none">5</a></li>
+        				</ul>
+        				<a href="#none" class="paging_prevnext paging_next"></a>
+        				<a href="#none" class="paging_prevnext total_next"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php
+include_once('../inc/bottom.php');
+?>
+<script>
+    $(document).ready(function(){
+        $('.tell_submit').click(function(){
+            $('.inner_pc_0').removeClass('on');
+            $('.inner_pc_1').addClass('on');
+            $('.secret_key').val(1);
+        });
+
+        $('.check_submit').click(function(){
+            $('.inner_pc_1').removeClass('on');
+            $('.inner_pc_2').addClass('on');
+            $('.secret_key').val(2);
+        });
+    });
+</script>

@@ -1,0 +1,37 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+.sub_content{margin-left:0;margin-right:0}
+
+.layer{margin:0 auto}
+.bi_320{width:320px}
+.bi_768{display:none;width:768px}
+.bi_1080{display:none;width:1080px}
+.bi_1260{display:none;width:1260px}
+
+.brand_identity{padding-bottom:60px}
+
+@media screen and (min-width:768px){
+    .bi_320{display:none}
+    .bi_768{display:block}
+}
+@media screen and (min-width:1080px){
+    .bi_768{display:none}
+    .bi_1080{display:block}
+}
+@media screen and (min-width:1260px){
+    .bi_1080{display:none}
+    .bi_1260{display:block}
+}
+</style>
+        <div class="brand_identity">
+            <div class="bi_320 layer"><img src="<?=$root?>/img/page/brand/03/bi_320.jpg" alt=""></div>
+            <div class="bi_768 layer"><img src="<?=$root?>/img/page/brand/03/bi_768.jpg" alt=""></div>
+            <div class="bi_1080 layer"><img src="<?=$root?>/img/page/brand/03/bi_1080.jpg" alt=""></div>
+            <div class="bi_1260 layer"><img src="<?=$root?>/img/page/brand/03/bi_1260.jpg" alt=""></div>
+        </div>
+<?
+include_once('../inc/bottom.php');
+?>

@@ -1,0 +1,186 @@
+.page_title_area{display:none}
+.sub_content{padding-bottom:100px;margin-left:0;margin-right:0}
+.over_border{border:0;box-shadow:none}
+
+.brand_1{padding-top:70px}
+
+/* numlyr */
+.numlyr{padding-bottom:140px}
+.numlyr .numlyr_logo{width:103px;margin:0 auto}
+.numlyr .numlyr_ttl{font-family:'SunBatang-Light';font-size:2.5rem;letter-spacing:-0.12em;color:#222}
+.numlyr .big_num_wrap{padding:40px 0 30px}
+.numlyr .big_num{display:inline-block;vertical-align:bottom}
+.numlyr .big_num li{position:relative;font-family:'SunBatang-Bold';font-size:7.6875rem;letter-spacing:-0.12em;color:#222;line-height:100%}
+.numlyr .big_num li.rest{margin-right:30px}
+.numlyr .big_num li.rest:before{content:',';position:absolute;right:-40px;bottom:-10px;font-family:'SunBatang-Bold';font-size:5.125rem;letter-spacing:-0.12em;color:#222}
+.numlyr .big_num_unit{display:inline-block;vertical-align:bottom;margin-left:15px;font-family:'SunBatang-Light';font-size:2.625rem;line-height:160%;letter-spacing:-0.12em;color:#222}
+.numlyr .numlyr_sttl{padding-bottom:90px;font-family:'SunBatang-Light';font-size:1.5625rem;line-height:160%;letter-spacing:-0.12em;color:#222}
+.numlyr .smlyr > li{margin-left:104px}
+.numlyr .smlyr > li:first-child{margin-left:0}
+.numlyr .numlyr_smttl{padding-bottom:15px;font-family:'SunBatang-Light';font-size:1.5625rem;letter-spacing:-0.12em;color:#222}
+.numlyr .sm_num_wrap .unit_ttl{display:inline-block;vertical-align:bottom;margin-right:5px;padding-bottom:10px;font-family:'SunBatang-Light';font-size:1.25rem;line-height:110%;color:#222}
+.numlyr .sm_num{display:inline-block;vertical-align:bottom}
+.numlyr .sm_num li{position:relative;font-family:'SunBatang-Bold';font-size:5.625rem;letter-spacing:-0.12em;line-height:100%;color:#222}
+.numlyr .sm_num li.rest{margin-right:20px}
+.numlyr .sm_num li.rest:before{content:',';position:absolute;right:-25px;bottom:-10px;font-size:3.125rem;letter-spacing:-0.12em;color:#222}
+.numlyr .sm_num_unit{display:inline-block;vertical-align:bottom;margin-left:10px;font-family:'SunBatang-Light';font-size:1.875rem;line-height:160%;letter-spacing:-0.12em;color:#222}
+@media screen and (max-width:1081px){
+    .numlyr{padding-bottom:100px}
+    .numlyr .numlyr_ttl{font-size:1.875rem}
+    .numlyr .big_num_wrap{padding:20px 0 15px}
+    .numlyr .big_num li{font-size:5.625rem}
+    .numlyr .big_num li.rest{margin-right:20px}
+    .numlyr .big_num li.rest:before{right:-28px;font-size:3.75rem}
+    .numlyr .big_num_unit{font-size:1.875rem}
+    .numlyr .numlyr_sttl{padding-bottom:60px;font-size:1.25rem}
+    .numlyr .smlyr > li{margin-left:40px}
+    .numlyr .smlyr > li:first-child{}
+    .numlyr .numlyr_smttl{padding-bottom:10px;font-size:1.375rem}
+    .numlyr .sm_num_wrap .unit_ttl{margin-right:2px;font-size:0.875rem}
+    .numlyr .sm_num li{font-size:4.375rem}
+    .numlyr .sm_num li.rest{margin-right:10px}
+    .numlyr .sm_num li.rest:before{right:-17px;font-size:2.5rem}
+    .numlyr .sm_num_unit{font-size:1.25rem;line-height:170%}
+}
+@media screen and (max-width:769px){
+    .numlyr{padding-bottom:70px}
+    .numlyr .numlyr_logo{width:56px}
+    .numlyr .numlyr_ttl{font-size:1.5rem}
+    .numlyr .big_num_wrap{padding:15px 0 12px}
+    .numlyr .big_num li{font-size:3.75rem}
+    .numlyr .big_num li.rest{margin-right:10px}
+    .numlyr .big_num li.rest:before{right:-17px;font-size:1.875rem}
+    .numlyr .big_num_unit{margin-left:8px;font-size:1.375rem}
+    .numlyr .numlyr_sttl{padding-bottom:40px;font-size:1rem}
+    .numlyr .smlyr > li{margin-left:0;margin-bottom:25px;width:100%}
+    .numlyr .smlyr > li:last-child{margin-bottom:0}
+    .numlyr .numlyr_smttl{padding-bottom:5px;font-size:1.25rem}
+    .numlyr .sm_num_wrap .unit_ttl{margin-right:2px;padding-bottom:0;font-size:0.875rem}
+    .numlyr .sm_num li{font-size:3.125rem}
+    .numlyr .sm_num li.rest{margin-right:10px}
+    .numlyr .sm_num li.rest:before{right:-17px;bottom:-3px;font-size:2.5rem}
+    .numlyr .sm_num_unit{font-size:1.25rem;line-height:170%}
+}
+
+
+.brand_video{position:relative;width:100%;padding-top:56.25%}
+.brand_video iframe{position:absolute;left:0;top:0;width:100%}
+.layer1{padding-bottom:70px}
+.layer1 .lyr1_ttl{width:59px;margin:47px auto 26px}
+.lyr_ttl_c .in_ttl{position:absolute;left:0;top:0;width:100%}
+.lyr_ttl_c .in_ttl1{z-index:5}
+.lyr_ttl_c .fixed_ttl{position:relative;z-index:10}
+.lyr_ttl_c .ovl{position:absolute;left:0;bottom:0;width:100%;height:100%;background-color:#f7f7ff}
+.layer1 .img_wrap > div{width:50%;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer1 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr1_img1.jpg')}
+.layer1 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr1_img2.jpg')}
+.layer1 .text_area{padding:26px 0 24px;text-align:center}
+.layer1 .text_area .br_ttl{padding-bottom:12px;font-family:'SunBatang-Light';font-size:1.125rem;line-height:159%;letter-spacing:-0.12em;color:#222}
+.layer1 .lyr1_video{position:relative;width:100%;padding-top:53.3333%}
+.layer1 .lyr1_video iframe{position:absolute;left:0;top:0}
+@media screen and (min-width:768px){
+    .sub_content{padding-bottom:120px;margin-left:20px;margin-right:20px}
+    .over_border{border:3px solid #fff;box-shadow: 4px 7px 11px 0px rgba(6, 6, 6, 0.08)}
+    .brand_1{padding-top:100px}
+    .layer1 .lyr1_ttl{margin:66px auto 57px;width:88px}
+    .layer1 .img_wrap > div{width:337px;height:337px}
+    .layer1 .img_wrap .img1{margin-right:20px}
+    .layer1 .text_area{padding:38px 0 40px}
+    .layer1 .text_area .br_ttl{padding-bottom:14px;font-size:1.375rem}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:150px}
+    .brand_1{padding-top:120px}
+    .layer1{padding-bottom:120px}
+    .layer1 .lyr1_ttl{margin:94px auto 55px;width:103px}
+    .layer1 .img_wrap .img1{width:400px;height:400px;margin-right:50px}
+    .layer1 .img_wrap .img2{width:400px;height:550px;margin-top:140px}
+    .layer1 .text_area{width:750px;margin:-203px auto 0;padding:0 0 82px;text-align:left}
+    .layer1 .lyr1_video{width:750px;height:400px;margin:0 auto;padding-top:0}
+    .layer1 .lyr1_video iframe{position:relative}
+}
+@media screen and (min-width:1260px){
+    .brand_video{width:1260px;height:710px;margin:0 auto;padding-top:0}
+    .brand_video iframe{position:relative}
+    .layer1 .lyr1_ttl{margin:100px auto 50px}
+}
+
+.layer{position:relative;padding-bottom:70px}
+.layer.layer4{padding-bottom:0}
+.layer .bg_area{overflow:hidden;height:192px;background-repeat:no-repeat;background-position:center;background-size:cover;box-sizing:border-box}
+.layer2 .bg_area{background-image:url('../img/page/brand/01/lyr2_bg.jpg')}
+.layer3 .bg_area{background-image:url('../img/page/brand/01/lyr3_bg.jpg')}
+.layer4 .bg_area{background-image:url('../img/page/brand/01/lyr4_bg.jpg')}
+.layer .lyr_ttl_c{margin:10px auto 0;width:60px}
+.layer .text_area{padding:26px 0 24px;text-align:center}
+.layer .text_area .br_ttl{padding-bottom:12px;font-family:'SunBatang-Light';font-size:1.125rem;line-height:159%;letter-spacing:-0.12em;color:#222}
+
+.layer .img_wrap .img1{width:50vw;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .img2{width:50vw;height:50vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .img3{width:100vw;height:51.25vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer .img_wrap .video1{position:relative;width:50%;padding-top:50%}
+.layer .img_wrap .video1 iframe{position:absolute;left:0;top:0}
+.layer2 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr2_img1.jpg')}
+.layer2 .img_wrap .img3{background-image:url('../img/page/brand/01/lyr2_img3.jpg')}
+.layer3 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr3_img1.jpg')}
+.layer3 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr3_img2.jpg')}
+.layer3 .img_wrap .img3{display:none;background-image:url('../img/page/brand/01/lyr3_img3.jpg')}
+.layer4 .img_wrap .img1{background-image:url('../img/page/brand/01/lyr4_img1.jpg')}
+.layer4 .img_wrap .img2{background-image:url('../img/page/brand/01/lyr4_img3.jpg')}
+.layer4 .img_wrap .img3{background-image:url('../img/page/brand/01/lyr4_img2.jpg')}
+
+.layer3 .video_bg{position:relative}
+.layer3 .lyr_ttl{top:0;left:0;width:100%;z-index:1}
+.layer3 .video_bg .video{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   overflow: hidden;
+}
+.layer3 .video_bg iframe {
+   width: 100vw;
+   height: 42.5vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 235.294117647vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width:768px){
+    .layer .bg_area{height:322px}
+    .layer .lyr_ttl_c{margin:20px auto 0;width:103px}
+    .layer .img_wrap{position:absolute;left:0;top:340px;width:100%}
+    .layer .img_wrap .video1{width:29.9479vw;height:29.9479vw;padding-top:29.89%;margin-right:2.4041vw}
+    .layer .img_wrap .img1{width:29.9479vw;height:29.9479vw;margin-right:2.4041vw}
+    .layer .img_wrap .img2{width:29.9479vw;height:29.9479vw;margin-right:2.4041vw}
+    .layer .img_wrap .img3{width:29.9479vw;height:29.9479vw}
+    .layer3 .img_wrap .img2{width:62.2395vw;margin-right:0}
+    .layer .text_area{padding:37.1094vw 0 0}
+    .layer .text_area .br_ttl{font-size:1.375rem}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:200px}
+    .layer .bg_area{height:850px}
+    .layer .lyr_ttl_c{margin:195px auto 0}
+    .layer .img_wrap{top:0}
+    .layer .img_wrap .video1{position:absolute;left:50%;top:750px;margin-left:50px;width:400px;height:400px;padding-top:0;margin-right:0}
+    .layer .img_wrap .video1 iframe{position:relative}
+    .layer2 .img_wrap .img1{position:absolute;left:50%;top:650px;margin-left:-449px;margin-right:0;width:447px;height:400px}
+    .layer2 .img_wrap .img3{position:absolute;left:50%;top:1100px;margin-left:-401px;margin-right:0;width:400px;height:500px}
+    .layer2 .text_area{padding:363px 0 280px calc(50% + 100px);text-align:left}
+    .layer3 .video_bg .video{left:50%;margin-left:-1000px;width:2000px;height:850px}
+    .layer3 .video_bg .video iframe{width:100%;height:100%;position:relative}
+    .layer3 .img_wrap .img1{position:absolute;left:50%;top:750px;margin-left:-425px;width:400px;height:400px}
+    .layer3 .img_wrap .img2{position:absolute;left:50%;top:650px;margin-left:25px;width:457px;height:400px}
+    .layer3 .img_wrap .img3{display:block;position:absolute;left:50%;top:1100px;margin-left:25px;width:400px;height:600px}
+    .layer3 .text_area{padding:363px 0 380px 50%;margin-left:-375px;text-align:left}
+    .layer4 .img_wrap .img1{position:absolute;left:50%;top:650px;margin-left:-470px;width:467px;height:400px}
+    .layer4 .img_wrap .img2{position:absolute;left:50%;top:750px;margin-left:50px;width:400px;height:400px}
+    .layer4 .img_wrap .img3{display:block;position:absolute;left:50%;top:1100px;margin-left:-400px;width:400px;height:500px}
+    .layer4 .text_area{padding:363px 0 110px calc(50% + 100px);text-align:left}
+}

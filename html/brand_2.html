@@ -1,0 +1,143 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.btn_top{z-index:10}
+.page_title_area{display:none}
+.sub_content{overflow:hidden;margin-left:0;margin-right:0}
+
+.brand_2{overflow:hidden;padding-top:70px;padding-bottom:100px}
+.br2_dec{display:none;top:502px;margin-left:474px}
+.video_area{width:254px;height:304px;margin:0 auto;border:3px solid #fff;box-sizing:border-box}
+.text_area{text-align:center}
+.text_area .cmn_link{margin:12px auto 50px;padding-left:14px;border-color:rgba(0,0,0,0.3)}
+.text_area .stitle{padding:24px 0 12px}
+.banner_area{height:385px;background-image:url('../img/page/brand/02/banner_m.jpg');box-sizing:border-box}
+.banner_area .stitle{padding:46px 0 14px;text-align:center}
+.banner_area > .text{padding-bottom:45px;text-align:center}
+.banner_area .line{width:300px;height:1px;margin:0 auto;background-color:rgba(255,255,255,0.3)}
+.banner_area .info{padding-top:20px}
+.banner_area .info .chn img{width:69px}
+.banner_area .info li{margin-top:6px;color:#b8b8b8}
+
+.br2_slide{width:290px;height:242px;margin:50px auto 0}
+.br2_paging{padding-top:10px;transform:translateX(-50%);margin-right:140px;text-align:right}
+@media screen and (min-width:768px){
+    .c_line{display:none}
+    .brand_2{padding-top:100px;padding-bottom:120px;margin-left:20px;margin-right:20px}
+    .video_area{width:505px;height:605px}
+    .text_area .stitle{padding:44px 0 24px}
+    .text_area .cmn_link{margin:40px auto 70px}
+    .banner_area{height:750px}
+    .banner_area .stitle{padding:136px 0 26px}
+    .banner_area .line{width:515px}
+    .banner_area .info{padding-top:30px}
+    .banner_area .info .chn img{width:138px;margin-right:26px}
+    .banner_area .info li:first-child{margin-top:20px}
+    .br2_slide{width:578px;height:482px}
+    .br2_paging{padding-top:20px;margin-right:290px}
+}
+@media screen and (min-width:1080px){
+    .c_line{display:block}
+    .brand_2{padding:120px 0 150px}
+    .video_area{float:left;width:480px;height:577px;margin-bottom:120px}
+    .text_area1{float:right;width:50%;padding-left:75px;box-sizing:border-box}
+    .text_area .stitle{text-align:left}
+    .text_area .text{text-align:left}
+    .text_area1 .cmn_link{margin-left:0;margin-bottom:0}
+    .banner_area{padding-left:calc(50% - 14px);background-image:url('../img/page/brand/02/banner_pc.jpg')}
+    .banner_area .stitle{text-align:left}
+    .banner_area > .text{text-align:left}
+    .banner_area .line{margin-left:-20px}
+    .banner_area .info{text-align:left}
+    .slides_wrap{float:right}
+    .text_area2{float:left}
+    .layer2{margin-top:120px}
+    .br2_slide{width:446px;height:372px;margin-top:0}
+    .br2_paging{transform:translateX(0);margin-right:0;text-align:left}
+}
+@media screen and (min-width:1260px){
+    .br2_dec{display:block}
+    .br_1080{display:none}
+    .video_area{margin-left:-70px;width:600px;height:720px}
+    .text_area1{padding-left:87px}
+    .text_area1 .stitle{padding-top:190px}
+    .text_area2 .br_1080{display:block}
+    .text_area2 .stitle{padding-top:145px}
+    .br2_slide{width:720px;height:600px;margin-right:-190px}
+}
+</style>
+        <div class="c_line"></div>
+        <div class="br2_dec l50"><img src="<?=$root?>/img/page/brand/02/br2_dec.png" alt=""></div>
+        <div class="brand_2 z_up">
+            <div class="pc_inner rel clearfix">
+                <p class="rotate_ttl"><img src="<?=$root?>/img/page/brand/02/rotate_ttl1.png" alt=""></p>
+                <div class="video_area shadow">
+                    <iframe src="//player.vimeo.com/video/391395038?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <div class="text_area1 text_area">
+                    <p class="stitle">귀중한 사람들과 <br class="br_1080">둘러앉아<br><em>풍요로운 시간을 <br class="br_1080">나누다</em></p>
+                    <p class="text">명장의 세월이 묻어난 맛의 향연.<br>멋을 품은 품격있는 공간.<br><em>매일 한결같은 마음으로 풍요로운 시간을 준비합니다.</em></p>
+                    <a href="<?=$root?>/html/trust_1.html" class="cmn_link"><span>진심을 만나세요</span><span class="cmn_arr"><img src="<?=$root?>/img/sub/link_arr_gray.png" alt=""></span></a>
+                </div>
+            </div>
+            <div class="banner_area bg">
+                <p class="stitle wt">30년을 잇는 갈비 명가의<br><em>자부심입니다.</em></p>
+                <p class="text wt">명장의 세월이 조미한 깊은 풍미.<br><em>30년을 잇는 갈비 명가의 자부심입니다.</em></p>
+                <div class="line"></div>
+                <div class="info fs_def t_center">
+                    <div class="chn"><img src="<?=$root?>/img/page/brand/02/chn.png" alt="명인"></div>
+                    <ul class="t_left">
+                        <li class="text">- 강강술래 R&amp;D Head chef. 김진민.</li>
+                        <li class="text">- 前 청와대 한식 조리장.</li>
+                        <li class="text">- 갈비 명장 제 10대 식품 명인.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layer2 clearfix rel pc_inner">
+                <p class="rotate_ttl"><img src="<?=$root?>/img/page/brand/02/rotate_ttl2.png" alt=""></p>
+                <div class="slides_wrap">
+                    <div class="cmn_slide br2_slide">
+                        <div class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="<?=$root?>/img/page/brand/02/br2_sl1.jpg" alt="" class="w100"></li>
+                                <li class="swiper-slide"><img src="<?=$root?>/img/page/brand/02/br2_sl2.jpg" alt="" class="w100"></li>
+                                <li class="swiper-slide"><img src="<?=$root?>/img/page/brand/02/br2_sl3.jpg" alt="" class="w100"></li>
+                                <li class="swiper-slide"><img src="<?=$root?>/img/page/brand/02/br2_sl4.jpg" alt="" class="w100"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="cmn_paging br2_paging fs_def">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                </div>
+                <div class="text_area2 text_area">
+                    <p class="stitle">공존과 조화로 <br class="br_1080"><em>멋을 품다.</em></p>
+                    <p class="text">전통의 정갈함과 현대적 모던함이 공존하고<br><em>사람과 자연이 조화로운 품격있는 공간.</em></p>
+                </div>
+            </div>
+        </div>
+<script>
+new Swiper('.br2_slide .swiper-container', {
+    setWrapperSize: true,
+    loop: true,
+    speed: 500,
+        autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+    	el: '.br2_paging',
+    	type: 'bullets',
+    	clickable: true,
+    	renderBullet: function(index, className){
+    		return '<li class="' + className + '"><a href="#none"></a></li>';
+    	}
+    },
+});
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

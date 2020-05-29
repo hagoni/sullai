@@ -1,0 +1,270 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+/* 오시는 길 */
+.location{padding-bottom:100px}
+.location .map_area{max-width:100%;height:262px;background-color:#666}
+.location .loc_cont{text-align:center}
+.location .title_area{padding:24px 0 20px;}
+.location .loc_title{padding-bottom:6px;font-family:'SunBatang-Light';font-size:1.25rem;letter-spacing:-0.12em;color:#231f20}
+.location .loc_logo img{width:200px}
+.location .loc_text{font-family:'NotoSansKR-Medium';font-size:0.75rem;letter-spacing:-0.05em;color:#666}
+.location .info_area li{margin-bottom:22px}
+.location .info_area .info_title{padding-bottom:6px;font-family:'SunBatang-Medium';font-size:1.125rem;letter-spacing:-0.12em;color:#231f20}
+.location .info_area .info_text{font-size:0.8125rem;letter-spacing:-0.05em;line-height:150%;color:#666}
+@media screen and (min-width:768px){
+    .location{padding-bottom:120px}
+    .location .map_area{height:550px}
+    .location .title_area{padding:40px 0 45px}
+    .location .loc_logo img{width:250px}
+    .location .loc_title{padding-bottom:20px;font-size:2.5rem}
+    .location .loc_text{font-size:1.125rem}
+    .location .info_area{width:500px;margin:0 auto;text-align:left}
+    .location .info_area li{overflow:hidden;margin-bottom:30px}
+    .location .info_area .info_title{float:left;display:inline-block;vertical-align:middle;padding-bottom:0;width:168px;padding-left:40px;font-size:1.5rem;box-sizing:border-box}
+    .location .info_area .info_text{float:left;display:inline-block;vertical-align:middle;width:332px;font-size:1.125rem}
+}
+@media screen and (min-width:1080px){
+    .location{padding-bottom:150px}
+    .location .loc_cont{overflow:hidden;width:1040px;margin:0 auto;padding-top:63px;display:table;table-layout:fixed}
+    .location .loc_cont > div{display:table-cell;vertical-align:middle;width:50%;box-sizing:border-box}
+    .location .title_area{padding:0;padding-left:73px;text-align:left}
+    .location .loc_logo img{width:321px}
+    .location .info_area li:last-child{margin-bottom:0}
+    .location .info_area .info_title{width:150px;padding-left:25px}
+}
+</style>
+        <!-- location start -->
+        <div class="location">
+            <div class="map_area" id="map_area"></div>
+            <div class="loc_cont">
+                <div class="title_area">
+                    <div class="loc_logo"><img src="<?=$root?>/img/page/com/07/logo.png" alt=""></div>
+                </div>
+                <ul class="info_area">
+                    <li>
+                        <p class="info_title">주소</p>
+                        <p class="info_text">서울 노원구 동일로 1628, 5층</p>
+                    </li>
+                    <li>
+                        <p class="info_title">전화번호</p>
+                        <p class="info_text">02-3392-5425</p>
+                    </li>
+                    <li>
+                        <p class="info_title">팩스</p>
+                        <p class="info_text">02-3392-5424</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //location end -->
+<?php
+include_once('../inc/bottom.php');
+?>
+
+<script type="text/javascript">
+<?
+$markerImgPath = '/design/other/marker.png';
+$markerImgSize = getImagesize(ROOT_INC.$markerImgPath);
+?>
+
+var marker = {
+	src: '<?=$pc.$markerImgPath?>',
+	offset: {x: <?=$markerImgSize[0] / 2?>, y: <?=$markerImgSize[1]?>},
+	size: {x: <?=$markerImgSize[0]?>, y: <?=$markerImgSize[1]?>}
+};
+var placeInfo = {
+	appkey: '<?=$settings_data['kakao_api_key'];?>',
+	container: 'map_area',
+	geocode: {lat: '37.67384475742321', lng: '127.05603262178302'},
+	scrollwheel: false,
+	marker: marker,
+};
+
+
+/**************************************************************************************************
+ * KakaoMap | Kakao map api를 이용하여 지도를 출력합니다.
+ *
+ * @class KakaoMap
+ * @constructor
+ * @version 1.0
+ *
+ * @param {Object} placeInfo 옵션 객체
+ *
+ **************************************************************************************************/
+(function($) {
+
+    'use strict';
+
+    window.KakaoMap = function(placeInfo) {
+
+    	var _this = this;
+
+    	var map,
+    		mapContainer = document.getElementById(placeInfo.container),
+    		mapOptions = {level: 4},
+    		marker,
+    		markerOptions,
+            rv,
+            resizeTimer = null;
+
+        var opt = {
+            mapTypeControl: true,
+            zoomControl: true
+        };
+
+    	/*
+    	 * KakaoMap class 초기화 함수
+    	 *
+    	 * @method initialize
+    	 */
+    	this.initialize = function() {
+            if(typeof placeInfo.scrollwheel === 'boolean') mapOptions.scrollwheel = false;
+            if(typeof placeInfo.level === 'number') mapOptions.level = placeInfo.level;
+            if(typeof placeInfo.mapTypeControl === 'boolean') opt.mapTypeControl = placeInfo.mapTypeControl;
+            if(typeof placeInfo.zoomControl === 'boolean') opt.zoomControl = placeInfo.zoomControl;
+    		var src = '//dapi.kakao.com/v2/maps/sdk.js?autoload=false&libraries=services&appkey='+ placeInfo.appkey;
+    		_this.cachedScript(src, function() {
+    			_this.mapLoad();
+    		});
+    	};
+		this.cachedScript = function( url, callback ) {
+			// kakao에서 timestamp 제거 요청으로 인한 처리 20181030 yoonwoo1023
+			var options = {
+				dataType: "script",
+				cache: true,
+				url: url,
+				success : callback
+			};
+			return jQuery.ajax( options );
+		};
+    	this.mapLoad = function() {
+    		daum.maps.load(function() {
+                var reg = /daumcdn|services\.js/g;
+                for(var i=0, src, res; i<$('head > script').length; i++) {
+                    if(typeof $('head > script').eq(i).attr('src') === 'undefined') continue;
+                    src = $('head > script').eq(i).attr('src');
+                    res = src.match(reg);
+                    if(res !== null && res.length === 2) {
+                        _this.cachedScript(src, function() {
+                            if(typeof placeInfo.geocode === 'object') {
+                				mapOptions.center = new daum.maps.LatLng(placeInfo.geocode.lat, placeInfo.geocode.lng);
+                				_this.mapping();
+                				if(typeof placeInfo.roadView === 'object') _this.roadView();
+                			} else {
+                				_this.geocoding(placeInfo.address, function() {
+                					_this.mapping();
+                					if(typeof placeInfo.roadView === 'object') _this.roadView();
+                				});
+                			}
+                        });
+                        break;
+                    }
+                }
+    		});
+    	};
+
+    	/*
+    	 * 주소를 경위도 좌표로 변환합니다.
+    	 *
+    	 * @method geocoding
+    	 * @param {String} addr 주소
+    	 * @param {Function} callback 콜백 함수
+    	 */
+    	this.geocoding = function(addr, callback) {
+    		var geocoder = new daum.maps.services.Geocoder();
+    		geocoder.addressSearch(addr, function(result, status) {
+    			if(status === daum.maps.services.Status.OK) {
+    				mapOptions.center = new daum.maps.LatLng(result[0].y, result[0].x);
+    				callback();
+    			}
+    		});
+    	};
+
+    	/*
+    	 * 지도를 출력합니다.
+    	 *
+    	 * @method mapping
+    	 */
+    	this.mapping = function() {
+    		map = new daum.maps.Map(mapContainer, mapOptions);
+    		this.addMarker();
+    		this.addControl();
+            this.addHandler();
+    		if(typeof placeInfo.callback === 'function') placeInfo.callback();
+    	};
+
+    	/*
+    	 * 마커를 표시합니다.
+    	 *
+    	 * @method addMarker
+    	 */
+    	this.addMarker = function() {
+            markerOptions = {
+    			position: mapOptions.center
+    		};
+    		if(typeof placeInfo.marker === 'object' && typeof placeInfo.marker.src === 'string') {
+                markerOptions.image = new daum.maps.MarkerImage(
+                    placeInfo.marker.src,
+                    new daum.maps.Size(placeInfo.marker.size.x, placeInfo.marker.size.y),
+                    {offset: new daum.maps.Point(placeInfo.marker.offset.x, placeInfo.marker.offset.y)}
+                );
+    		}
+    		var marker = new daum.maps.Marker(markerOptions);
+    		marker.setMap(map);
+    	};
+
+    	/*
+    	 * 컨트롤을 올립니다.
+    	 *
+    	 * @method addControl
+    	 */
+    	this.addControl = function() {
+            if(opt.mapTypeControl === true) map.addControl(new daum.maps.MapTypeControl(), daum.maps.ControlPosition.TOPRIGHT);
+    		if(opt.zoomControl === true) map.addControl(new daum.maps.ZoomControl(), daum.maps.ControlPosition.RIGHT);
+    	};
+
+    	/*
+    	 * 로드뷰를 출력합니다.
+    	 *
+    	 * @method roadView
+    	 */
+    	this.roadView = function() {
+    		var rvOptions = placeInfo.roadView;
+    		rv = new daum.maps.Roadview(document.getElementById(rvOptions.container));
+    		var rvClient = new daum.maps.RoadviewClient();
+
+    		rvClient.getNearestPanoId(mapOptions.center, 50, function(panoId) {
+    			rv.setPanoId(panoId, mapOptions.center);
+    		});
+    	};
+
+        this.addHandler = function() {
+            $(window).resize(this.resize);
+        };
+
+        this.resize = function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                map.relayout();
+                map.setCenter(mapOptions.center);
+                if(typeof rv === 'object') rv.relayout();
+            }, 100);
+        };
+
+    	// KakaoMap class 초기화 함수를 호출합니다.
+    	this.initialize();
+    };
+
+    if(typeof placeInfo.length === 'undefined') window.instofKakaoMap = new KakaoMap(placeInfo);
+    else {
+        window.instofKakaoMap = [];
+        for(var i=0; i<placeInfo.length; i++) {
+            window.instofKakaoMap[i] = new KakaoMap(placeInfo[i]);
+        }
+    }
+
+}(jQuery));
+
+</script>

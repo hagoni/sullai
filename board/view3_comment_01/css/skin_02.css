@@ -1,0 +1,61 @@
+.view3_comment_wrap.comment_skin_02 { position: relative; margin-top:30px; background: #f7f7f7;}
+.view3_comment_wrap.comment_skin_02 textarea, .view3_comment_wrap.comment_skin_02 input, .view3_comment_wrap.comment_skin_02 label { cursor: pointer}
+.view3_comment_wrap.comment_skin_02 textarea:focus, .view3_comment_wrap.comment_skin_02 input:focus { cursor: text}
+.view3_comment_wrap.comment_skin_02  .c_both { clear: both}
+.view3_comment_wrap.comment_skin_02 .comment_insert_area { position: relative; border-top: none; padding: 40px;}
+.view3_comment_wrap.comment_skin_02 .comment_fix_line { position: relative; margin-top: 14px;}
+.view3_comment_wrap.comment_skin_02 .comment_title{font-size:22px;color:#212121;line-height:22px;}
+.view3_comment_wrap.comment_skin_02 .comment_input_text { position: relative; margin-top: 10px;}
+.view3_comment_wrap.comment_skin_02 .comment_input_text label { position: absolute; line-height: 23px; z-index: 11; padding: 18px 24px; font-size: 14px; color: #888888;}
+.view3_comment_wrap.comment_skin_02 .comment_input_text input { position: relative; z-index: 10; padding: 18px 24px; height: 23px; line-height: 23px; font-size: 14px; border: 0; background: #fffeed;border:1px solid #ebebeb;}
+.view3_comment_wrap.comment_skin_02 .comment_textarea { position: relative; display: block; left: 0px; right: 0px;}
+.view3_comment_wrap.comment_skin_02 .comment_textarea textarea { position: relative; z-index: 10; width: 95%; right: 0; min-height: 90px; height: auto !important; height: 90px; overflow: auto; resize: none; padding: 18px 2.5%; line-height: 23px; font-size: 16px; border:1px solid #ebebeb;background: #FFFFFF;}
+.view3_comment_wrap.comment_skin_02 .comment_textarea label { position: absolute; line-height: 23px; z-index: 11; padding: 18px 0; left: 0; padding-left: 2.5%; width: 99%; font-size: 14px; color: #888888;}
+.view3_comment_wrap.comment_skin_02 .comment_textarea input { color: #424650}
+.view3_comment_wrap.comment_skin_02 .comment_list_area { margin:0 35px;}
+.view3_comment_wrap.comment_skin_02 .comment_list_area li.comment_content_li { position: relative; clear:both; border-top: #e0e0e0 solid 1px;}
+.view3_comment_wrap.comment_skin_02 .comment_list_content_wrap { position: relative; padding: 30px;}
+.view3_comment_wrap.comment_skin_02 .comment_user_name { font-size: 18px; color: #212121;}
+.view3_comment_wrap.comment_skin_02 .comment_user_name span {position:absolute;margin-top:2px;font-size: 14px; margin-left: 20px; color: #767575;}
+.view3_comment_wrap.comment_skin_02 .comment_option {cursor:pointer;position: absolute; z-index: 13; right: 30px; top: 30px;}
+.view3_comment_wrap.comment_skin_02 .comment_option.on .comment_option_menu { display: block}
+.view3_comment_wrap.comment_skin_02 .comment_option_btn { width:30px;height:30px;line-height:30px; color: #FFF; background: #a2b14b; font-size: 18px;text-align:center; font-weight: normal;}
+.view3_comment_wrap.comment_skin_02 .comment_option_menu { display: none; position: absolute; z-index: 12; top: 0; right: 0;}
+.view3_comment_wrap.comment_skin_02 .comment_option_menu ul li { padding: 10px 0; text-align: center; width: 80px; background: #a2b14b;}
+.view3_comment_wrap.comment_skin_02 .comment_option_menu ul li { cursor: pointer; padding: 10px 0; font-size: 14px; text-align: center; width: 80px; color: #FFF; background: #a2b14b;}
+.view3_comment_wrap.comment_skin_02 .comment_option_menu ul li:hover { background: #617200}
+.view3_comment_wrap.comment_skin_02 .comment_content { min-height: 60px; height: auto !important; height: 60px; padding: 25px 3px 0 3px;}
+.view3_comment_wrap.comment_skin_02 .comment_content .hidden_content{font-size:14px;color:#AAA;}
+.view3_comment_wrap.comment_skin_02 .comment_content.content_type_text { font-size: 14px; color: #767575; line-height: 120%;width:95%}
+.view3_comment_wrap.comment_skin_02 .comment_insert_btn { position: relative; margin-top: 20px; text-align: center; letter-spacing: -1px; display: block; cursor: pointer; background: #a2b14b; color: #FFF; font-size: 16px;  padding: 15px 60px; float: right;}
+.view3_comment_wrap.comment_skin_02 .pw_check_box { position: absolute; z-index: 15; left: 0; top: 0; width: 100%; height: 100%; background: #f5f6f4; background: rgba(165,177,97,0.15);}
+.view3_comment_wrap.comment_skin_02 .pw_check_close { cursor: pointer; position: absolute; top: 30px; right: 30px; width:30px;height:30px;line-height:30px; color: #FFF; background: #a2b14b; font-size: 18px; text-align:center; font-weight: normal;}
+.view3_comment_wrap.comment_skin_02 .comment_pwcheck_wrap { position: relative; margin: 0 auto; top: 50px; width: 335px;}
+.view3_comment_wrap.comment_skin_02 .comment_pwcheck_btn { position: absolute; top: 0; right: 0; width: 24%;height:40px;line-height:40px;text-align: center; letter-spacing: -1px; display: block; cursor: pointer; background: #617200; color: #FFF; font-size: 13px; font-weight: bold;}
+.view3_comment_wrap.comment_skin_02 .comment_list_content_wrap .comment_textarea { margin-top: 20px}
+.view3_comment_wrap.comment_skin_02 .input_type_short { margin-right: 10px; float: left;}
+.view3_comment_wrap.comment_skin_02 .input_type_short input { width: 200px}
+.view3_comment_wrap.comment_skin_02 .input_type_full { clear:both;padding-top:10px;margin-right: 10px; }
+.view3_comment_wrap.comment_skin_02 .input_type_full input { width: 96%}
+
+.view3_comment_wrap.comment_skin_02 .agreePrivacyWrap{font-size:13px;}
+.view3_comment_wrap.comment_skin_02 .agreePrivacyWrap button.agreePrivacyContents{display:inline-block;margin-left:4px;padding:3px 5px;background:#a2b14b;color:#FFFFFF;}
+.view3_comment_wrap.comment_skin_02 .agreePrivacyWrap input[type=checkbox]{-webkit-appearance:checkbox;appearance:checkbox}
+
+.view3_comment_wrap.comment_skin_02 .input_type_pwcheck { position: absolute; top: 0; width: 73%;color: #888888;}
+.view3_comment_wrap.comment_skin_02 .input_type_pwcheck input { color: #424650; width: 84%;padding: 0 8%; height: 40px; line-height: 40px; font-size: 14px; border: 0; background: #FFFFFF;}
+.view3_comment_wrap.comment_skin_02 .input_type_pwcheck label { position: absolute;width: 84%;padding: 0 8%;height:40px;line-height: 40px; z-index: 11;font-size: 14px;}
+.view3_comment_wrap.comment_skin_02 li.comment_more_list{cursor:pointer;position:relative;background:#a3afb5;text-align:center;color:#FFF;font-size:12px;padding:15px 0;font-weight:bold;border-top:0;}
+.view3_comment_wrap.comment_skin_02 li.comment_more_list a{color:#FFF;}
+.view3_comment_wrap.comment_skin_02 li.comment_more_list:hover{background:#939fa5;}
+.view3_comment_wrap.comment_skin_02 div.comment_more_page{position: absolute;font-size:14px;background: #939fa5;top: 0;right: 0;bottom: 0;padding: 18px;}
+.view3_comment_wrap.comment_skin_02 .blur {/*IE는 IE9 에서만 지원*/
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    /* FF doesn't support blur filter, but SVG */
+    filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur");
+    filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius = '5');
+    filter: blur(5px);
+}

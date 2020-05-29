@@ -1,0 +1,126 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+.sub_content{margin-left:10px;margin-right:10px}
+
+.brand_identity{max-width:1200px;margin:0 auto;padding:80px 0 100px}
+.brand_identity .text_area{text-align:center}
+.brand_identity .lyr_ttl_en{padding:10px 0 18px;font-size:0.8125rem;letter-spacing:0.3em;color:#666}
+.img_1260{display:none}
+
+.layer1 .text{padding-bottom:42px}
+.layer1 .img_area{position:relative;border:1px solid #bfc1c4}
+.layer1 .img_ttl{position:absolute;left:0;width:100%;font-family:'NotoSansKR-Bold';font-size:0.8125rem;letter-spacing:-0.05em;color:#222;text-align:center}
+.layer1 .img_ttl1{top:44.7532%}
+.layer1 .img_ttl2{top:83.1169%}
+
+.layer2{padding-top:66px}
+.layer2 .text{padding-bottom:45px}
+.layer2 .img_area{max-width:565px;margin:0 auto}
+
+.layer3{padding-top:66px}
+.layer3 li{width:100%;text-align:center}
+.layer3 li:first-child{margin-bottom:44px}
+.layer3 .li_text{padding-bottom:16px;font-size:0.8125rem;letter-spacing:-0.05em;line-height:177%;color:#666}
+.layer3 .li_text em{font-family:'NotoSansKR-Bold';color:#222}
+.layer3 .img_area img{width:262px}
+
+@media screen and (min-width:768px){
+    .brand_identity{padding:100px 0 120px}
+    .brand_identity .lyr_ttl_en{padding:10px 0 28px;font-size:1.125rem}
+
+    .layer1 .img_ttl{font-size:1.125rem}
+    .layer1 .img_ttl1{top:44.7532%}
+    .layer1 .img_ttl2{top:83.1169%}
+
+    .layer3 .li_text{padding-bottom:30px;font-size:1.125rem}
+    .layer3 .img_area img{width:423px}
+}
+@media screen and (min-width:1080px){
+    .brand_identity{padding:120px 0 150px}
+    .img_768{display:none}
+    .img_1260{display:block}
+
+    .layer1 .img_ttl{display:none}
+
+    .layer2{padding-top:115px}
+    .layer2 .img_area{max-width:100%}
+
+    .layer3{padding-top:115px}
+    .layer3 .lyr_ttl_en{padding-bottom:44px}
+    .layer3 li{width:50%}
+    .layer3 li:nth-child(2) .img_area img{width:411px}
+}
+@media screen and (min-width:1260px){
+    .brand_identity .text_area{text-align:left}
+    .brand_identity .lyr_ttl{margin-left:-7px;display:inline-block}
+    .brand_identity .lyr_ttl_en{display:inline-block;margin-left:20px}
+}
+</style>
+        <div class="brand_identity">
+            <div class="layer1">
+                <div class="text_area">
+                    <div class="ttl_area">
+                        <p class="lyr_ttl stitle">심벌마크</p>
+                        <p class="lyr_ttl_en">Symbol Mark</p>
+                    </div>
+                    <p class="text">강강술래의 심벌마크는 깊어가는 밤 <br class="br_m">또렷하게 빛나는 달을 모티브로 <br class="br_m1260"><em>하나로 어우러져 함께 즐기고자하는 <br class="br_m">강강술래 본연의 뜻을 담아내고 있습니다.</em></p>
+                </div>
+                <div class="img_area">
+                    <img src="<?=$root?>/img/page/brand/03/img1_768.jpg" alt="" class="img_768 w100">
+                    <img src="<?=$root?>/img/page/brand/03/img1_1260.jpg" alt="" class="img_1260 w100">
+                    <p class="img_ttl1 img_ttl">심벌마크 Symbol Mark</p>
+                    <p class="img_ttl2 img_ttl">시그니처 국문 Signature Korean</p>
+                </div>
+            </div>
+            <div class="layer2">
+                <div class="text_area">
+                    <p class="lyr_ttl stitle">기본배치 규정</p>
+                    <p class="lyr_ttl_en">Basic Positioning</p>
+                    <p class="text">
+                        심볼마크는 그리드 규정을 준수하여 <br class="br_m">
+                        기본 형태의 오류가 발생하지 않도록 제작하여야 하며, <br>
+                        시그니처 상하조합의 높이(K)를 기준으로 하여 <br>
+                        <em>주변에 어떠한 요소도 침범하면 안되는 <br class="br_m">
+                        최소의 공간규정을 준수하여야 합니다.</em>
+                    </p>
+                </div>
+                <div class="img_area">
+                    <img src="<?=$root?>/img/page/brand/03/img2_768.jpg" alt="" class="img_768 w100">
+                    <img src="<?=$root?>/img/page/brand/03/img2_1260.jpg" alt="" class="img_1260 w100">
+                </div>
+            </div>
+            <div class="layer3">
+                <div class="text_area">
+                    <p class="lyr_ttl stitle">전용색상</p>
+                    <p class="lyr_ttl_en">Color System</p>
+                </div>
+                <ul class="fs_def">
+                    <li>
+                        <p class="li_text">
+                            <em>Main Color</em><br>
+                            강강술래 심볼마크를 구성하는 색이며<br class="br_m">
+                            개별적인 색의 활용보다는<br>
+                            세 색의 배색을 통하여 강강술래의 칼라<br class="br_m">
+                            아이덴티티를 표현할 수 있습니다.
+                        </p>
+                        <div class="img_area"><img src="<?=$root?>/img/page/brand/03/color1_768.jpg" alt=""></div>
+                    </li>
+                    <li>
+                        <p class="li_text">
+                            <em>Sub Color</em><br>
+                            시그니처나 엠블럼 등에 추가적으로<br class="br_m">
+                            사용할 수 있는 포인트 칼라로<br>
+                            basic color의 이미지를 손상시키지 않는 <br class="br_m">
+                            범위에서 사용 할 수 있습니다.
+                        </p>
+                        <div class="img_area"><img src="<?=$root?>/img/page/brand/03/color2_768.jpg" alt=""></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<?
+include_once('../inc/bottom.php');
+?>

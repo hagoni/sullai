@@ -1,0 +1,39 @@
+<?php
+include_once('../inc/top.php');
+?>
+<link rel="stylesheet" href="<?=$root?>/css/form.css?<?=$time?>">
+
+        <p class="page_title">아이디 찾기</p>
+        <!-- 아이디 찾기 start -->
+        <form class="find_wrap">
+            <fieldset class="find_id">
+				<legend class="cmn_ttl t_center">아이디 찾기</legend>
+                <div class="top_area">
+                    <div class="check_wrap fs_def t_center">
+                        <div class="su_check rel">
+        					<input type="checkbox" name="" id="findIdEmail" />
+        					<label for="findIdEmail" class="check_label">이메일</label>
+        				</div>
+                        <div class="su_check2 su_check rel">
+        					<input type="checkbox" name="" id="findIdMobile" />
+        					<label for="findIdMobile" class="check_label">휴대폰 번호</label>
+        				</div>
+                    </div>
+                    <div class="fs_def">
+                        <div class="fill">
+                            <input type="text" name="" id="findIdName" class="fill_input1 w100" placeholder="이름" />
+                            <input type="text" name="" id="findIdEmail" class="w100" placeholder="가입메일주소" />
+                        </div>
+                        <a href="#none" class="find_id_btn">아이디 찾기</a>
+                    </div>
+                </div>
+                <div class="other_btns">
+                    <a href="#none" class="other_btn1 other_btn">비밀번호 찾기</a>
+                    <a href="#none" class="other_btn2 other_btn">로그인하기</a>
+                </div>
+			</fieldset>
+        </form>
+        <!-- //아이디 찾기 end -->
+<?php
+include_once('../inc/bottom.php');
+?>

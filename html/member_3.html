@@ -1,0 +1,93 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_content{margin-left:0;margin-right:0;padding-bottom:100px}
+
+.layer1{padding:44px 0 38px;background-color:#eee;text-align:center}
+.list_ul{margin-left:10px;margin-right:10px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.1)}
+.list_ul li{margin-bottom:13px}
+.list_ul li .check{display:inline-block;margin-right:8px;width:12px;height:9px;background:url('../img/page/member/01/lyr1_check.png')no-repeat center;background-size:cover}
+.list_ul li:last-child{margin-bottom:0}
+.list_ul .text .small{display:block;margin-top:2px;font-size:0.6875rem;color:#9e9e9e}
+.red_ul{padding-top:12px}
+.red_ul li{width:100%;margin-bottom:10px}
+.red_ul li:last-child{margin-bottom:0}
+.red_ul .text em{font-family:'NotoSansKR-Medium'}
+.red_ul .text em .red{color:#c00000}
+.lyr1_dec{display:none;bottom:0;margin-left:-1025px}
+
+.layer2{padding-top:48px;background-color:#e7e7e7;text-align:center}
+.lyr2_dec{display:none;bottom:0;margin-left:89px}
+.layer2 .list_ul{border-bottom:0}
+.cards{margin-left:10px;margin-right:10px;padding:16px 0 20px;border:1px solid rgba(0,0,0,0.15)}
+.cards li{display:block;margin-bottom:26px}
+.cards li:last-child{margin-bottom:0}
+.cards .card_ttl{padding-bottom:13px}
+.img_768{padding-top:40px}
+
+@media screen and (min-width:768px){
+    .sub_content{margin-left:20px;margin-right:20px;padding-bottom:120px}
+    .layer1{padding:95px 0}
+    .list_ul{width:460px;margin:0 auto;padding:24px 0}
+    .list_ul li{margin-bottom:15px}
+    .list_ul li .check{width:18px;height:14px}
+    .list_ul .text .small{margin-top:5px;font-size:0.875rem}
+    .red_ul{padding-top:24px}
+
+    .layer2{padding-top:95px}
+    .cards{width:530px;margin:0 auto;padding:23px 0 30px}
+    .cards li{display:inline-block;margin-bottom:0;margin-left:30px}
+    .cards li:first-child{margin-left:0}
+}
+@media screen and (min-width:1080px){
+    .sub_content{padding-bottom:150px}
+    .layer1{height:650px;padding:134px 0 0 calc(50% + 20px);text-align:left;box-sizing:border-box}
+    .list_ul{margin:0}
+    .nbsp_1080{margin-left:108px}
+    .lyr1_dec{display:block}
+    .small{margin-left:28px}
+
+    .text_area{width:1040px;padding-left:50px;margin:0 auto;box-sizing:border-box}
+    .layer2{text-align:left;padding-bottom:95px}
+    .lyr2_dec{display:block}
+    .cards{margin-left:0;padding-left:40px;box-sizing:border-box}
+
+    .img_768{display:none}
+}
+@media screen and (min-width:1260px){
+    .layer1{padding-left:calc(50% + 70px)}
+    .nbsp_1080{display:none}
+    .br_1080{display:none}
+    .lyr1_dec{margin-left:-1100px}
+
+    .text_area{width:1200px}
+}
+</style>
+        <div class="member_1">
+            <div class="layer2 over_h rel">
+                <div class="lyr2_dec l50"><img src="<?=$root?>/img/page/member/01/lyr2_dec.png" alt=""></div>
+                <div class="text_area">
+                    <p class="stitle">강강술래 기프트카드</p>
+                    <ul class="list_ul">
+                        <li><span class="check"></span><span class="text"><em>5만원, 10만원, 20만원, 30만원, 50만원</em> (총5종)</span></li>
+                        <li><span class="check"></span><span class="text">강강술래 매장에서 현금처럼 자유롭게 사용가능</span></li>
+                        <li><span class="check"></span><span class="text">사용 용도에 따라 <em>현금영수증 발행시점 선택가능</em></span></li>
+                    </ul>
+                    <ul class="cards fs_def">
+                        <li>
+                            <p class="card_ttl text"><em>사용 시</em> (현금영수증 발행)</p>
+                            <div class="card"><img src="<?=$root?>/img/page/member/01/lyr2_card1.png" alt=""></div>
+                        </li>
+                        <li>
+                            <p class="card_ttl text"><em>구매 시</em> (현금영수증 발행)</p>
+                            <div class="card"><img src="<?=$root?>/img/page/member/01/lyr2_card2.png" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img_768"><img src="<?=$root?>/img/page/member/01/img2_768.jpg" alt="" class="w100"></div>
+            </div>
+        </div>
+<?php
+include_once('../inc/bottom.php');
+?>

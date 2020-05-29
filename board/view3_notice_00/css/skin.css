@@ -1,0 +1,52 @@
+
+.board_inner{position:relative;margin:0 auto;margin-top:20px}
+.board_list_text > p{margin-right:0;}
+.board_list_date{display:none}
+
+.sub_content{margin-left:10px;margin-right:10px}
+.circle_wrap li{position:relative;width:88px;height:88px;padding-top:26px;margin-left:15px;border-radius:50%;border:1px solid rgba(90,17,28,0.3);box-sizing:border-box}
+.circle_wrap li:first-child{margin-left:0}
+.circle_wrap li:nth-child(2){padding-top:35px;background-color:#5a111c;border-color:#5a111c}
+.circle_wrap li p{font-family:'SunBatang-Medium';font-size:0.9375rem;letter-spacing:-0.12em;color:#231f20;}
+.circle_wrap li:nth-child(2) p{color:#fff}
+.circle_wrap li:before{content:'';position:absolute;right:-16px;top:50%;width:15px;height:1px;background-color:rgba(90,17,28,0.3)}
+.circle_wrap li:last-child:before{display:none}
+.circle_wrap li:nth-child(2):after{content:'';position:absolute;left:50%;bottom:-15px;width:1px;height:15px;background-color:rgba(90,17,28,0.3)}
+@media screen and (min-width:768px){
+    .board_list_date{display:block}
+    .sub_content{margin-left:20px;margin-right:20px}
+    .circle_wrap li{width:214px;height:214px;margin-left:43px;padding-top:90px}
+    .circle_wrap li:nth-child(2){padding-top:90px}
+    .circle_wrap li p{font-size:1.875rem}
+    .circle_wrap li:before{right:-44px;width:43px}
+    .circle_wrap li:nth-child(2):after{bottom:-62px;height:62px}
+}
+@media screen and (min-width:1080px){
+    .circle_wrap li{width:240px;height:240px;padding-top:100px;margin-left:50px}
+    .circle_wrap li:nth-child(2){padding-top:100px}
+    .circle_wrap li:before{right:-101px;width:100px}
+}
+
+.hih{padding:24px 0 10px;border-bottom:1px solid rgba(90,17,28,0.3);font-family:'SunBatang-Medium';font-size:1.25rem;letter-spacing:-0.12em;color:#5a111c;text-transform:uppercase}
+.hih_list{padding:12px 0 46px;max-width:400px;margin:0 auto}
+.hih_list li{width:50%;margin-bottom:20px}
+.hih_list li:nth-child(3), .hih_list li:last-child{margin-bottom:0}
+.hih_list .hih_ttl{padding-bottom:10px;font-family:'SunBatang-Medium';font-size:1.25rem;letter-spacing:-0.12em;color:#231f20}
+.hih_list .hih_text{font-size:0.8125rem;letter-spacing:-0.05em;line-height:177%;color:#666}
+@media screen and (min-width:768px){
+    .hih{padding:86px 0 26px;font-size:3.125rem}
+    .hih_list{padding:25px 0 95px;max-width:500px}
+    .hih_list li{margin-bottom:50px}
+    .hih_list .hih_ttl{padding-bottom:20px;font-size:1.875rem}
+    .hih_list .hih_text{font-size:1.125rem}
+@media screen and (min-width:1080px){
+
+    .hih{max-width:970px;margin:0 auto}
+    .hih_list{max-width:970px}
+    .hih_list li{width:25%;margin-bottom:90px}
+}
+
+@media screen and (min-width:1260px){
+    .board_inner{width:1100px;}
+    .board_list_text > p{margin-right:140px;}
+}

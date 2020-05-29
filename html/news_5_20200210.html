@@ -1,0 +1,78 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_content{margin-left:0;margin-right:0}
+.np_list{max-width:320px;padding-bottom:60px;margin:0 auto}
+.np_list li{width:160px;padding:0 12px 25px;box-sizing:border-box}
+.np_list li a{display:block;width:100%;height:100%}
+.np_list .img_area{width:136px;height:191px;margin:0 auto;background-repeat:no-repeat;background-position:center;background-size:cover}
+.np_list .text_area{margin-top:7px;font-size:0.8125rem;letter-spacing:-0.03em;line-height:146%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;height:calc(1.46em * 2);text-overflow:ellipsis;text-align:center;color:#666}
+.plus{opacity:0;position:absolute;left:50%;top:50%;margin-left:-32px;margin-top:-32px;width:65px;height:65px;background:url('../img/page/news/05/np_plus.png')no-repeat center;transition:all 0.3s ease}
+@media screen and (min-width:768px){
+    .np_list{max-width:728px}
+    .np_list li{width:202px;padding:0;margin-left:61px;margin-bottom:90px}
+    .np_list li:nth-child(3n-2){margin-left:0}
+    .np_list .img_area{width:202px;height:283px}
+    .np_list .text_area{margin-top:14px;font-size:1.125rem}
+}
+@media screen and (min-width:1080px){
+    .np_list{max-width:1040px}
+    .np_list li{padding:0;margin-left:77px}
+    .np_list li:nth-child(3n-2){margin-left:77px}
+    .np_list li:nth-child(4n-3){margin-left:0}
+}
+@media screen and (min-width:1260px){
+    .np_list{max-width:1200px}
+    .np_list li{width:300px;margin-left:0px}
+    .np_list li:nth-child(3n-2){margin-left:0px}
+    .np_list li a{position:relative;padding:50px;;box-sizing:border-box}
+    .np_list li a:before{opacity:0;content:'';position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(90,17,28,0.15);transition:all 0.3s ease}
+    .np_list li a:hover:before{opacity:1}
+    .np_list li a:hover .plus{opacity:1}
+}
+</style>
+        <!-- 소식지 start -->
+        <div class="newspaper">
+            <ul class="np_list fs_def">
+                <li>
+                    <a href="#none">
+                        <span class="plus"></span>
+                        <div class="img_area" style="background-image:url('../img/page/news/05/np_img.jpg')"></div>
+                        <p class="text_area">VOL.45<br>만나세요 19년 11월호</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <span class="plus"></span>
+                        <div class="img_area" style="background-image:url('../img/page/news/05/np_img.jpg')"></div>
+                        <p class="text_area">VOL.45<br>만나세요 19년 11월호</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <span class="plus"></span>
+                        <div class="img_area" style="background-image:url('../img/page/news/05/np_img.jpg')"></div>
+                        <p class="text_area">VOL.45<br>만나세요 19년 11월호</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <span class="plus"></span>
+                        <div class="img_area" style="background-image:url('../img/page/news/05/np_img.jpg')"></div>
+                        <p class="text_area">VOL.45<br>만나세요 19년 11월호</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <span class="plus"></span>
+                        <div class="img_area" style="background-image:url('../img/page/news/05/np_img.jpg')"></div>
+                        <p class="text_area">VOL.45<br>만나세요 19년 11월호</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- //소식지 end -->
+<?php
+include_once('../inc/bottom.php');
+?>

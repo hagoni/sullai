@@ -1,0 +1,128 @@
+<?php
+include_once('../inc/top.php');
+?>
+<link rel="stylesheet" href="<?=$root?>/css/board.css">
+<style media="screen">
+.restoration{padding-bottom:70px}
+.cont_list .rs_list{padding-top:50px}
+.cont_list .rs_list li{width:48.6111%;margin-left:2.7778%;margin-bottom:27px}
+.cont_list .rs_list li:nth-child(2n-1){margin-left:0}
+.cont_list .rs_list .img_area{width:100%;height:31.25vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.cont_list .rs_list .text{margin-top:12px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;height:calc(1.77em * 2);text-overflow:ellipsis}
+@media screen and (max-width:768px) {
+    .tabmenu li.li2 a{padding-top:5px}
+}
+@media screen and (min-width:768px) {
+    .restoration{padding-bottom:100px}
+    .tabmenu{margin-bottom:70px}
+    .tabmenu li{width:50%;height:90px}
+    .tabmenu li a{padding-top:13px;font-size:1.375rem;line-height:136%}
+    .top_cont .stitle{padding:65px 0 22px}
+    .top_cont .add_text{margin-bottom:15px;padding:10px 13px 12px 13px;font-size:0.9375rem}
+    .top_cont .add_text em{font-size:1.875rem}
+    .cont_list .rs_list li{margin-bottom:50px}
+    .cont_list .rs_list .text{white-space:nowrap;display:block;-webkit-line-clamp:1;height:auto}
+    .bot_cont{padding-top:45px}
+    .bot_cont .stext span{font-size:1.0625rem}
+    .bot_cont .text{padding:10px 0 60px}
+}
+@media screen and (min-width:1080px) {
+    .restoration{padding-bottom:120px}
+    .tabmenu{margin-bottom:70px}
+    .tabmenu li{height:80px}
+    .tabmenu li a{padding-top:0;font-size:1.375rem;line-height:80px}
+}
+@media screen and (min-width:1260px) {
+    .tabmenu li{width:25%}
+    .tab_cont4 .top_cont:before{width:1200px;left:50%;margin-left:-600px}
+}
+@media screen and (min-width:1500px) {
+    .top_cont .stitle, .top_cont .text, .top_cont .add_text{margin-left:224px}
+    .cont_list .rs_list.center{width:100%;max-width:1400px}
+    .cont_list .rs_list .text{white-space:nowrap;display:block;-webkit-line-clamp:1;height:auto}
+    .cont_list .rs_list li{width:453px;margin-left:20px}
+    .cont_list .rs_list li:nth-child(2n-1){margin-left:20px}
+    .cont_list .rs_list li:nth-child(3n-2){margin-left:0}
+    .cont_list .rs_list .img_area{width:445px;height:324px;-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+    .cont_list .rs_list .img_area:hover{filter: grayscale(0%);-webkit-filter: grayscale(0);transition:all 1s;}
+    .bot_cont .stext, .bot_cont .text{padding-left:224px}
+}
+</style>
+        <ul class="circle_wrap fs_def t_center">
+            <li><p>고객 사랑 <br class="br_m">나눔</p></li>
+            <li><p>실천적 참여</p></li>
+            <li><p>지역 사회 <br class="br_m">환원</p></li>
+        </ul>
+        <p class="hih t_center">hand in hand</p>
+        <ul class="hih_list fs_def t_center">
+            <li>
+                <p class="hih_ttl">사회복지</p>
+                <p class="hih_text">
+                    &middot; 소외계층 사랑의 음식 나눔<br>
+                    &middot; 저소득가정 기부캠페인 등
+                </p>
+            </li>
+            <li>
+                <p class="hih_ttl">직원참여</p>
+                <p class="hih_text">
+                    &middot; 지역사회 대민 봉사활동<br>
+                    &middot; 우리축산농가 응원 캠페인 등
+                </p>
+            </li>
+            <li>
+                <p class="hih_ttl">고객참여</p>
+                <p class="hih_text">&middot; 불우이웃 성금 모금 등</p>
+            </li>
+            <li>
+                <p class="hih_ttl">녹색캠페인</p>
+                <p class="hih_text">&middot; 희망 꽃씨 나눔 등</p>
+            </li>
+        </ul>
+        <!-- 환원 start -->
+        <div class="restoration rs inner_1400">
+            <div class="tab_conts">
+                <div class="tab_cont1 tab_cont cont_list">
+                    <ul class="rs_list fs_def">
+<?
+$contri_board = 'contribute_01';
+$contri_select_query = "SELECT * FROM `".TABLE_LEFT.$contri_board."` WHERE view3_use = '1' ORDER BY view3_order DESC, view3_write_day DESC, view3_idx DESC";
+$contri_count = mysql_num_rows(mysql_query($contri_select_query));
+$contri_page = $_REQUEST['contri_page'];
+if(!$contri_page) $contri_page = 1;
+$contri_list_per_page = 1000;
+$contri_numbering = 4;
+$contri_start_i = ($contri_page - 1) * $contri_list_per_page;
+$contri_list_query = $contri_select_query." LIMIT $contri_start_i, $contri_list_per_page";
+$contri_result = mysql_query($contri_list_query);
+if($contri_count > 0) {
+$contri_paging = page($contri_count, $contri_list_per_page, $contri_numbering, '', '', $contri_page, '', 'contri_page');
+while($contri_list = mysql_fetch_assoc($contri_result)) {
+    $contri_title = $contri_list['view3_title_01'];
+    $contri_img = explode("||",$contri_list['view3_file']);
+?>
+                        <li>
+                            <div class="img_area" style="background-image:url('<?=$request_root?>/upload/<?=$contri_board?><?=$contri_img[2]?>')"></div>
+                            <p class="text">
+                                <?=$contri_title?>
+                            </p>
+                        </li>
+<? } ?>
+<? } ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //환원 end -->
+<script>
+new Tabbing($('.tabmenu'), $('.tab_conts'));
+<? if($contri_page>1){ ?>
+    $(window).load(function(){
+        setTimeout(function(){
+            $('html, body').scrollTop($('.rs_list').offset().top-100);
+        },1)
+    });
+<? } ?>
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>

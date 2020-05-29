@@ -1,0 +1,168 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.sub_content{margin-left:0;margin-right:0}
+.layer1{height:380px}
+.layer1 .video_area{position:relative;height:100%}
+.layer1 .video_area .video{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   overflow: hidden;
+}
+.layer1 .video_area .video iframe {
+   width: 100vw;
+   height: 84.21052631585vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+   min-height: 100vh;
+   min-width: 118.7vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.layer1 .text_area{position:absolute;left:0;top:50%;width:100%;text-align:center;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+.layer1 .text_area .text.wt{padding-top:10px;color:#d9d9d9}
+.layer1 .text_area .text.wt em{color:#d9d9d9}
+
+.layer2{padding-top:50px;padding-bottom:100px}
+.com2_slide{width:277px;height:332px;margin:0 auto}
+.com2_slide .sl1{background-image:url('../img/page/com/02/com2_sl1.jpg')}
+.com2_slide .sl2{background-image:url('../img/page/com/02/com2_sl2.jpg')}
+.com2_slide .sl3{background-image:url('../img/page/com/02/com2_sl3.jpg')}
+.com2_paging{padding-top:12px;padding-left:50%;margin-left:-138px}
+.layer2 .text_area{padding-top:27px;text-align:center}
+.layer2 .st_text{padding:12px 0 18px}
+.layer2 .nb_ttl{padding-bottom:14px;font-family:'SunBatang-Light';font-size:1.25rem;letter-spacing:-0.12em;color:#231f20}
+.layer2 .c_ttl{display:none;top:100px;margin-left:20px}
+
+@media screen and (min-width:768px){
+    .sub_content{margin-left:20px;margin-right:20px}
+    .c_line{display:none}
+    .layer1{height:800px}
+    .layer1 .video_area{overflow:hidden}
+    .layer1 .video_area .video{
+       position:absolute;
+       left:50%;
+       top:50%;
+       margin-left:-980px;
+       margin-top:-400px;
+       width:1960px;
+       height:800px;
+       background-repeat:no-repeat;background-position:center;background-size:cover;background-image:url('../img/page/com/02/vid_bg.jpg');
+    }
+    .layer1 .video_area .video iframe {
+        position:relative;
+        width:100%;
+        top:0;left:0;
+        min-height:0;
+        min-width:0;
+        height:100%;
+        transform:translate(0,0);
+    }
+
+    .layer2{padding-top:100px;padding-bottom:120px}
+    .com2_slide{width:600px;height:720px}
+    .com2_paging{padding-top:30px;margin-left:-300px}
+    .layer2 .text_area{padding-top:42px}
+    .layer2 .st_text{padding:26px 0 36px}
+    .layer2 .nb_ttl{padding-bottom:1.375rem;font-size:1.875rem}
+}
+@media screen and (min-width:1080px){
+    .c_line{display:block}
+    .layer2{width:1040px;padding-top:120px;padding-bottom:150px;margin:0 auto}
+    .layer2 .slide_area{float:left;width:50%;box-sizing:border-box}
+    .layer2 .com2_slide{width:481px;height:577px;margin:0}
+    .com2_paging{padding-left:0;margin-left:0}
+    .layer2 .text_area{float:left;width:50%;padding-left:72px;padding-top:20px;box-sizing:border-box;text-align:left}
+}
+@media screen and (min-width:1260px){
+    .layer2 .c_ttl{display:block}
+}
+@media screen and (min-width:1400px){
+    .layer2{width:1340px;margin:0 auto}
+    .layer2 .com2_slide{width:600px;height:720px}
+    .layer2 .text_area{padding-left:90px;padding-top:90px}
+}
+@media screen and (min-width:2000px){
+    .layer1 .video_area .video{margin-left:-1260px;margin-top:-514px;width:2520px;height:1028px}
+}
+</style>
+        <div class="culture rel">
+            <p class="c_line"></p>
+            <div class="layer1 rel">
+                <div class="video_area">
+                    <div class="video">
+                        <iframe src="//player.vimeo.com/video/386445710?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="text_area">
+                    <p class="stitle wt">한국의 색채로 <em>세상을 칠하다</em></p>
+                    <p class="text wt">
+                        한식은 대체 가능한 국가가 없는 한국의 자랑입니다.<br>
+                        <em>한 껏 살린 한국의 맛과 멋으로 한식의 세계화에 앞장서겠습니다.</em>
+                    </p>
+                </div>
+            </div>
+            <div class="layer2 clearfix rel">
+                <p class="c_ttl l50"><img src="<?=$root?>/img/page/com/02/cttl.png" alt="Sullai Space"></p>
+                <div class="slide_area">
+                    <div class="com2_slide cmn_slide">
+                        <div class="swiper-container h100">
+                            <ul class="swiper-wrapper h100">
+                                <li class="swiper-slide sl1 bg h100"></li>
+                                <li class="swiper-slide sl2 bg h100"></li>
+                                <li class="swiper-slide sl3 bg h100"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="com2_paging cmn_paging fs_def">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                </div>
+                <div class="text_area">
+                    <p class="stitle">한식을 벗삼아<br><em>삶의 여유를 즐기다.</em></p>
+                    <p class="st_text text">품격있는 식사를 넘어 삶의 여유를 함께 누리세요.</p>
+                    <p class="nb_ttl">강강술래 늘봄농원점</p>
+                    <p class="nb_text text">
+                        국내 최대 규모의 한식테마파크로 조성된 신개념 외식문화공간, <br>
+                        약 1,000석 규모의 숯불구이관과 식사관, 민속주점 주향천리,<br>
+                        강강술래 브랜드 상품을 만나볼 수 있는 늘봄마켓과 커피전문점<br><br>
+
+                        울창한 숲에 함께 조성된 휴식공간과 트레킹 코스,<br>
+                        매일 10여명의 가수가 선사하는 야외 공연까지 <br>
+                        한식을 벗삼아, 풍류와 낭만, 자연과의 조화를 이루는 <br>
+                        강강술래 늘봄농원점에서 새로운 문화를 만나세요
+                    </p>
+                </div>
+            </div>
+        </div>
+<script>
+new Swiper('.com2_slide .swiper-container', {
+    setWrapperSize: true,
+    loop: true,
+    speed: 500,
+        autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+    	el: '.com2_paging',
+    	type: 'bullets',
+    	clickable: true,
+    	renderBullet: function(index, className){
+    		return '<li class="' + className + '"><a href="#none"></a></li>';
+    	}
+    },
+});
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>

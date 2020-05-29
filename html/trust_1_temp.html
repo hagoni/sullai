@@ -1,0 +1,134 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.page_title_area{display:none}
+
+.trust_1{height:1703px;background:url('../img/temp/trust_1.jpg')no-repeat center top}
+.video:before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border:3px solid #fff;box-sizing:border-box}
+.video1{top:716px;margin-left:31px;width:450px;height:340px}
+
+.tr_slides_wrap{height:700px;padding-bottom:100px}
+.tr_tab{left:50%;top:75px;margin-left:-600px;width:1200px;border-bottom:1px solid rgba(255,255,255,0.08);z-index:1}
+.tr_tab li{width:160px;height:62px;line-height:62px}
+.tr_tab li a{display:block;width:100%;height:100%;position:relative;font-family:'SunBatang-Medium';font-size:1.375rem;letter-spacing:-0.12em;line-height:62px;color:rgba(255,255,255,0.3)}
+.tr_tab li a:before{opacity:0;content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#dfd4c2}
+.tr_tab li.on a, .tr_tab li a:hover{color:#dfd4c2}
+.tr_tab li.on a:before, .tr_tab li a:hover:before{opacity:1}
+.tr_slide1 .slide1{background-image:url('../img/page/trust/01/slide1_1.jpg')}
+.tr_slide2 .slide1{background-image:url('../img/page/trust/01/slide2_1.jpg')}
+.tr_slide2 .slide2{background-image:url('../img/page/trust/01/slide2_2.jpg')}
+.tr_slide3 .slide1{background-image:url('../img/page/trust/01/slide3_1.jpg')}
+.tr_slide3 .slide2{background-image:url('../img/page/trust/01/slide3_2.jpg')}
+.tr_slide .tr_btns{position:absolute;top:50%;margin-top:-25px;width:25px;height:49px;background-repeat:no-repeat;background-position:center;font-size:0}
+.tr_slide .tr_btns.tr_prev{left:40px;background-image:url('../img/page/trust/01/tr_prev.png')}
+.tr_slide .tr_btns.tr_next{right:40px;background-image:url('../img/page/trust/01/tr_next.png')}
+.tr_paging{left:0;bottom:50px;width:100%}
+.tr_paging li{width:16px;height:16px;margin-left:10px}
+.tr_paging li:first-child{margin-left:0}
+.tr_paging li a{display:block;width:100%;height:100%;border-radius:50%;border:1px solid #fff;box-sizing:border-box}
+.tr_paging li.swiper-pagination-bullet-active a, .tr_paging li a:hover{background-color:#fff}
+</style>
+
+        <div class="trust_1 rel">
+            <div class="video video1 l50">
+                <iframe src="//player.vimeo.com/video/386453955?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="tr_slides_wrap rel">
+            <ul class="tr_tab abs fs_def t_center">
+                <li class="on"><a href="#none">한우구이</a></li>
+                <li><a href="#none">양념구이</a></li>
+                <li><a href="#none">식사메뉴</a></li>
+            </ul>
+            <div class="tr_conts h100">
+                <div class="tr_slide1 tr_slide rel h100">
+                    <div class="swiper-container h100">
+                        <ul class="swiper-wrapper h100">
+                            <li class="swiper-slide slide1 h100 bg"></li>
+                        </ul>
+                    </div>
+                    <ul class="tr_paging1 tr_paging abs fs_def t_center">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                    <button type="button" class="tr_btns tr_prev tr_prev1">이전</button>
+                    <button type="button" class="tr_btns tr_next tr_next1">다음</button>
+                </div>
+                <div class="tr_slide2 tr_slide rel h100" style="display:none">
+                    <div class="swiper-container h100">
+                        <ul class="swiper-wrapper h100">
+                            <li class="swiper-slide slide1 h100 bg"></li>
+                            <li class="swiper-slide slide2 h100 bg"></li>
+                        </ul>
+                    </div>
+                    <ul class="tr_paging2 tr_paging abs fs_def t_center">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                    <button type="button" class="tr_btns tr_prev tr_prev2">이전</button>
+                    <button type="button" class="tr_btns tr_next tr_next2">다음</button>
+                </div>
+                <div class="tr_slide3 tr_slide rel h100" style="display:none">
+                    <div class="swiper-container h100">
+                        <ul class="swiper-wrapper h100">
+                            <li class="swiper-slide slide1 h100 bg"></li>
+                            <li class="swiper-slide slide2 h100 bg"></li>
+                        </ul>
+                    </div>
+                    <ul class="tr_paging3 tr_paging abs fs_def t_center">
+                        <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                        <li><a href="#none"></a></li>
+                    </ul>
+                    <button type="button" class="tr_btns tr_prev tr_prev3">이전</button>
+                    <button type="button" class="tr_btns tr_next tr_next3">다음</button>
+                </div>
+            </div>
+        </div>
+<script>
+(function() {
+    var tabmenu = $('.tr_tab'), tabcons = $('.tr_conts');
+    if(tabmenu.length > 0) {
+        var startIndex = tabmenu.children('li.on').index();
+        new Tabbing($('.tr_tab'), $('.tr_conts'), function(i, prevI) {
+            swipers[prevI].autoplay.stop();
+            swipers[i].update();
+            swipers[i].autoplay.start();
+        });
+        var swipers = [];
+        $('.tr_conts > div').each(function(i) {
+            swipers[i] = new Swiper($(this).find('.swiper-container'), {
+                setWrapperSize: true,
+                autoplay: {
+                    // disableInteraction: false,
+                    delay: 5000
+                },
+                pagination: {
+                    el: $(this).find('.tr_paging'),
+                    type: 'bullets',
+                    clickable: true,
+                    renderBullet: function(index, className) {
+                        return '<li class="'+ className +'"><a href="#none"></a></li>';
+                    }
+                },
+                navigation: {
+                    nextEl: $(this).find('.tr_btns.tr_next'),
+                    prevEl: $(this).find('.tr_btns.tr_prev'),
+                },
+                effect: 'fade',
+                fadeEffect: {
+                	crossFade: true
+                },
+            });
+            swipers[i].autoplay.stop();
+        });
+        swipers[startIndex].autoplay.start();
+    }
+}());
+</script>
+<?
+include_once('../inc/bottom.php');
+?>

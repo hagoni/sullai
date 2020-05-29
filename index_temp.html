@@ -1,0 +1,293 @@
+<?
+######################################################################################################################################################
+//VIEW3 BOARD 1.0
+######################################################################################################################################################
+define('_VIEW3BOARD_', TRUE);
+define('MAIN_TYPE',													'MAIN',TRUE);
+@include_once														"./view3.php";
+######################################################################################################################################################
+$html_idx = "12";//유저게시판
+######################################################################################################################################################
+$settings_sql = 'SELECT * FROM `'.TABLE_LEFT.'settings` WHERE `key`="info";';
+$settings_query = mysql_query($settings_sql);
+$settings_raw = mysql_fetch_assoc($settings_query);
+$settings_data = unserialize($settings_raw['val']);
+$sitename = htmlentities($settings_data['title'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$description = htmlentities($settings_data['desc'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$keywords = htmlentities($settings_data['keyword'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$canonical = htmlentities($settings_data['canonical'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$site_uri = urlencode(PROTOCOL.$_SERVER[SERVER_NAME].$_SERVER[REQUEST_URI]);
+$og_image = $def_og_image;
+######################################################################################################################################################
+$request_root = $root;
+$time = time();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="naver-site-verification" content="<?=htmlentities($settings_data['naver_webmastertools_key'], ENT_QUOTES | ENT_IGNORE, "UTF-8");?>">
+<meta name="description" content="<?=$description?>">
+<meta name="keywords" content="<?=$keywords?>">
+<meta name="author" content="">
+<meta property="og:title" content="<?=$sitename?>">
+<meta property="og:url" content="<?=$site_uri?>">
+<meta property="og:description" content="<?=$description?>">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<?=$og_image?>">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<?=$sitename?>">
+<meta name="twitter:url" content="<?=$site_uri?>">
+<meta name="twitter:description" content="<?=$description?>">
+<meta name="twitter:image" content="<?=$og_image?>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title><?=$sitename?></title>
+<link rel="canonical" href="<?=$canonical?>">
+<link rel="shortcut icon" href="<?=$root?>/img/favicon.ico">
+<link rel="stylesheet" href="<?=$root?>/css/style.css?<?=$time?>">
+<link rel="stylesheet" href="<?=$root?>/css/main.css?<?=$time?>">
+</head>
+<body>
+
+<!-- 건너뛰기 링크 시작 -->
+<dl id="skiptoContent">
+	<dt>바로가기 메뉴</dt>
+	<dd><a href="#navigation" class="skip">네비게이션 바로가기</a></dd>
+	<dd><a href="#content" class="skip">본문 바로가기</a></dd>
+</dl>
+<!-- //건너뛰기 링크 끝 -->
+
+<div id="wrap">
+<?php
+include_once('inc/header.php');
+?>
+	<div class="m20">
+		<!-- main_visual start -->
+		<div class="main_visual rel">
+			<div class="swiper-container h100">
+				<ul class="swiper-wrapper h100">
+					<li class="swiper-slide mv01 h100 bg">
+						<div class="pc_inner">
+							<p class="title wt"><em>사람</em>을 만나세요<br>그리고 <br class="br_m"><em>강강술래</em>를 만나세요</p>
+							<p class="text wt">사람과 만남 그리고 강강술래<br><em>사람과 사람이 마주앉아 따뜻함을 나누는 세상을 만들어갑니다.</em></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="mv_btns mv_prev">이전</button>
+			<button type="button" class="mv_btns mv_next">다음</button>
+		</div>
+		<!-- //main_visual end -->
+		<!-- main_content start -->
+		<div class="main_content" id="content">
+			<!-- neulbom start -->
+			<div class="neulbom rel">
+				<div class="neulbom_dec l50"><img src="<?=$root?>/img/main/neulbom_dec.png" alt=""></div>
+				<div class="pc_inner h100">
+					<div class="text_wrap">
+						<p class="title wt"><em>늘봄농원점</em></p>
+						<p class="text wt">강강술래 늘봄농원점은 <br class="br_m1080"><em>고객과 가장 가까운 곳에 위치하고 있습니다.</em></p>
+					</div>
+					<div class="btns_wrap fs_def">
+						<a href="#none" class="neulbom_link cmn_link">늘봄농원점 바로가기</a>
+						<a href="#none" class="neulbom_link2 cmn_link">오시는 길 바로가기</a>
+					</div>
+				</div>
+				<a href="#none" class="list_link">다<br>른<br><span class="blank_m"></span>매<br>장<br><span class="blank_m"></span>보<br>기</a>
+			</div>
+			<!-- //neulbom end -->
+			<!-- video_banner start -->
+			<div class="video_banner_wrap rel">
+				<div class="video_banner l50 bg">
+					<iframe src="//player.vimeo.com/video/386442431?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+				<p class="title v_mid wt t_center">Since 1989, <br><em>전통에 가치를 더하다.</em></p>
+			</div>
+			<!-- //video_banner end -->
+			<!-- sincerity start -->
+			<div class="sincerity rel over_h">
+				<span class="c_line"></span>
+				<p class="v_title">Sullai Story</p>
+				<div class="top_img_m l50"><img src="<?=$root?>/img/main/sincer_img_m.png" alt=""></div>
+				<div class="top_img_tablet l50"><img src="<?=$root?>/img/main/sincer_img_tbl.png" alt=""></div>
+				<div class="top_img_pc l50">
+					<div class="img1 abs"><img src="<?=$root?>/img/main/snc_img1.png" alt=""></div>
+					<div class="img2 abs"><img src="<?=$root?>/img/main/snc_img2.png" alt=""></div>
+					<div class="img3 abs"><img src="<?=$root?>/img/main/snc_img3.png" alt=""></div>
+					<div class="img4 abs"><img src="<?=$root?>/img/main/snc_img4.png" alt=""></div>
+				</div>
+				<div class="text_area pc_inner">
+					<p class="title"><em>진심</em>을 <br class="br_768 br_m1080">만나세요</p>
+					<p class="text">'음식에는 요령이 아닌 진심이 담겨야 합니다.'<br><em>진심을 담은 원칙으로 맺은 매듭, <br class="br_mpc">변함없는 마음으로 그 크기를 더해갑니다</em></p>
+					<a href="#none" class="snc_link cmn_link">문화를 만나세요</a>
+				</div>
+				<ul class="fs_def t_center">
+					<li class="box1">
+						<a href="#none">
+							<p class="eng_text_pc">Membership</p>
+							<div class="v_mid">
+								<p class="eng_text">Membership</p>
+								<p class="ko_text">멤<br class="br_1080">버<br class="br_1080">쉽</p>
+							</div>
+						</a>
+					</li>
+					<li class="box2">
+						<a href="#none">
+							<p class="eng_text_pc">Event</p>
+							<div class="v_mid">
+								<p class="eng_text">Event</p>
+								<p class="ko_text">이<br class="br_1080">벤<br class="br_1080">트</p>
+							</div>
+						</a>
+					</li>
+					<li class="box3">
+						<a href="#none" class="over_h">
+							<p class="eng_text_pc">Broad Cast</p>
+							<div class="left_area"></div>
+							<div class="right_area rel">
+								<div class="v_mid">
+									<p class="eng_text">Broad Cast</p>
+									<p class="ko_text">보<br class="br_1080">도<br class="br_1080">자<br class="br_1080">료</p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //sincerity end -->
+			<!-- sns start -->
+			<div class="sns over_h t_center">
+				<div class="title_area">
+					<p class="en_title">Sullai SNS</p>
+					<p class="title"><em>고객이 말하는</em> 강강술래</p>
+					<div class="sns_slide swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="#none">
+									<div class="img_area_wrap">
+										<div class="img_area" style="background-image:url('../img/main/sns_img1.jpg')"><span class="ico_area abs"><img src="<?=$root?>/img/main/sns_ico2.png" alt=""></span></div>
+									</div>
+									<p class="pc_text">부모님 칠순잔치로 찾은 강강술래! 정갈한 부모님 칠순잔치로 찾은 강강술래! 정갈한 </p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //sns end -->
+			<!-- bot_btns start -->
+			<div class="bot_btns">
+				<ul class="fs_def t_center">
+					<li class="li1">
+						<a href="#none">
+							<p class="eng_text_pc">Brand Story</p>
+							<div class="v_mid">
+								<p class="en_text">Brand Story</p>
+								<p class="title wt">품격을 만나세요</p>
+								<p class="text wt">명장의 세월이 묻어난 맛의 향연, 맛과 멋을 품은 품격있는 공간</p>
+							</div>
+						</a>
+					</li>
+					<li class="li2">
+						<a href="#none">
+							<p class="eng_text_pc">Sullai Mall</p>
+							<div class="v_mid">
+								<p class="en_text">Sullai Mall</p>
+								<p class="title">가정에서도 만나세요</p>
+								<p class="text">고마운 사람에게 전할 특별한 선물로 모두의 마음에 닿겠습니다.</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //bot_btns end -->
+		</div>
+		<!-- //main_content end -->
+	</div>
+<?php
+include_once('inc/footer.php');
+?>
+</div>
+
+<script>
+var CONST_REQUEST_ROOT = '<?=$request_root?>';
+var CONST_ROOT = '<?=$root?>';
+var CONST_SITENAME = '<?=str_replace(' ', '', $sitename)?>';
+</script>
+<script src="<?=$root?>/js/jquery-1.12.0.min.js"></script>
+<script src="<?=$root?>/freebest/inquiry.js"></script>
+<script src="<?=$root?>/js/common.js?<?=$time?>"></script>
+<script src="<?=$root?>/js/main.js?<?=$time?>"></script>
+<?
+@include_once(BOARD_INC.'/view3_popup_01/list.php');
+@include_once(BOARD_INC.'/view3_popup_02/list.php');
+@include_once(BOARD_INC.'/view3_popup_03/list.php');
+@include_once(BOARD_INC.'/view3_popup_04/list.php');
+?>
+<script>
+(function($) {
+	$(document).ready(function() {
+		function popupCallback() {
+			setTimeout(function() {
+
+			}, 400);
+		}
+		new Popup('type02', {
+			callback: popupCallback
+		});
+		new Popup('type03', {
+			callback: popupCallback
+		});
+		new Popup('type04', {
+			callback: popupCallback
+		});
+	});
+}(jQuery));
+</script>
+<?
+@include_once(ROOT_INC.'/statistics_include.php');
+?>
+
+</body>
+</html>

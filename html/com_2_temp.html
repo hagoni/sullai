@@ -1,0 +1,59 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+.temp{height:1781px;background:url('../img/temp/com_2.jpg')no-repeat center bottom}
+.temp .video_area{left:0;top:0;width:100%;height:800px}
+.temp .video{top:50%;margin-top:-400px;margin-left:-960px;width:1960px;height:800px}
+.temp .video_ttl{left:0;top:50%;width:100%;text-align:center;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+@media screen and (min-width:2000px){
+    .temp .video{margin-top:-514px;margin-left:-1260px;width:2520px;height:1028px}
+}
+
+.com2_slide{top:926px;margin-left:-670px;width:594px;height:714px}
+.com2_paging{top:1675px;margin-left:-670px}
+</style>
+        <div class="temp rel">
+            <div class="video_area abs over_h">
+                <div class="video l50">
+                    <iframe src="//player.vimeo.com/video/386445710?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <p class="video_ttl abs"><img src="<?=$root?>/img/temp/com_2_ttl.png" alt=""></p>
+            </div>
+            <div class="com2_slide cmn_slide l50">
+                <div class="swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/com/02/com2_sl1.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/com/02/com2_sl2.jpg" alt=""></li>
+                        <li class="swiper-slide"><img src="<?=$root?>/img/page/com/02/com2_sl3.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="cmn_paging com2_paging l50 fs_def">
+                <li class="swiper-pagination-bullet-active"><a href="#none"></a></li>
+                <li><a href="#none"></a></li>
+            </ul>
+        </div>
+<script>
+new Swiper('.com2_slide .swiper-container', {
+    setWrapperSize: true,
+    speed: 500,
+        autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+    	el: '.com2_paging',
+    	type: 'bullets',
+    	clickable: true,
+    	renderBullet: function(index, className){
+    		return '<li class="' + className + '"><a href="#none"></a></li>';
+    	}
+    },
+});
+</script>
+<?php
+include_once('../inc/bottom.php');
+?>
